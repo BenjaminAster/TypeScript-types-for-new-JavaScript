@@ -9,13 +9,17 @@ interface FileSystemCreateWritableOptions {
 
 interface FileSystemFileHandle extends FileSystemHandle {
 	createWritable(options?: FileSystemCreateWritableOptions): Promise<FileSystemWritableFileStream>;
+
+	// non-standard move() function (Chromium only, see https://whatpr.org/fs/10.html#dom-filesystemhandle-move):
+	move(name: string): Promise<void>;
+	move(parent: FileSystemDirectoryHandle): Promise<void>;
+	move(parent: FileSystemDirectoryHandle, name: string): Promise<void>;
 }
 
-declare enum WriteCommandType {
-	"write",
-	"seek",
-	"truncate",
-}
+type WriteCommandType =
+	| "write"
+	| "seek"
+	| "truncate";
 
 interface WriteParams {
 	type: WriteCommandType;

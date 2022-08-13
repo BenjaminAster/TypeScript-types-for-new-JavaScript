@@ -11,7 +11,7 @@ GitHub: [BenjaminAster/TypeScript-types-for-new-JavaScript](https://github.com/B
 
 Install using npm:
 ```shell
-npm i @benjaminaster/new-javscript
+npm i -D @benjaminaster/new-javscript
 ```
 Reference the type definitions directly in your TypeScript/JavaScript files...
 ```javascript

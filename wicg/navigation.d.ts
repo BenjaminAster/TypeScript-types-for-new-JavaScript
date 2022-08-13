@@ -59,11 +59,10 @@ interface NavigationResult {
 	finished: Promise<NavigationHistoryEntry>;
 }
 
-declare enum NavigationHistoryBehavior {
-	"auto",
-	"push",
-	"replace",
-}
+type NavigationHistoryBehavior =
+	| "auto"
+	| "push"
+	| "replace";
 
 interface NavigationCurrentEntryChangeEvent extends Event {
 	readonly navigationType: NavigationType | null;
@@ -128,24 +127,21 @@ interface NavigationInterceptOptions {
 	scroll: NavigationScrollBehavior;
 }
 
-declare enum NavigationFocusReset {
-	"after-transition",
-	"manual",
-}
+type NavigationFocusReset =
+	| "after-transition"
+	| "manual";
 
-declare enum NavigationScrollBehavior {
-	"after-transition",
-	"manual",
-}
+type NavigationScrollBehavior =
+	| "after-transition"
+	| "manual";
 
 type NavigationInterceptHandler = () => Promise<void>;
 
-declare enum NavigationType {
-	"reload",
-	"push",
-	"replace",
-	"traverse",
-}
+type NavigationType =
+	| "reload"
+	| "push"
+	| "replace"
+	| "traverse";
 
 interface NavigationDestination {
 	readonly url: string;

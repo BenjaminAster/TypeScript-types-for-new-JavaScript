@@ -3,10 +3,9 @@
 // Specification: https://wicg.github.io/file-system-access/
 // Repository: https://github.com/WICG/file-system-access
 
-declare enum FileSystemPermissionMode {
-	"read",
-	"readwrite",
-}
+type FileSystemPermissionMode =
+	| "read"
+	| "readwrite";
 
 interface FileSystemPermissionDescriptor extends PermissionDescriptor {
 	handle: FileSystemHandle;
@@ -22,14 +21,13 @@ interface FileSystemHandle {
 	requestPermission(descriptor?: FileSystemHandlePermissionDescriptor): Promise<PermissionState>;
 }
 
-declare enum WellKnownDirectory {
-	"desktop",
-	"documents",
-	"downloads",
-	"music",
-	"pictures",
-	"videos",
-}
+type WellKnownDirectory =
+	| "desktop"
+	| "documents"
+	| "downloads"
+	| "music"
+	| "pictures"
+	| "videos";
 
 type StartInDirectory = WellKnownDirectory | FileSystemHandle;
 

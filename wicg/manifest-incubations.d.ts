@@ -15,10 +15,9 @@ interface PromptResponseObject {
 	platform: string; // non-standard (Chromium only, not in spec)
 }
 
-declare enum AppBannerPromptOutcome {
-	"accepted",
-	"dismissed",
-}
+type AppBannerPromptOutcome =
+	| "accepted"
+	| "dismissed";
 
 declare var BeforeInstallPromptEvent: {
 	prototype: BeforeInstallPromptEvent;

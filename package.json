@@ -1,6 +1,6 @@
 {
 	"name": "@benjaminaster/new-javascript",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"description": "TypeScript type definitions for new JavaScript stuff that isn't yet in TypeScript's standard type definitions",
 	"main": "index.d.ts",
 	"scripts": {
@@ -11,7 +11,7 @@
 		"url": "git+https://github.com/BenjaminAster/TypeScript-types-for-new-JavaScript.git"
 	},
 	"author": "Benjamin Aster",
-	"license": "ISC",
+	"license": "WTFPL",
 	"bugs": {
 		"url": "https://github.com/BenjaminAster/TypeScript-types-for-new-JavaScript/issues"
 	},
