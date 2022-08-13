@@ -1,8 +1,7 @@
 
 // URLPattern API
-// specification: https://wicg.github.io/urlpattern/
-// repository: https://github.com/WICG/urlpattern
-// MDN documentation: https://developer.mozilla.org/en-US/docs/Web/API/URLPattern
+// Specification: https://wicg.github.io/urlpattern/
+// Repository: https://github.com/WICG/urlpattern
 
 type URLPatternInput = URLPatternInit | string;
 
@@ -19,6 +18,11 @@ interface URLPattern {
 	readonly hash: string;
 }
 
+declare var URLPattern: {
+	prototype: URLPattern;
+	new(input?: URLPatternInput, baseURL?: string);
+}
+
 interface URLPatternInit {
 	protocol: string;
 	username: string;
@@ -33,7 +37,6 @@ interface URLPatternInit {
 
 interface URLPatternResult {
 	inputs: URLPatternInput[];
-
 	protocol: URLPatternComponentResult;
 	username: URLPatternComponentResult;
 	password: URLPatternComponentResult;
@@ -47,9 +50,4 @@ interface URLPatternResult {
 interface URLPatternComponentResult {
 	input: string;
 	groups: Record<string, string | undefined>;
-}
-
-declare var URLPattern: {
-	prototype: URLPattern;
-	new(input?: URLPatternInput, baseURL?: string);
 }

@@ -1,10 +1,27 @@
 
 // Sanitizer API
-// specification: https://wicg.github.io/sanitizer-api/
-// repository: https://github.com/WICG/sanitizer-api
-// MDN documentation: https://developer.mozilla.org/en-US/docs/Web/API/HTML_Sanitizer_API
+// Specification: https://wicg.github.io/sanitizer-api/
+// Repository: https://github.com/WICG/sanitizer-api
 
-declare type AttributeMatchList = Record<string, string[]>;
+interface Sanitizer {
+	sanitize(input: DocumentFragment | Document): DocumentFragment;
+	sanitizeFor(element: string, input: string): Element | null;
+	getConfiguration(): SanitizerConfig;
+	getDefaultConfiguration(): SanitizerConfig;
+}
+
+declare var Sanitizer: {
+	prototype: Sanitizer;
+	new(config?: SanitizerConfig): Sanitizer;
+};
+
+interface SetHTMLOptions {
+	sanitizer: Sanitizer;
+}
+
+interface Element {
+	setHTML(input: string, options?: SetHTMLOptions): void;
+}
 
 interface SanitizerConfig {
 	allowElements?: string[];
@@ -16,21 +33,5 @@ interface SanitizerConfig {
 	allowComments?: boolean;
 }
 
-interface Sanitizer {
-	sanitize(input: DocumentFragment | Document): DocumentFragment;
-	sanitizeFor(element: string, input: string): Element;
-	getConfiguration(): SanitizerConfig;
-	getDefaultConfiguration(): SanitizerConfig;
-}
-
-declare var Sanitizer: {
-	prototype: Sanitizer;
-	new(config?: SanitizerConfig): Sanitizer;
-};
-
-interface Element {
-	setHTML(input: string, options?: {
-		sanitizer: Sanitizer;
-	}): void;
-}
+declare type AttributeMatchList = Record<string, string[]>;
 

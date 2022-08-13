@@ -1,37 +1,44 @@
 
 // Navigation API
-// specification: https://wicg.github.io/navigation-api/
-// repository: https://github.com/WICG/navigation-api
+// Specification: https://wicg.github.io/navigation-api/
+// Repository: https://github.com/WICG/navigation-api
 
-interface NavigationHistoryEntryEventMap {
-	"dispose": Event;
-}
+declare var navigation: Navigation;
 
-interface NavigationHistoryEntry extends EventTarget {
-	readonly url: string | null;
-	readonly key: string;
-	readonly id: string;
-	readonly index: number;
-	readonly sameDocument: boolean;
-	getState(): any;
-	ondispose: (event: Event) => void;
-	addEventListener<K extends keyof NavigationHistoryEntryEventMap>(type: K, listener: (this: NavigationHistoryEntry, ev: NavigationHistoryEntryEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+interface Navigation extends EventTarget {
+	entries(): NavigationHistoryEntry[];
+	readonly currentEntry: NavigationHistoryEntry | null;
+	updateCurrentEntry(options: NavigationUpdateCurrentEntryOptions): void;
+	readonly transition: NavigationTransition | null;
+	readonly canGoBack: boolean;
+	readonly canGoForward: boolean;
+	navigate(url: string, options?: NavigationNavigateOptions): NavigationResult;
+	reload(options?: NavigationReloadOptions): NavigationResult;
+	traverseTo(key: string, options?: NavigationOptions): NavigationResult;
+	back(options?: NavigationOptions): NavigationResult;
+	forward(options?: NavigationOptions): NavigationResult;
+	onnavigate: ((this: Navigation, ev: NavigateEvent) => void) | null;
+	onnavigatesuccess: ((this: Navigation, ev: NavigateEvent) => void) | null;
+	onnavigateerror: ((this: Navigation, ev: NavigateEvent) => void) | null;
+	oncurrententrychange: ((this: Navigation, ev: NavigateEvent) => void) | null;
+	addEventListener<K extends keyof NavigationEventMap>(type: K, listener: (this: Navigation, ev: NavigationEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
 	addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
 }
 
-interface NavigationUpdateCurrentEntryOptions {
-	state?: any;
-}
-
-interface NavigationTransition {
-	readonly navigationType: NavigationType;
-	readonly from: NavigationHistoryEntry;
-	readonly finished: Promise<undefined>;
-}
-
-declare var NavigationTransition: {
-	prototype: NavigationTransition;
+declare var Navigation: {
+	prototype: Navigation;
 	new(): never;
+}
+
+interface NavigationEventMap {
+	"navigate": NavigateEvent;
+	"navigatesuccess": NavigateEvent;
+	"navigateerror": NavigateEvent;
+	"navigatecurrententrychange": NavigateEvent;
+}
+
+interface NavigationUpdateCurrentEntryOptions {
+	state: any;
 }
 
 interface NavigationOptions {
@@ -63,15 +70,26 @@ interface NavigationCurrentEntryChangeEvent extends Event {
 	readonly from: NavigationHistoryEntry;
 }
 
+declare var NavigationCurrentEntryChangeEvent: {
+	prototype: NavigationCurrentEntryChangeEvent;
+	new(type: "navigationcurrententrychange", options: NavigationCurrentEntryChangeEventInit);
+};
+
 interface NavigationCurrentEntryChangeEventInit extends EventInit {
 	navigationType?: NavigationType;
 	destination: NavigationHistoryEntry;
 }
 
-declare var NavigationCurrentEntryChangeEvent: {
-	prototype: NavigationCurrentEntryChangeEvent;
-	new(type: "navigationcurrententrychange", options: NavigationCurrentEntryChangeEventInit);
-};
+interface NavigationTransition {
+	readonly navigationType: NavigationType;
+	readonly from: NavigationHistoryEntry;
+	readonly finished: Promise<undefined>;
+}
+
+declare var NavigationTransition: {
+	prototype: NavigationTransition;
+	new(): never;
+}
 
 interface NavigateEvent extends Event {
 	readonly navigationType: NavigationType;
@@ -87,6 +105,11 @@ interface NavigateEvent extends Event {
 	restoreScroll(): void;
 }
 
+declare var NavigateEvent: {
+	prototype: NavigateEvent;
+	new(type: "navigateevent", options: NavigateEventInit);
+}
+
 interface NavigateEventInit extends EventInit {
 	navigationType?: NavigationType;
 	destination: NavigationDestination;
@@ -99,15 +122,10 @@ interface NavigateEventInit extends EventInit {
 	info?: any;
 }
 
-declare var NavigateEvent: {
-	prototype: NavigateEvent;
-	new(type: "navigateevent", options: NavigateEventInit);
-}
-
 interface NavigationInterceptOptions {
 	handler: NavigationInterceptHandler;
 	focusReset: NavigationFocusReset;
-	scrollRestoration: NavigationScrollRestoration;
+	scroll: NavigationScrollBehavior;
 }
 
 declare enum NavigationFocusReset {
@@ -115,12 +133,12 @@ declare enum NavigationFocusReset {
 	"manual",
 }
 
-declare enum NavigationScrollRestoration {
+declare enum NavigationScrollBehavior {
 	"after-transition",
 	"manual",
 }
 
-type NavigationInterceptHandler = () => Promise<undefined>;
+type NavigationInterceptHandler = () => Promise<void>;
 
 declare enum NavigationType {
 	"reload",
@@ -143,31 +161,18 @@ declare var NavigationDestination: {
 	new(): never;
 }
 
-interface NavigationEventMap {
-	"navigate": NavigateEvent;
-	"navigatesuccess": NavigateEvent;
-	"navigateerror": NavigateEvent;
-	"navigatecurrententrychange": NavigateEvent;
-}
-
-interface Navigation extends EventTarget {
-	entries(): NavigationHistoryEntry[];
-	readonly currentEntry?: NavigationHistoryEntry;
-	updateCurrentEntry(options: NavigationUpdateCurrentEntryOptions): void;
-	readonly transition: NavigationTransition | null;
-	readonly canGoBack: boolean;
-	readonly canGoForward: boolean;
-	navigate(url: string, options?: NavigationNavigateOptions): NavigationResult;
-	reload(options?: NavigationReloadOptions): NavigationResult;
-	traverseTo(key: string, options?: NavigationOptions): NavigationResult;
-	back(options?: NavigationOptions): NavigationResult;
-	forward(options?: NavigationOptions): NavigationResult;
-	onnavigate: ((this: Navigation, ev: NavigateEvent) => void) | null;
-	onnavigatesuccess: ((this: Navigation, ev: NavigateEvent) => void) | null;
-	onnavigateerror: ((this: Navigation, ev: NavigateEvent) => void) | null;
-	oncurrententrychange: ((this: Navigation, ev: NavigateEvent) => void) | null;
-	addEventListener<K extends keyof NavigationEventMap>(type: K, listener: (this: Navigation, ev: NavigationEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+interface NavigationHistoryEntry extends EventTarget {
+	readonly url: string | null;
+	readonly key: string;
+	readonly id: string;
+	readonly index: number;
+	readonly sameDocument: boolean;
+	getState(): any;
+	ondispose: (event: Event) => void;
+	addEventListener<K extends keyof NavigationHistoryEntryEventMap>(type: K, listener: (this: NavigationHistoryEntry, ev: NavigationHistoryEntryEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
 	addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
 }
 
-declare var navigation: Navigation;
+interface NavigationHistoryEntryEventMap {
+	"dispose": Event;
+}

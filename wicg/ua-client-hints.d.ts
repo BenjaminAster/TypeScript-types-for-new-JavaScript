@@ -1,25 +1,43 @@
 
 // User Agent Client Hints
-// specification: https://wicg.github.io/ua-client-hints/
-// repository: https://github.com/WICG/ua-client-hints
-// MDN documentation: https://developer.mozilla.org/en-US/docs/Web/API/Navigator/userAgentData
+// Specification: https://wicg.github.io/ua-client-hints/
+// Repository: https://github.com/WICG/ua-client-hints
+
+interface NavigatorUABrandVersion {
+	brand?: string;
+	version?: string;
+}
+
+interface UADataValues {
+	brands?: NavigatorUABrandVersion[];
+	mobile?: boolean;
+	architecture?: string;
+	bitness?: string;
+	model?: string;
+	platform?: string;
+	platformVersion?: string;
+	uaFullVersion?: string;
+	wow64?: boolean;
+	fullVersionList?: NavigatorUABrandVersion[];
+}
+
+interface UALowEntropyJSON {
+	brands?: NavigatorUABrandVersion[];
+	mobile?: boolean;
+	platform?: string;
+}
 
 interface NavigatorUAData {
-	readonly brands: {
-		readonly brand: string;
-		readonly version: string;
-	}[];
+	readonly brands: NavigatorUABrandVersion[];
 	readonly mobile: boolean;
 	readonly platform: string;
-	getHighEntropyValues(hints: ("architecture" | "bitness" | "model" | "platformVersion" | "uaFullVersion" | "fullVersionList" | "wow64")[]): Promise<Record<string, any>>;
-	toJSON(): Record<string, any>;
+	getHighEntropyValues(hints: string[]): Promise<UADataValues>;
+	toJSON(): UALowEntropyJSON;
 }
 
-declare var NavigatorUAData: {
-	prototype: NavigatorUAData;
-	new(): never;
+interface NavigatorUA {
+	readonly userAgentData: NavigatorUAData;
 }
 
-interface Navigator {
-	userAgentData: NavigatorUAData;
-}
+interface Navigator extends NavigatorUA {}
+interface WorkerNavigator extends NavigatorUA {}

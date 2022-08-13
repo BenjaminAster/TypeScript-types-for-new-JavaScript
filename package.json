@@ -1,0 +1,19 @@
+{
+	"name": "@benjaminaster/new-javascript",
+	"version": "0.0.1",
+	"description": "TypeScript types for new JavaScript",
+	"main": "index.d.ts",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/BenjaminAster/TypeScript-types-for-new-JavaScript.git"
+	},
+	"author": "Benjamin Aster",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/BenjaminAster/TypeScript-types-for-new-JavaScript/issues"
+	},
+	"homepage": "https://github.com/BenjaminAster/TypeScript-types-for-new-JavaScript#readme"
+}

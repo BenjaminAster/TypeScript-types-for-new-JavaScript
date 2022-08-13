@@ -1,15 +1,17 @@
 
 // Local Font Access API
-// specification: https://wicg.github.io/local-font-access/
-// repository: https://github.com/WICG/local-font-access
+// Specification: https://wicg.github.io/local-font-access/
+// Repository: https://github.com/WICG/local-font-access
 
-interface LocalFontsQueryOptions {
+declare function queryLocalFonts(options?: QueryOptions): Promise<FontData[]>;
+
+interface QueryOptions {
 	postscriptNames: string[];
 }
 
 interface FontData {
 	blob(): Promise<Blob>;
-	readonly postscriptNames: string[];
+	readonly postscriptName: string;
 	readonly fullName: string;
 	readonly family: string;
 	readonly style: string;
@@ -19,5 +21,3 @@ declare var FontData: {
 	prototype: FontData;
 	new(): never;
 }
-
-declare function queryLocalFonts(options?: LocalFontsQueryOptions): Promise<FontData[]>;
