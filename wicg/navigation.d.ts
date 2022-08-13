@@ -28,7 +28,7 @@ interface Navigation extends EventTarget {
 declare var Navigation: {
 	prototype: Navigation;
 	new(): never;
-}
+};
 
 interface NavigationEventMap {
 	"navigate": NavigateEvent;
@@ -88,7 +88,7 @@ interface NavigationTransition {
 declare var NavigationTransition: {
 	prototype: NavigationTransition;
 	new(): never;
-}
+};
 
 interface NavigateEvent extends Event {
 	readonly navigationType: NavigationType;
@@ -107,7 +107,7 @@ interface NavigateEvent extends Event {
 declare var NavigateEvent: {
 	prototype: NavigateEvent;
 	new(type: "navigateevent", options: NavigateEventInit);
-}
+};
 
 interface NavigateEventInit extends EventInit {
 	navigationType?: NavigationType;
@@ -155,7 +155,7 @@ interface NavigationDestination {
 declare var NavigationDestination: {
 	prototype: NavigationDestination;
 	new(): never;
-}
+};
 
 interface NavigationHistoryEntry extends EventTarget {
 	readonly url: string | null;

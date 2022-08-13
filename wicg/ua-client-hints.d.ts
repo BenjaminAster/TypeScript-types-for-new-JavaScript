@@ -35,6 +35,11 @@ interface NavigatorUAData {
 	toJSON(): UALowEntropyJSON;
 }
 
+declare var NavigatorUAData: {
+	prototype: NavigatorUAData;
+	new(): never;
+};
+
 interface NavigatorUA {
 	readonly userAgentData: NavigatorUAData;
 }

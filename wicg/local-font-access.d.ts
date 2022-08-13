@@ -20,4 +20,4 @@ interface FontData {
 declare var FontData: {
 	prototype: FontData;
 	new(): never;
-}
+};

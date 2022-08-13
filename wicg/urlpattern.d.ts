@@ -21,7 +21,7 @@ interface URLPattern {
 declare var URLPattern: {
 	prototype: URLPattern;
 	new(input?: URLPatternInput, baseURL?: string);
-}
+};
 
 interface URLPatternInit {
 	protocol: string;

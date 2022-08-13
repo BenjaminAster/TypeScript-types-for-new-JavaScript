@@ -28,7 +28,6 @@ declare var WindowControlsOverlayGeometryChangeEvent: {
 	new(type: string, eventInitTict: WindowControlsOverlayGeometryChangeEventInit);
 };
 
-
 interface WindowControlsOverlayGeometryChangeEventInit extends EventInit {
 	titlebarAreaRect: DOMRect;
 	visible?: boolean;
