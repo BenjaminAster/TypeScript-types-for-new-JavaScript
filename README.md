@@ -17,7 +17,7 @@ Reference the type definitions directly in your TypeScript/JavaScript files...
 ```javascript
 /// <reference types="@benjaminaster/new-javascript" />
 ```
-...or include them in your `tsconfig.json` or `jsconfig.json`
+...or include them in your `tsconfig.json` or `jsconfig.json`:
 ```jsonc
 {
 	"compilerOptions": {
@@ -36,6 +36,7 @@ These type definitions include the following specifications (grouped by venue):
 	 - [Manifest Incubations](https://wicg.github.io/manifest-incubations) (this includes BeforeInstallPromptEvent and File Handling)
 	 - [Navigation API](https://wicg.github.io/navigation-api/)
 	 - [Sanitizer API](https://wicg.github.io/sanitizer-api/)
+	 - [Shared Element Transitions](https://github.com/WICG/shared-element-transitions/blob/main/explainer.md)
 	 - [User-Agent Client Hints](https://wicg.github.io/ua-client-hints/)
 	 - [URLPattern API](https://wicg.github.io/urlpattern/)
 	 - [Window Controls Overlay](https://wicg.github.io/window-controls-overlay/)

@@ -21,3 +21,9 @@ declare var FontData: {
 	prototype: FontData;
 	new(): never;
 };
+
+interface Permissions {
+	query(permissionDesc: {
+		name: PermissionName | "local-fonts";
+	}): Promise<PermissionStatus>;
+}

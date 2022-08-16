@@ -16,6 +16,7 @@ interface UADataValues {
 	model?: string;
 	platform?: string;
 	platformVersion?: string;
+	/** @deprecated */
 	uaFullVersion?: string;
 	wow64?: boolean;
 	fullVersionList?: NavigatorUABrandVersion[];
@@ -31,7 +32,7 @@ interface NavigatorUAData {
 	readonly brands: NavigatorUABrandVersion[];
 	readonly mobile: boolean;
 	readonly platform: string;
-	getHighEntropyValues(hints: string[]): Promise<UADataValues>;
+	getHighEntropyValues(hints: ("architecture" | "bitness" | "model" | "platformVersioin" | "uaFullVersion" | "wow64" | "fullVersionList")[]): Promise<UADataValues>;
 	toJSON(): UALowEntropyJSON;
 }
 
