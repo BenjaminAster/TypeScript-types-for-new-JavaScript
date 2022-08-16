@@ -29,7 +29,7 @@ interface UALowEntropyJSON {
 }
 
 interface NavigatorUAData {
-	readonly brands: NavigatorUABrandVersion[];
+	readonly brands: ReadonlyArray<NavigatorUABrandVersion>;
 	readonly mobile: boolean;
 	readonly platform: string;
 	getHighEntropyValues(hints: ("architecture" | "bitness" | "model" | "platformVersioin" | "uaFullVersion" | "wow64" | "fullVersionList")[]): Promise<UADataValues>;

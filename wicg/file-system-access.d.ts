@@ -3,9 +3,10 @@
 // Specification: https://wicg.github.io/file-system-access/
 // Repository: https://github.com/WICG/file-system-access
 
-type FileSystemPermissionMode =
+type FileSystemPermissionMode = (
 	| "read"
-	| "readwrite";
+	| "readwrite"
+);
 
 interface FileSystemPermissionDescriptor extends PermissionDescriptor {
 	handle: FileSystemHandle;
@@ -21,13 +22,14 @@ interface FileSystemHandle {
 	requestPermission(descriptor?: FileSystemHandlePermissionDescriptor): Promise<PermissionState>;
 }
 
-type WellKnownDirectory =
+type WellKnownDirectory = (
 	| "desktop"
 	| "documents"
 	| "downloads"
 	| "music"
 	| "pictures"
-	| "videos";
+	| "videos"
+);
 
 type StartInDirectory = WellKnownDirectory | FileSystemHandle;
 

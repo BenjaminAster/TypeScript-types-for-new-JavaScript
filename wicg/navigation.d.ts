@@ -59,10 +59,11 @@ interface NavigationResult {
 	finished: Promise<NavigationHistoryEntry>;
 }
 
-type NavigationHistoryBehavior =
+type NavigationHistoryBehavior = (
 	| "auto"
 	| "push"
-	| "replace";
+	| "replace"
+);
 
 interface NavigationCurrentEntryChangeEvent extends Event {
 	readonly navigationType: NavigationType | null;
@@ -127,21 +128,24 @@ interface NavigationInterceptOptions {
 	scroll: NavigationScrollBehavior;
 }
 
-type NavigationFocusReset =
+type NavigationFocusReset = (
 	| "after-transition"
-	| "manual";
+	| "manual"
+);
 
-type NavigationScrollBehavior =
+type NavigationScrollBehavior = (
 	| "after-transition"
-	| "manual";
+	| "manual"
+);
 
 type NavigationInterceptHandler = () => Promise<void>;
 
-type NavigationType =
+type NavigationType = (
 	| "reload"
 	| "push"
 	| "replace"
-	| "traverse";
+	| "traverse"
+);
 
 interface NavigationDestination {
 	readonly url: string;

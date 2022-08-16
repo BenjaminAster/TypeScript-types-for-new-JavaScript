@@ -16,10 +16,11 @@ interface FileSystemFileHandle extends FileSystemHandle {
 	move(parent: FileSystemDirectoryHandle, name: string): Promise<void>;
 }
 
-type WriteCommandType =
+type WriteCommandType = (
 	| "write"
 	| "seek"
-	| "truncate";
+	| "truncate"
+);
 
 interface WriteParams {
 	type: WriteCommandType;

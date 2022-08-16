@@ -15,9 +15,10 @@ interface PromptResponseObject {
 	platform: string; // non-standard (Chromium only, not in spec)
 }
 
-type AppBannerPromptOutcome =
+type AppBannerPromptOutcome = (
 	| "accepted"
-	| "dismissed";
+	| "dismissed"
+);
 
 declare var BeforeInstallPromptEvent: {
 	prototype: BeforeInstallPromptEvent;
@@ -34,7 +35,7 @@ declare var onappinstalled: ((this: Window, ev: Event) => any) | null;
 
 interface LaunchParams {
 	readonly targetURL?: string;
-	readonly files: FileSystemFileHandle[];
+	readonly files: ReadonlyArray<FileSystemFileHandle>;
 }
 
 declare var LaunchParams: {
