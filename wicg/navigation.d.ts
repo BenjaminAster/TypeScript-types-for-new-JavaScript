@@ -17,18 +17,15 @@ interface Navigation extends EventTarget {
 	traverseTo(key: string, options?: NavigationOptions): NavigationResult;
 	back(options?: NavigationOptions): NavigationResult;
 	forward(options?: NavigationOptions): NavigationResult;
-	onnavigate: ((this: Navigation, ev: NavigateEvent) => void) | null;
-	onnavigatesuccess: ((this: Navigation, ev: NavigateEvent) => void) | null;
-	onnavigateerror: ((this: Navigation, ev: NavigateEvent) => void) | null;
-	oncurrententrychange: ((this: Navigation, ev: NavigateEvent) => void) | null;
+	onnavigate: ((this: Navigation, ev: NavigateEvent) => any) | null;
+	onnavigatesuccess: ((this: Navigation, ev: NavigateEvent) => any) | null;
+	onnavigateerror: ((this: Navigation, ev: NavigateEvent) => any) | null;
+	oncurrententrychange: ((this: Navigation, ev: NavigateEvent) => any) | null;
 	addEventListener<K extends keyof NavigationEventMap>(type: K, listener: (this: Navigation, ev: NavigationEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
 	addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+	removeEventListener<K extends keyof NavigationEventMap>(type: K, listener: (this: Navigation, ev: NavigationEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+	removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
 }
-
-declare var Navigation: {
-	prototype: Navigation;
-	new(): never;
-};
 
 interface NavigationEventMap {
 	"navigate": NavigateEvent;
@@ -36,6 +33,11 @@ interface NavigationEventMap {
 	"navigateerror": NavigateEvent;
 	"navigatecurrententrychange": NavigateEvent;
 }
+
+declare var Navigation: {
+	prototype: Navigation;
+	new(): never;
+};
 
 interface NavigationUpdateCurrentEntryOptions {
 	state: any;
@@ -72,7 +74,7 @@ interface NavigationCurrentEntryChangeEvent extends Event {
 
 declare var NavigationCurrentEntryChangeEvent: {
 	prototype: NavigationCurrentEntryChangeEvent;
-	new(type: "navigationcurrententrychange", options: NavigationCurrentEntryChangeEventInit);
+	new(type: string, options: NavigationCurrentEntryChangeEventInit);
 };
 
 interface NavigationCurrentEntryChangeEventInit extends EventInit {
@@ -107,7 +109,7 @@ interface NavigateEvent extends Event {
 
 declare var NavigateEvent: {
 	prototype: NavigateEvent;
-	new(type: "navigateevent", options: NavigateEventInit);
+	new(type: string, options: NavigateEventInit);
 };
 
 interface NavigateEventInit extends EventInit {
