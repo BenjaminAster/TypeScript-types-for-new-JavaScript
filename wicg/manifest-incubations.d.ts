@@ -40,7 +40,6 @@ interface LaunchParams {
 
 declare var LaunchParams: {
 	prototype: LaunchParams;
-	new(): never;
 };
 
 type LaunchConsumer = (params: LaunchParams) => any;
@@ -51,7 +50,6 @@ interface LaunchQueue {
 
 declare var LaunchQueue: {
 	prototype: LaunchQueue;
-	new(): never;
 };
 
 declare var launchQueue: LaunchQueue;

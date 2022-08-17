@@ -39,7 +39,6 @@ interface FileSystemWritableFileStream extends WritableStream {
 
 declare var FileSystemWritableFileStream: {
 	prototype: FileSystemWritableFileStream;
-	new(): never;
 };
 
 interface StorageManager {

@@ -64,7 +64,6 @@ interface BackgroundFetchRegistrationEventMap {
 
 declare var BackgroundFetchRegistration: {
 	prototype: BackgroundFetchRegistration;
-	new(): never;
 };
 
 type BackgroundFetchResult = (
@@ -89,7 +88,6 @@ interface BackgroundFetchRecord {
 
 declare var BackgroundFetchRecord: {
 	prototype: BackgroundFetchRecord;
-	new(): never;
 };
 
 interface BackgroundFetchEvent extends ExtendableEvent {

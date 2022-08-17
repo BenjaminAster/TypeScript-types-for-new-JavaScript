@@ -25,7 +25,6 @@ interface PeriodicSyncManager {
 
 declare var PeriodicSyncManager: {
 	prototype: PeriodicSyncManager;
-	new(): never;
 };
 
 interface BackgroundSyncOptions {

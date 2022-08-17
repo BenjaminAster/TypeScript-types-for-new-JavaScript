@@ -17,5 +17,8 @@ interface DocumentTransition {
 
 declare var DocumentTransition: {
 	prototype: DocumentTransition;
-	new(): never;
 };
+
+interface CSSStyleDeclaration {
+	pageTransitionTag: string;
+}

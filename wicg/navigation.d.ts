@@ -7,9 +7,9 @@ declare var navigation: Navigation;
 
 interface Navigation extends EventTarget {
 	entries(): NavigationHistoryEntry[];
-	readonly currentEntry: NavigationHistoryEntry | null;
+	readonly currentEntry?: NavigationHistoryEntry | null;
 	updateCurrentEntry(options: NavigationUpdateCurrentEntryOptions): void;
-	readonly transition: NavigationTransition | null;
+	readonly transition?: NavigationTransition | null;
 	readonly canGoBack: boolean;
 	readonly canGoForward: boolean;
 	navigate(url: string, options?: NavigationNavigateOptions): NavigationResult;
@@ -36,7 +36,6 @@ interface NavigationEventMap {
 
 declare var Navigation: {
 	prototype: Navigation;
-	new(): never;
 };
 
 interface NavigationUpdateCurrentEntryOptions {
@@ -68,7 +67,7 @@ type NavigationHistoryBehavior = (
 );
 
 interface NavigationCurrentEntryChangeEvent extends Event {
-	readonly navigationType: NavigationType | null;
+	readonly navigationType?: NavigationType | null;
 	readonly from: NavigationHistoryEntry;
 }
 
@@ -90,7 +89,6 @@ interface NavigationTransition {
 
 declare var NavigationTransition: {
 	prototype: NavigationTransition;
-	new(): never;
 };
 
 interface NavigateEvent extends Event {
@@ -100,8 +98,8 @@ interface NavigateEvent extends Event {
 	readonly userInitiated: boolean;
 	readonly hashChange: boolean;
 	readonly signal: AbortSignal;
-	readonly formData: FormData | null;
-	readonly downloadRequest: string | null;
+	readonly formData?: FormData | null;
+	readonly downloadRequest?: string | null;
 	readonly info: any;
 	intercept(options?: NavigationInterceptOptions): void;
 	restoreScroll(): void;
@@ -151,8 +149,8 @@ type NavigationType = (
 
 interface NavigationDestination {
 	readonly url: string;
-	readonly key: string | null;
-	readonly id: string | null;
+	readonly key?: string | null;
+	readonly id?: string | null;
 	readonly index: number;
 	readonly sameDocument: boolean;
 	getState(): any;
@@ -160,11 +158,10 @@ interface NavigationDestination {
 
 declare var NavigationDestination: {
 	prototype: NavigationDestination;
-	new(): never;
 };
 
 interface NavigationHistoryEntry extends EventTarget {
-	readonly url: string | null;
+	readonly url?: string | null;
 	readonly key: string;
 	readonly id: string;
 	readonly index: number;

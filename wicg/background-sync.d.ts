@@ -16,7 +16,6 @@ interface SyncManager {
 
 declare var SyncManager: {
 	prototype: SyncManager;
-	new(): never;
 };
 
 interface ServiceWorkerGlobalScope {

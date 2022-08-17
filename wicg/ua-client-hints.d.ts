@@ -38,7 +38,6 @@ interface NavigatorUAData {
 
 declare var NavigatorUAData: {
 	prototype: NavigatorUAData;
-	new(): never;
 };
 
 interface NavigatorUA {
