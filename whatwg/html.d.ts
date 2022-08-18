@@ -37,7 +37,7 @@ interface OffscreenCanvas extends EventTarget {
 
 declare var OffscreenCanvas: {
 	prototype: OffscreenCanvas;
-	new(width: number, height: number);
+	new(width: number, height: number): OffscreenCanvas;
 };
 
 interface OffscreenCanvasEventMap {
