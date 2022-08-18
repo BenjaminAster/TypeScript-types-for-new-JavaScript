@@ -5,7 +5,7 @@
 
 /// <reference types="@webgpu/types" />
 
-// The elements of HTML >> Scripting >> The canvas element >> The OffscreenCanvas interface
+// The elements of HTML >> Scripting >> The canvas element >> The OffscreenCanvas interface (https://html.spec.whatwg.org/multipage/canvas.html#the-offscreencanvas-interface)
 type OffscreenRenderingContext = OffscreenCanvasRenderingContext2D | ImageBitmapRenderingContext | WebGLRenderingContext | WebGL2RenderingContext | GPUCanvasContext;
 
 interface ImageEncodeOptions {
@@ -24,7 +24,10 @@ type OffscreenRenderingContextId = (
 interface OffscreenCanvas extends EventTarget {
 	width: number;
 	height: number;
-	getContext(contextId: OffscreenRenderingContextId, options?: any): OffscreenRenderingContext | null;
+	getContext(contextId: "2d", options?: CanvasRenderingContext2DSettings): OffscreenCanvasRenderingContext2D | null;
+	getContext(contextId: "bitmaprenderer", options?: ImageBitmapRenderingContextSettings): ImageBitmapRenderingContext | null;
+	getContext(contextId: "webgl", options?: WebGLContextAttributes): WebGLRenderingContext | null;
+	getContext(contextId: "webgl2", options?: WebGLContextAttributes): WebGL2RenderingContext | null;
 	transferToImageBitmap(): ImageBitmap;
 	convertToBlob(options?: ImageEncodeOptions): Promise<Blob>;
 	oncontextlost: ((this: OffscreenCanvas, ev: Event) => any) | null;
