@@ -1,5 +1,5 @@
 
-# TypeScript Types for new JavaScript
+# TypeScript types for new JavaScript
 
 This repository contains TypeScript type declarations for a lot of new JavaScript stuff that isn't yet in TypeScript's standard type declarations (see below for [the complete list](#specifications-in-this-repository)). These range from the [File System Access API](https://wicg.github.io/file-system-access/) over [Shared Element Transitions](https://github.com/WICG/shared-element-transitions/blob/main/explainer.md) to [Houdini CSS Typed OM](https://drafts.css-houdini.org/css-typed-om/) or [Handwriting Recognition](https://wicg.github.io/handwriting-recognition/). Some specifications have only partially been integrated into TypeScript's standard type declarations, in which case this repository contains only the parts of the specifications that aren't there (yet). For most specifications I have used [WebIDL2TS](https://github.com/giniedp/webidl2ts), a tool that automatically converts [WebIDL](https://webidl.spec.whatwg.org/) to TypeScript type declarations, and manually edited the stuff where it didn't generate the desired result.
 
@@ -41,9 +41,12 @@ The type declarations in this repository include the following specifications (g
 	 - [EyeDropper API](https://wicg.github.io/eyedropper-api/)
 	 - [File System Access API](https://wicg.github.io/file-system-access/)
 	 - [Handwriting Recognition API](https://wicg.github.io/handwriting-recognition/)
+	 - [Keyboard Lock](https://wicg.github.io/keyboard-lock/)
+	 - [Keyboard Map](https://wicg.github.io/keyboard-map/)
 	 - [Local Font Access API](https://wicg.github.io/local-font-access/)
 	 - [Manifest Incubations](https://wicg.github.io/manifest-incubations) (this includes the [BeforeInstallPromptEvent](https://wicg.github.io/manifest-incubations/#beforeinstallpromptevent-interface) and [File Handling](https://github.com/WICG/file-handling/blob/main/explainer.md))
 	 - [Navigation API](https://wicg.github.io/navigation-api/)
+	 - [Network Information API](https://wicg.github.io/netinfo/)
 	 - [Periodic Background Sync](https://wicg.github.io/periodic-background-sync/)
 	 - [Sanitizer API](https://wicg.github.io/sanitizer-api/)
 	 - [Shape Detection API](https://wicg.github.io/shape-detection-api/)
