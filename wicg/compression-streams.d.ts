@@ -16,4 +16,3 @@ declare var DecompressionStream: {
 	prototype: DecompressionStream;
 	new(format: string): DecompressionStream;
 };
-

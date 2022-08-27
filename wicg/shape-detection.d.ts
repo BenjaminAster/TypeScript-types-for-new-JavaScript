@@ -3,15 +3,10 @@
 // Specification: https://wicg.github.io/shape-detection-api/
 // Repository: https://github.com/WICG/shape-detection-api
 
-interface FaceDetector {
-	new(faceDetectorOptions?: FaceDetectorOptions);
+declare class FaceDetector {
+	constructor(faceDetectorOptions?: FaceDetectorOptions);
 	detect(image: ImageBitmapSource): Promise<DetectedFace[]>;
 }
-
-declare var FaceDetector: {
-	prototype: FaceDetector;
-	new(faceDetectorOptions?: FaceDetectorOptions);
-};
 
 interface FaceDetectorOptions {
 	maxDetectedFaces?: number;
@@ -34,15 +29,11 @@ type LandmarkType = (
 	| "nose"
 );
 
-interface BarcodeDetector {
+declare class BarcodeDetector {
+	constructor(barcodeDetectorOptions?: BarcodeDetectorOptions);
 	detect(image: ImageBitmapSource): Promise<DetectedBarcode[]>;
+	static getSupportedFormats(): Promise<BarcodeFormat[]>;
 }
-
-declare var BarcodeDetector: {
-	prototype: BarcodeDetector;
-	new(barcodeDetectorOptions?: BarcodeDetectorOptions);
-	getSupportedFormats(): Promise<BarcodeFormat[]>;
-};
 
 interface BarcodeDetectorOptions {
 	formats?: BarcodeFormat[];

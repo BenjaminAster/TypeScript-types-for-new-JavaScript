@@ -3,17 +3,13 @@
 // Specification: https://wicg.github.io/sanitizer-api/
 // Repository: https://github.com/WICG/sanitizer-api
 
-interface Sanitizer {
+declare class Sanitizer {
+	constructor(config?: SanitizerConfig);
 	sanitize(input: DocumentFragment | Document): DocumentFragment;
 	sanitizeFor(element: string, input: string): Element | null;
 	getConfiguration(): SanitizerConfig;
 	getDefaultConfiguration(): SanitizerConfig;
 }
-
-declare var Sanitizer: {
-	prototype: Sanitizer;
-	new(config?: SanitizerConfig): Sanitizer;
-};
 
 interface SetHTMLOptions {
 	sanitizer: Sanitizer;

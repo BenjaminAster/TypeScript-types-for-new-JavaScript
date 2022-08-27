@@ -5,11 +5,11 @@
 
 declare var navigation: Navigation;
 
-interface Navigation extends EventTarget {
+declare class Navigation extends EventTarget {
 	entries(): NavigationHistoryEntry[];
-	readonly currentEntry?: NavigationHistoryEntry | null;
+	readonly currentEntry: NavigationHistoryEntry | null;
 	updateCurrentEntry(options: NavigationUpdateCurrentEntryOptions): void;
-	readonly transition?: NavigationTransition | null;
+	readonly transition: NavigationTransition | null;
 	readonly canGoBack: boolean;
 	readonly canGoForward: boolean;
 	navigate(url: string, options?: NavigationNavigateOptions): NavigationResult;
@@ -29,30 +29,26 @@ interface Navigation extends EventTarget {
 
 interface NavigationEventMap {
 	"navigate": NavigateEvent;
-	"navigatesuccess": NavigateEvent;
-	"navigateerror": NavigateEvent;
-	"navigatecurrententrychange": NavigateEvent;
+	"navigatesuccess": Event;
+	"navigateerror": ErrorEvent;
+	"navigatecurrententrychange": NavigationCurrentEntryChangeEvent;
 }
 
-declare var Navigation: {
-	prototype: Navigation;
-};
-
 interface NavigationUpdateCurrentEntryOptions {
-	state: any;
+	state: unknown;
 }
 
 interface NavigationOptions {
-	info?: any;
+	info?: unknown;
 }
 
 interface NavigationNavigateOptions extends NavigationOptions {
-	state?: any;
+	state?: unknown;
 	history?: NavigationHistoryBehavior;
 }
 
 interface NavigationReloadOptions extends NavigationOptions {
-	state?: any;
+	state?: unknown;
 }
 
 interface NavigationResult {
@@ -66,49 +62,37 @@ type NavigationHistoryBehavior = (
 	| "replace"
 );
 
-interface NavigationCurrentEntryChangeEvent extends Event {
-	readonly navigationType?: NavigationType | null;
+declare class NavigationCurrentEntryChangeEvent extends Event {
+	constructor(type: string, options: NavigationCurrentEntryChangeEventInit);
+	readonly navigationType: NavigationType | null;
 	readonly from: NavigationHistoryEntry;
 }
 
-declare var NavigationCurrentEntryChangeEvent: {
-	prototype: NavigationCurrentEntryChangeEvent;
-	new(type: string, options: NavigationCurrentEntryChangeEventInit);
-};
-
 interface NavigationCurrentEntryChangeEventInit extends EventInit {
-	navigationType?: NavigationType;
+	navigationType?: NavigationType | null;
 	destination: NavigationHistoryEntry;
 }
 
-interface NavigationTransition {
+declare class NavigationTransition {
 	readonly navigationType: NavigationType;
 	readonly from: NavigationHistoryEntry;
-	readonly finished: Promise<undefined>;
+	readonly finished: Promise<void>;
 }
 
-declare var NavigationTransition: {
-	prototype: NavigationTransition;
-};
-
-interface NavigateEvent extends Event {
+declare class NavigateEvent extends Event {
+	constructor(type: string, eventInit: NavigateEventInit);
 	readonly navigationType: NavigationType;
 	readonly destination: NavigationDestination;
 	readonly canIntercept: boolean;
 	readonly userInitiated: boolean;
 	readonly hashChange: boolean;
 	readonly signal: AbortSignal;
-	readonly formData?: FormData | null;
-	readonly downloadRequest?: string | null;
-	readonly info: any;
+	readonly formData: FormData | null;
+	readonly downloadRequest: string | null;
+	readonly info: unknown;
 	intercept(options?: NavigationInterceptOptions): void;
 	restoreScroll(): void;
 }
-
-declare var NavigateEvent: {
-	prototype: NavigateEvent;
-	new(type: string, options: NavigateEventInit);
-};
 
 interface NavigateEventInit extends EventInit {
 	navigationType?: NavigationType;
@@ -117,9 +101,9 @@ interface NavigateEventInit extends EventInit {
 	userInitiated?: boolean;
 	hashChange?: boolean;
 	signal: AbortSignal;
-	formData?: FormData;
-	downloadRequest?: string;
-	info?: any;
+	formData?: FormData | null;
+	downloadRequest?: string | null;
+	info?: unknown;
 }
 
 interface NavigationInterceptOptions {
@@ -147,27 +131,23 @@ type NavigationType = (
 	| "traverse"
 );
 
-interface NavigationDestination {
+declare class NavigationDestination {
 	readonly url: string;
-	readonly key?: string | null;
-	readonly id?: string | null;
+	readonly key: string | null;
+	readonly id: string | null;
 	readonly index: number;
 	readonly sameDocument: boolean;
-	getState(): any;
+	getState(): unknown;
 }
 
-declare var NavigationDestination: {
-	prototype: NavigationDestination;
-};
-
 interface NavigationHistoryEntry extends EventTarget {
-	readonly url?: string | null;
+	readonly url: string | null;
 	readonly key: string;
 	readonly id: string;
 	readonly index: number;
 	readonly sameDocument: boolean;
-	getState(): any;
-	ondispose: (event: Event) => void;
+	getState(): unknown;
+	ondispose: ((this: NavigationHistoryEntry, ev: Event) => any) | null;
 	addEventListener<K extends keyof NavigationHistoryEntryEventMap>(type: K, listener: (this: NavigationHistoryEntry, ev: NavigationHistoryEntryEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
 	addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
 }

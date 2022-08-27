@@ -7,24 +7,16 @@ declare namespace CSS {
 	var paintWorklet: Worklet;
 }
 
-interface PaintWorkletGlobalScope extends WorkletGlobalScope {
+declare class PaintWorkletGlobalScope implements WorkletGlobalScope {
 	registerPaint(name: string, paintCtor: VoidFunction): void;
 	readonly devicePixelRatio: number;
 }
-
-declare var PaintWorkletGlobalScope: {
-	prototype: PaintWorkletGlobalScope;
-};
 
 interface PaintRenderingContext2DSettings {
 	alpha?: boolean;
 }
 
-interface PaintRenderingContext2D { }
-
-declare var PaintRenderingContext2D: {
-	prototype: PaintRenderingContext2D;
-};
+declare class PaintRenderingContext2D { }
 
 interface PaintRenderingContext2D extends CanvasState { }
 
@@ -48,11 +40,7 @@ interface PaintRenderingContext2D extends CanvasPathDrawingStyles { }
 
 interface PaintRenderingContext2D extends CanvasPath { }
 
-interface PaintSize {
+declare class PaintSize {
 	readonly width: number;
 	readonly height: number;
-}
-
-declare var PaintSize: {
-	prototype: PaintSize;
 }

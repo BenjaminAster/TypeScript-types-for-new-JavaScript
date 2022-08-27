@@ -7,7 +7,7 @@ interface Navigator {
 	readonly keyboard: Keyboard;
 }
 
-interface Keyboard extends EventTarget {
+declare class Keyboard extends EventTarget {
 	lock(keyCodes?: string[]): Promise<void>;
 	unlock(): void;
 	addEventListener<K extends keyof KeyboardEventMap>(type: K, listener: (this: Keyboard, ev: KeyboardEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
@@ -15,9 +15,5 @@ interface Keyboard extends EventTarget {
 	removeEventListener<K extends keyof KeyboardEventMap>(type: K, listener: (this: Keyboard, ev: KeyboardEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
 	removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
 }
-
-declare var Keyboard: {
-	prototype: Keyboard;
-};
 
 interface KeyboardEventMap { }

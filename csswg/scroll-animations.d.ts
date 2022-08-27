@@ -15,28 +15,20 @@ interface ScrollTimelineOptions {
 	axis?: ScrollAxis;
 }
 
-interface ScrollTimeline extends AnimationTimeline {
+declare class ScrollTimeline extends AnimationTimeline {
+	constructor(options?: ScrollTimelineOptions);
 	readonly source?: Element | null;
 	readonly axis: ScrollAxis;
 }
-
-declare var ScrollTimeline: {
-	prototype: ScrollTimeline;
-	new(options?: ScrollTimelineOptions): ScrollTimeline;
-};
 
 interface ViewTimelineOptions {
 	subject?: Element;
 	axis?: ScrollAxis;
 }
 
-interface ViewTimeline extends ScrollTimeline {
+declare class ViewTimeline extends ScrollTimeline {
+	constructor(options?: ViewTimelineOptions);
 	readonly subject: Element;
 	readonly startOffset: CSSNumericValue;
 	readonly endOffset: CSSNumericValue;
 }
-
-declare var ViewTimeline: {
-	prototype: ViewTimeline;
-	new(options?: ViewTimelineOptions): ViewTimeline;
-};

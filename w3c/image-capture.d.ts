@@ -3,18 +3,14 @@
 // Specification: https://w3c.github.io/mediacapture-image/
 // Repository: https://github.com/w3c/mediacapture-image
 
-interface ImageCapture {
+declare class ImageCapture {
+	constructor(videoTrack: MediaStreamTrack);
 	takePhoto(photoSettings?: PhotoSettings): Promise<Blob>;
 	getPhotoCapabilities(): Promise<PhotoCapabilities>;
 	getPhotoSettings(): Promise<PhotoSettings>;
 	grabFrame(): Promise<ImageBitmap>;
 	readonly track: MediaStreamTrack;
 }
-
-declare var ImageCapture: {
-	prototype: ImageCapture;
-	new(videoTrack: MediaStreamTrack): ImageCapture;
-};
 
 interface PhotoCapabilities {
 	redEyeReduction?: RedEyeReduction;

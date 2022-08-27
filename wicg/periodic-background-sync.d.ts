@@ -35,11 +35,7 @@ interface PeriodicSyncEventInit extends ExtendableEventInit {
 	tag: string;
 }
 
-interface PeriodicSyncEvent extends ExtendableEvent {
+declare class PeriodicSyncEvent extends ExtendableEvent {
+	constructor(type: string, init: PeriodicSyncEventInit);
 	readonly tag: string;
-}
-
-declare var PeriodicSyncEvent: {
-	prototype: PeriodicSyncEvent;
-	new(type: string, init: PeriodicSyncEventInit): PeriodicSyncEvent;
 }

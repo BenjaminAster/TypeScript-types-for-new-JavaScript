@@ -39,7 +39,7 @@ interface BackgroundFetchOptions extends BackgroundFetchUIOptions {
 	downloadTotal?: number;
 }
 
-interface BackgroundFetchRegistration extends EventTarget {
+declare class BackgroundFetchRegistration extends EventTarget {
 	readonly id: string;
 	readonly uploadTotal: number;
 	readonly uploaded: number;
@@ -62,10 +62,6 @@ interface BackgroundFetchRegistrationEventMap {
 	"progress": BackgroundFetchEvent;
 }
 
-declare var BackgroundFetchRegistration: {
-	prototype: BackgroundFetchRegistration;
-};
-
 type BackgroundFetchResult = (
 	| ""
 	| "success"
@@ -81,33 +77,21 @@ type BackgroundFetchFailureReason = (
 	| "download-total-exceeded"
 );
 
-interface BackgroundFetchRecord {
+declare class BackgroundFetchRecord {
 	readonly request: Request;
 	readonly responseReady: Promise<Response>;
 }
 
-declare var BackgroundFetchRecord: {
-	prototype: BackgroundFetchRecord;
-};
-
-interface BackgroundFetchEvent extends ExtendableEvent {
+declare class BackgroundFetchEvent extends ExtendableEvent {
+	constructor(type: string, init: BackgroundFetchEventInit);
 	readonly registration: BackgroundFetchRegistration;
 }
-
-declare var BackgroundFetchEvent: {
-	prototype: BackgroundFetchEvent;
-	new(type: string, init: BackgroundFetchEventInit);
-};
 
 interface BackgroundFetchEventInit extends ExtendableEventInit {
 	registration: BackgroundFetchRegistration;
 }
 
-interface BackgroundFetchUpdateUIEvent extends BackgroundFetchEvent {
+declare class BackgroundFetchUpdateUIEvent extends BackgroundFetchEvent {
+	constructor(type: string, init: BackgroundFetchEventInit);
 	updateUI(options?: BackgroundFetchUIOptions): Promise<void>;
 }
-
-declare var BackgroundFetchUpdateUIEvent: {
-	prototype: BackgroundFetchUpdateUIEvent;
-	new(type: string, init: BackgroundFetchEventInit);
-};

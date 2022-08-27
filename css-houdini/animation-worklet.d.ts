@@ -7,34 +7,22 @@ declare namespace CSS {
 	var animationWorklet: Worklet;
 }
 
-interface AnimationWorkletGlobalScope extends WorkletGlobalScope {
+declare class AnimationWorkletGlobalScope implements WorkletGlobalScope {
 	registerAnimator(name: string, animatorCtor: AnimatorInstanceConstructor): void;
 }
 
-declare var AnimationWorkletGlobalScope: {
-	prototype: AnimationWorkletGlobalScope;
-};
-
 type AnimatorInstanceConstructor = (options: any, state?: any) => any;
 
-interface WorkletAnimationEffect {
+declare class WorkletAnimationEffect {
 	getTiming(): EffectTiming;
 	getComputedTiming(): ComputedEffectTiming;
 	localTime?: number | null;
 }
 
-declare var WorkletAnimationEffect: {
-	prototype: WorkletAnimationEffect;
-};
-
-interface WorkletAnimation extends Animation {
+declare class WorkletAnimation extends Animation {
+	constructor(animatorName: string, effects?: AnimationEffect | AnimationEffect[], timeline?: AnimationTimeline, options?: any);
 	readonly animatorName: string;
 }
-
-declare var WorkletAnimation: {
-	prototype: WorkletAnimation;
-	new(animatorName: string, effects?: AnimationEffect | AnimationEffect[], timeline?: AnimationTimeline, options?: any): WorkletAnimation;
-};
 
 interface WorkletGroupEffect {
 	getChildren(): WorkletAnimationEffect[];

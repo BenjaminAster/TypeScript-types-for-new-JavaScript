@@ -9,14 +9,10 @@ interface ServiceWorkerRegistration {
 	readonly sync: SyncManager;
 }
 
-interface SyncManager {
+declare class SyncManager {
 	register(tag: string): Promise<undefined>;
 	getTags(): Promise<Array<string>>;
 }
-
-declare var SyncManager: {
-	prototype: SyncManager;
-};
 
 interface ServiceWorkerGlobalScope {
 	onsync: ((this: ServiceWorkerGlobalScope, ev: SyncEvent) => any) | null;

@@ -9,22 +9,14 @@ type HighlightType = (
 	| "grammar-error"
 );
 
-interface Highlight extends Set<AbstractRange> {
+declare class Highlight extends Set<AbstractRange> {
+	constructor(initialRanges: AbstractRange);
 	priority: number;
 	type: HighlightType;
 }
-
-declare var Highlight: {
-	prototype: Highlight;
-	new(initialRanges: AbstractRange): Highlight;
-};
 
 declare namespace CSS {
 	var highlights: HighlightRegistry;
 }
 
-interface HighlightRegistry extends Map<string, Highlight> { }
-
-declare var HighlightRegistry: {
-	prototype: HighlightRegistry;
-};
+declare class HighlightRegistry extends Map<string, Highlight> { }

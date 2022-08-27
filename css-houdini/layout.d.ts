@@ -7,13 +7,9 @@ declare namespace CSS {
 	var layoutWorklet: Worklet;
 }
 
-interface LayoutWorkletGlobalScope extends WorkletGlobalScope {
+declare class LayoutWorkletGlobalScope implements WorkletGlobalScope {
 	registerLayout(name: string, layoutCtor: VoidFunction): void;
 }
-
-declare var LayoutWorkletGlobalScope: {
-	prototype: LayoutWorkletGlobalScope;
-};
 
 interface LayoutOptions {
 	childDisplay?: ChildDisplayType;
@@ -30,17 +26,13 @@ type LayoutSizingMode = (
 	| "manual"
 );
 
-interface LayoutChild {
+declare class LayoutChild {
 	readonly styleMap: StylePropertyMapReadOnly;
 	intrinsicSizes(): Promise<IntrinsicSizes>;
 	layoutNextFragment(constraints: LayoutConstraintsOptions, breakToken: ChildBreakToken): Promise<LayoutFragment>;
 }
 
-declare var LayoutChild: {
-	prototype: LayoutChild;
-};
-
-interface LayoutFragment {
+declare class LayoutFragment {
 	readonly inlineSize: number;
 	readonly blockSize: number;
 	inlineOffset: number;
@@ -49,20 +41,12 @@ interface LayoutFragment {
 	readonly breakToken?: ChildBreakToken | null;
 }
 
-declare var LayoutFragment: {
-	prototype: LayoutFragment;
-};
-
-interface IntrinsicSizes {
+declare class IntrinsicSizes {
 	readonly minContentSize: number;
 	readonly maxContentSize: number;
 }
 
-declare var IntrinsicSizes: {
-	prototype: IntrinsicSizes;
-};
-
-interface LayoutConstraints {
+declare class LayoutConstraints {
 	readonly availableInlineSize: number;
 	readonly availableBlockSize: number;
 	readonly fixedInlineSize?: number | null;
@@ -73,10 +57,6 @@ interface LayoutConstraints {
 	readonly blockFragmentationType: BlockFragmentationType;
 	readonly data: any;
 }
-
-declare var LayoutConstraints: {
-	prototype: LayoutConstraints;
-};
 
 type BlockFragmentationType = (
 	| "none"
@@ -97,23 +77,15 @@ interface LayoutConstraintsOptions {
 	data?: any;
 }
 
-interface ChildBreakToken {
+declare class ChildBreakToken {
 	readonly breakType: BreakType;
 	readonly child: LayoutChild;
 }
 
-declare var ChildBreakToken: {
-	prototype: ChildBreakToken;
-};
-
-interface BreakToken {
+declare class BreakToken {
 	readonly childBreakTokens: ReadonlyArray<ChildBreakToken>;
 	readonly data: any;
 }
-
-declare var BreakToken: {
-	prototype: BreakToken;
-};
 
 interface BreakTokenOptions {
 	childBreakTokens?: ChildBreakToken[];
@@ -128,7 +100,7 @@ type BreakType = (
 	| "region"
 );
 
-interface LayoutEdges {
+declare class LayoutEdges {
 	readonly inlineStart: number;
 	readonly inlineEnd: number;
 	readonly blockStart: number;
@@ -136,10 +108,6 @@ interface LayoutEdges {
 	readonly inline: number;
 	readonly block: number;
 }
-
-declare var LayoutEdges: {
-	prototype: LayoutEdges;
-};
 
 interface FragmentResultOptions {
 	inlineSize?: number;
@@ -150,15 +118,10 @@ interface FragmentResultOptions {
 	breakToken?: BreakTokenOptions;
 }
 
-interface FragmentResult {
+declare class FragmentResult {
 	readonly inlineSize: number;
 	readonly blockSize: number;
 }
-
-declare var FragmentResult: {
-	prototype: FragmentResult;
-	new(options?: FragmentResultOptions): FragmentResult;
-};
 
 interface IntrinsicSizesResultOptions {
 	maxContentSize?: number;

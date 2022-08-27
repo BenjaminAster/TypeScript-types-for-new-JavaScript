@@ -31,10 +31,10 @@ interface RequestDeviceOptions {
 	acceptAllDevices?: boolean;
 }
 
-interface Bluetooth extends EventTarget {
+declare class Bluetooth extends EventTarget {
 	getAvailability(): Promise<boolean>;
 	onavailabilitychanged: ((this: Bluetooth, ev: ValueEvent) => any) | null;
-	readonly referringDevice?: BluetoothDevice | null;
+	readonly referringDevice: BluetoothDevice | null;
 	getDevices(): Promise<BluetoothDevice[]>;
 	requestDevice(options?: RequestDeviceOptions): Promise<BluetoothDevice>;
 	onadvertisementreceived: ((this: Bluetooth, ev: BluetoothAdvertisingEvent) => any) | null;
@@ -48,10 +48,6 @@ interface Bluetooth extends EventTarget {
 	removeEventListener<K extends keyof BluetoothEventMap>(type: K, listener: (this: Bluetooth, ev: BluetoothEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
 	removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
 }
-
-declare var Bluetooth: {
-	prototype: Bluetooth;
-};
 
 interface BluetoothEventMap {
 	"availabilitychanged": ValueEvent;
@@ -82,28 +78,20 @@ interface BluetoothPermissionStorage {
 	allowedDevices: AllowedBluetoothDevice[];
 }
 
-interface BluetoothPermissionResult extends PermissionStatus {
+declare class BluetoothPermissionResult extends PermissionStatus {
 	devices: ReadonlyArray<BluetoothDevice>;
 }
 
-declare var BluetoothPermissionResult: {
-	prototype: BluetoothPermissionResult;
-};
-
-interface ValueEvent extends Event {
+declare class ValueEvent extends Event {
+	constructor(type: string, initDict?: ValueEventInit);
 	readonly value: any;
 }
-
-declare var ValueEvent: {
-	prototype: ValueEvent;
-	new(type: string, initDict?: ValueEventInit);
-};
 
 interface ValueEventInit extends EventInit {
 	value?: any;
 }
 
-interface BluetoothDevice extends EventTarget {
+declare class BluetoothDevice extends EventTarget {
 	readonly id: string;
 	readonly name?: string | null;
 	readonly gatt?: BluetoothRemoteGATTServer | null;
@@ -122,10 +110,6 @@ interface BluetoothDevice extends EventTarget {
 	removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
 }
 
-declare var BluetoothDevice: {
-	prototype: BluetoothDevice;
-};
-
 interface BluetoothDeviceEventMap {
 	"advertisementreceived": BluetoothAdvertisingEvent;
 	"gattserverdisconnected": Event;
@@ -139,19 +123,12 @@ interface WatchAdvertisementsOptions {
 	signal?: AbortSignal;
 }
 
-interface BluetoothManufacturerDataMap extends Map<number, DataView> { }
+declare class BluetoothManufacturerDataMap extends Map<number, DataView> { }
 
-declare var BluetoothManufacturerDataMap: {
-	prototype: BluetoothManufacturerDataMap;
-};
+declare class BluetoothServiceDataMap extends Map<UUID, DataView> { }
 
-interface BluetoothServiceDataMap extends Map<UUID, DataView> { }
-
-declare var BluetoothServiceDataMap: {
-	prototype: BluetoothServiceDataMap;
-};
-
-interface BluetoothAdvertisingEvent extends Event {
+declare class BluetoothAdvertisingEvent extends Event {
+	constructor(type: string, init: BluetoothAdvertisingEventInit);
 	readonly device: BluetoothDevice;
 	readonly uuids: ReadonlyArray<UUID>;
 	readonly name?: string;
@@ -161,11 +138,6 @@ interface BluetoothAdvertisingEvent extends Event {
 	readonly manufacturerData: BluetoothManufacturerDataMap;
 	readonly serviceData: BluetoothServiceDataMap;
 }
-
-declare var BluetoothAdvertisingEvent: {
-	prototype: BluetoothAdvertisingEvent;
-	new(type: string, init: BluetoothAdvertisingEventInit);
-};
 
 interface BluetoothAdvertisingEventInit extends EventInit {
 	device: BluetoothDevice;
@@ -178,7 +150,7 @@ interface BluetoothAdvertisingEventInit extends EventInit {
 	serviceData?: BluetoothServiceDataMap;
 }
 
-interface BluetoothRemoteGATTServer {
+declare class BluetoothRemoteGATTServer {
 	readonly device: BluetoothDevice;
 	readonly connected: boolean;
 	connect(): Promise<BluetoothRemoteGATTServer>;
@@ -187,11 +159,7 @@ interface BluetoothRemoteGATTServer {
 	getPrimaryServices(service?: BluetoothServiceUUID): Promise<BluetoothRemoteGATTService[]>;
 }
 
-declare var BluetoothRemoteGATTServer: {
-	prototype: BluetoothRemoteGATTServer;
-};
-
-interface BluetoothRemoteGATTService extends EventTarget {
+declare class BluetoothRemoteGATTService extends EventTarget {
 	readonly device: BluetoothDevice;
 	readonly uuid: UUID;
 	readonly isPrimary: boolean;
@@ -209,10 +177,6 @@ interface BluetoothRemoteGATTService extends EventTarget {
 	removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
 }
 
-declare var BluetoothRemoteGATTService: {
-	prototype: BluetoothRemoteGATTService;
-};
-
 interface BluetoothRemoteGATTServiceEventMap {
 	characteristicvaluechanged: Event;
 	serviceadded: Event;
@@ -220,7 +184,7 @@ interface BluetoothRemoteGATTServiceEventMap {
 	serviceremoved: Event;
 }
 
-interface BluetoothRemoteGATTCharacteristic extends EventTarget {
+declare class BluetoothRemoteGATTCharacteristic extends EventTarget {
 	readonly service: BluetoothRemoteGATTService;
 	readonly uuid: UUID;
 	readonly properties: BluetoothCharacteristicProperties;
@@ -240,15 +204,11 @@ interface BluetoothRemoteGATTCharacteristic extends EventTarget {
 	removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
 }
 
-declare var BluetoothRemoteGATTCharacteristic: {
-	prototype: BluetoothRemoteGATTCharacteristic;
-};
-
 interface BluetoothRemoteGATTCharacteristicEventMap {
 	"characteristicvaluechanged": Event;
 }
 
-interface BluetoothCharacteristicProperties {
+declare class BluetoothCharacteristicProperties {
 	readonly broadcast: boolean;
 	readonly read: boolean;
 	readonly writeWithoutResponse: boolean;
@@ -260,21 +220,13 @@ interface BluetoothCharacteristicProperties {
 	readonly writableAuxiliaries: boolean;
 }
 
-declare var BluetoothCharacteristicProperties: {
-	prototype: BluetoothCharacteristicProperties;
-};
-
-interface BluetoothRemoteGATTDescriptor {
+declare class BluetoothRemoteGATTDescriptor {
 	readonly characteristic: BluetoothRemoteGATTCharacteristic;
 	readonly uuid: UUID;
-	readonly value?: DataView | null;
+	readonly value: DataView | null;
 	readValue(): Promise<DataView>;
 	writeValue(value: BufferSource): Promise<undefined>;
 }
-
-declare var BluetoothRemoteGATTDescriptor: {
-	prototype: BluetoothRemoteGATTDescriptor;
-};
 
 interface CharacteristicEventHandlers {
 	oncharacteristicvaluechanged: ((this: Bluetooth, ev: Event) => any) | null;
@@ -320,16 +272,12 @@ interface ServiceEventHandlersEventMap {
 
 type UUID = string;
 
-interface BluetoothUUID {
+declare class BluetoothUUID {
 	getService(name: string | number): UUID;
 	getCharacteristic(name: string | number): UUID;
 	getDescriptor(name: string | number): UUID;
 	canonicalUUID(alias: number): UUID;
 }
-
-declare var BluetoothUUID: {
-	prototype: BluetoothUUID;
-};
 
 type BluetoothServiceUUID = string | number;
 

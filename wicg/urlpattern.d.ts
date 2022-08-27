@@ -5,7 +5,8 @@
 
 type URLPatternInput = URLPatternInit | string;
 
-interface URLPattern {
+declare class URLPattern {
+	constructor(input?: URLPatternInput, baseURL?: string);
 	test(input?: URLPatternInput, baseURL?: string): boolean;
 	exec(input?: URLPatternInput, baseURL?: string): URLPatternResult | null;
 	readonly protocol: string;
@@ -17,11 +18,6 @@ interface URLPattern {
 	readonly search: string;
 	readonly hash: string;
 }
-
-declare var URLPattern: {
-	prototype: URLPattern;
-	new(input?: URLPatternInput, baseURL?: string);
-};
 
 interface URLPatternInit {
 	protocol: string;

@@ -21,7 +21,8 @@ type OffscreenRenderingContextId = (
 	| "webgpu"
 );
 
-interface OffscreenCanvas extends EventTarget {
+declare class OffscreenCanvas extends EventTarget {
+	constructor(width: number, height: number);
 	width: number;
 	height: number;
 	getContext(contextId: "2d", options?: CanvasRenderingContext2DSettings): OffscreenCanvasRenderingContext2D | null;
@@ -38,24 +39,15 @@ interface OffscreenCanvas extends EventTarget {
 	removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
 }
 
-declare var OffscreenCanvas: {
-	prototype: OffscreenCanvas;
-	new(width: number, height: number): OffscreenCanvas;
-};
-
 interface OffscreenCanvasEventMap {
 	"contextlost": Event;
 	"contextrestored": Event;
 }
 
-interface OffscreenCanvasRenderingContext2D {
+declare class OffscreenCanvasRenderingContext2D {
 	commit(): void;
 	canvas: OffscreenCanvas;
 }
-
-declare var OffscreenCanvasRenderingContext2D: {
-	prototype: OffscreenCanvasRenderingContext2D;
-};
 
 interface OffscreenCanvasRenderingContext2D extends CanvasState { }
 

@@ -28,26 +28,31 @@ Reference the type definitions directly in your TypeScript/JavaScript files...
 }
 ```
 
-----
+---
 
 ## Specifications in this repository
 
 The type declarations in this repository include the following specifications (grouped by venue):
 
  -  [WICG](https://wicg.io):
+	 - [Anonymous iframe](https://wicg.github.io/anonymous-iframe/)
 	 - [Background Fetch](https://wicg.github.io/background-fetch/)
 	 - [Background Sync](https://wicg.github.io/background-sync/spec/)
 	 - [Compression Streams](https://wicg.github.io/compression-streams/)
+	 - [Compute Pressure](https://wicg.github.io/compute-pressure/)
 	 - [EyeDropper API](https://wicg.github.io/eyedropper-api/)
+	 - [Fenced frame](https://wicg.github.io/fenced-frame/)
 	 - [File System Access API](https://wicg.github.io/file-system-access/)
 	 - [Handwriting Recognition API](https://wicg.github.io/handwriting-recognition/)
+	 - [isInputPending](https://wicg.github.io/is-input-pending/)
 	 - [Keyboard Lock](https://wicg.github.io/keyboard-lock/)
 	 - [Keyboard Map](https://wicg.github.io/keyboard-map/)
 	 - [Local Font Access API](https://wicg.github.io/local-font-access/)
-	 - [Manifest Incubations](https://wicg.github.io/manifest-incubations) (this includes the [BeforeInstallPromptEvent](https://wicg.github.io/manifest-incubations/#beforeinstallpromptevent-interface) and [File Handling](https://github.com/WICG/file-handling/blob/main/explainer.md))
+	 - [Manifest Incubations](https://wicg.github.io/manifest-incubations/) (this includes the [BeforeInstallPromptEvent](https://wicg.github.io/manifest-incubations/#beforeinstallpromptevent-interface) and [File Handling](https://github.com/WICG/file-handling/blob/main/explainer.md))
 	 - [Navigation API](https://wicg.github.io/navigation-api/)
 	 - [Network Information API](https://wicg.github.io/netinfo/)
 	 - [Periodic Background Sync](https://wicg.github.io/periodic-background-sync/)
+	 - [Portals](https://wicg.github.io/portals/)
 	 - [Sanitizer API](https://wicg.github.io/sanitizer-api/)
 	 - [Shape Detection API](https://wicg.github.io/shape-detection-api/)
 	 - [Shared Element Transitions](https://github.com/WICG/shared-element-transitions/blob/main/explainer.md)

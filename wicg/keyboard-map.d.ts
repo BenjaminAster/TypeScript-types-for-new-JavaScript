@@ -3,11 +3,7 @@
 // Specification: https://wicg.github.io/keyboard-map/
 // Repository: https://github.com/wicg/keyboard-map
 
-interface KeyboardLayoutMap extends Map<string, string> { }
-
-declare var KeyboardLayoutMap: {
-	prototype: KeyboardLayoutMap;
-};
+declare class KeyboardLayoutMap extends Map<string, string> { }
 
 interface Keyboard {
 	getLayoutMap(): Promise<KeyboardLayoutMap>;

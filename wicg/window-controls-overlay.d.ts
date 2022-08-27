@@ -21,15 +21,11 @@ interface WindowControlsOverlayEventMap {
 	"geometrychange": WindowControlsOverlayGeometryChangeEvent;
 }
 
-interface WindowControlsOverlayGeometryChangeEvent extends Event {
+declare class WindowControlsOverlayGeometryChangeEvent extends Event {
+	constructor(type: string, eventInitTict: WindowControlsOverlayGeometryChangeEventInit);
 	readonly titlebarAreaRect: DOMRect;
 	readonly visible: boolean;
 }
-
-declare var WindowControlsOverlayGeometryChangeEvent: {
-	prototype: WindowControlsOverlayGeometryChangeEvent;
-	new(type: string, eventInitTict: WindowControlsOverlayGeometryChangeEventInit);
-};
 
 interface WindowControlsOverlayGeometryChangeEventInit extends EventInit {
 	titlebarAreaRect: DOMRect;

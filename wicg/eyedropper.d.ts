@@ -11,11 +11,7 @@ interface ColorSelectionOptions {
 	signal?: AbortSignal;
 }
 
-interface EyeDropper {
+declare class EyeDropper {
+	constructor();
 	open(options?: ColorSelectionOptions): Promise<ColorSelectionResult>;
 }
-
-declare var EyeDropper: {
-	prototype: EyeDropper;
-	new(): EyeDropper;
-};

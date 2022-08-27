@@ -8,16 +8,12 @@ interface Document {
 	createDocumentTransition(): DocumentTransition;
 }
 
-interface DocumentTransition {
+declare class DocumentTransition {
 	readonly finished: Promise<undefined> | undefined;
 	abandon(): void;
 	start(callback: () => any): Promise<void>;
 	prepare(callback: () => any): Promise<void>;
 }
-
-declare var DocumentTransition: {
-	prototype: DocumentTransition;
-};
 
 interface CSSStyleDeclaration {
 	pageTransitionTag: string;

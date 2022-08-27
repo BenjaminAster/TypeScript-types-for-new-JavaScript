@@ -31,15 +31,11 @@ interface WriteParams {
 
 type FileSystemWriteChunkType = BufferSource | Blob | string | WriteParams;
 
-interface FileSystemWritableFileStream extends WritableStream {
+declare class FileSystemWritableFileStream extends WritableStream {
 	write(data: FileSystemWriteChunkType): Promise<void>;
 	seek(position: number): Promise<void>;
 	truncate(size: number): Promise<void>;
 }
-
-declare var FileSystemWritableFileStream: {
-	prototype: FileSystemWritableFileStream;
-};
 
 interface StorageManager {
 	getDirectory(): Promise<FileSystemDirectoryHandle>;

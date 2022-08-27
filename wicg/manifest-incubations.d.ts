@@ -3,7 +3,8 @@
 // Specification: https://wicg.github.io/manifest-incubations/
 // Repository: https://github.com/WICG/manifest-incubations
 
-interface BeforeInstallPromptEvent extends Event {
+declare class BeforeInstallPromptEvent extends Event {
+	constructor(type: string, eventInitDict?: EventInit);
 	prompt(): Promise<PromptResponseObject>;
 	readonly platforms: Array<string>; // non-standard (Chromium only, not in spec)
 	readonly userChoice: Promise<PromptResponseObject>; // non-standard (Chromium only, not in spec)
@@ -20,11 +21,6 @@ type AppBannerPromptOutcome = (
 	| "dismissed"
 );
 
-declare var BeforeInstallPromptEvent: {
-	prototype: BeforeInstallPromptEvent;
-	new(type: string, eventInitDict?: EventInit);
-};
-
 interface WindowEventMap {
 	"beforeinstallprompt": BeforeInstallPromptEvent;
 	"appinstalled": Event;
@@ -33,23 +29,15 @@ interface WindowEventMap {
 declare var onbeforeinstallprompt: ((this: Window, ev: BeforeInstallPromptEvent) => any) | null;
 declare var onappinstalled: ((this: Window, ev: Event) => any) | null;
 
-interface LaunchParams {
+declare class LaunchParams {
 	readonly targetURL?: string;
 	readonly files: ReadonlyArray<FileSystemFileHandle>;
 }
 
-declare var LaunchParams: {
-	prototype: LaunchParams;
-};
-
 type LaunchConsumer = (params: LaunchParams) => any;
 
-interface LaunchQueue {
+declare class LaunchQueue {
 	setConsumer(consumer: LaunchConsumer): void;
 }
-
-declare var LaunchQueue: {
-	prototype: LaunchQueue;
-};
 
 declare var launchQueue: LaunchQueue;

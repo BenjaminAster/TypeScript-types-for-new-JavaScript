@@ -59,16 +59,12 @@ interface HandwritingDrawing {
 	getPrediction(): Promise<HandwritingPrediction[]>;
 }
 
-interface HandwritingStroke {
+declare class HandwritingStroke {
+	constructor();
 	addPoint(point: HandwritingPoint): void;
 	getPoints(): HandwritingPoint[];
 	clear(): void;
 }
-
-declare var HandwritingStroke: {
-	prototype: HandwritingStroke;
-	new(): HandwritingStroke;
-};
 
 interface HandwritingPoint {
 	x: number;

@@ -14,13 +14,9 @@ declare namespace CSS {
 	function registerProperty(definition: PropertyDefinition): void;
 }
 
-interface CSSPropertyRule extends CSSRule {
+declare class CSSPropertyRule extends CSSRule {
 	readonly name: string;
 	readonly syntax: string;
 	readonly inherits: boolean;
 	readonly initialValue?: string | null;
 }
-
-declare var CSSPropertyRule: {
-	prototype: CSSPropertyRule;
-};

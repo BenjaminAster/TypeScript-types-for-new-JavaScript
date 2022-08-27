@@ -28,17 +28,13 @@ interface UALowEntropyJSON {
 	platform?: string;
 }
 
-interface NavigatorUAData {
+declare class NavigatorUAData {
 	readonly brands: ReadonlyArray<NavigatorUABrandVersion>;
 	readonly mobile: boolean;
 	readonly platform: string;
 	getHighEntropyValues(hints: ("architecture" | "bitness" | "model" | "platformVersioin" | "uaFullVersion" | "wow64" | "fullVersionList")[]): Promise<UADataValues>;
 	toJSON(): UALowEntropyJSON;
 }
-
-declare var NavigatorUAData: {
-	prototype: NavigatorUAData;
-};
 
 interface NavigatorUA {
 	readonly userAgentData: NavigatorUAData;

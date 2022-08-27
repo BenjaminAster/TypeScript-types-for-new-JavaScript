@@ -9,17 +9,13 @@ interface QueryOptions {
 	postscriptNames: string[];
 }
 
-interface FontData {
+declare class FontData {
 	blob(): Promise<Blob>;
 	readonly postscriptName: string;
 	readonly fullName: string;
 	readonly family: string;
 	readonly style: string;
 }
-
-declare var FontData: {
-	prototype: FontData;
-};
 
 interface Permissions {
 	query(permissionDesc: {
