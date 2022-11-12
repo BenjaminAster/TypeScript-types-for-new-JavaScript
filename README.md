@@ -1,7 +1,7 @@
 
 # TypeScript types for new JavaScript
 
-This repository contains TypeScript type declarations for a lot of new JavaScript stuff that isn't yet in TypeScript's standard type declarations (see below for [the complete list](#specifications-in-this-repository)). These range from the [File System Access API](https://wicg.github.io/file-system-access/) over [Shared Element Transitions](https://github.com/WICG/shared-element-transitions/blob/main/explainer.md) to [Houdini CSS Typed OM](https://drafts.css-houdini.org/css-typed-om/) or [Handwriting Recognition](https://wicg.github.io/handwriting-recognition/). Some specifications have only partially been integrated into TypeScript's standard type declarations, in which case this repository contains only the parts of the specifications that aren't there (yet). For most specifications I have used [WebIDL2TS](https://github.com/giniedp/webidl2ts), a tool that automatically converts [WebIDL](https://webidl.spec.whatwg.org/) to TypeScript type declarations, and manually edited the stuff where it didn't generate the desired result.
+This repository contains TypeScript type declarations for a lot of new JavaScript stuff that isn't yet in TypeScript's standard type declarations (see below for [the complete list](#specifications-in-this-repository)). These range from the [File System Access API](https://wicg.github.io/file-system-access/) over [View Transitions](https://w3c.github.io/csswg-drafts/css-view-transitions-1/) to [Houdini CSS Typed OM](https://drafts.css-houdini.org/css-typed-om/) or [Handwriting Recognition](https://wicg.github.io/handwriting-recognition/). Some specifications have only partially been integrated into TypeScript's standard type declarations, in which case this repository contains only the parts of the specifications that aren't there (yet). For most specifications I have used [WebIDL2TS](https://github.com/giniedp/webidl2ts), a tool that automatically converts [WebIDL](https://webidl.spec.whatwg.org/) to TypeScript type declarations, and manually edited the stuff where it didn't generate the desired result.
 
 ---
 
@@ -55,7 +55,6 @@ The type declarations in this repository include the following specifications (g
 	 - [Portals](https://wicg.github.io/portals/)
 	 - [Sanitizer API](https://wicg.github.io/sanitizer-api/)
 	 - [Shape Detection API](https://wicg.github.io/shape-detection-api/)
-	 - [Shared Element Transitions](https://github.com/WICG/shared-element-transitions/blob/main/explainer.md)
 	 - [User-Agent Client Hints](https://wicg.github.io/ua-client-hints/)
 	 - [URLPattern API](https://wicg.github.io/urlpattern/)
 	 - [Window Controls Overlay](https://wicg.github.io/window-controls-overlay/)
@@ -66,12 +65,15 @@ The type declarations in this repository include the following specifications (g
 	 - [CSS Properties and Values API](https://drafts.css-houdini.org/css-properties-values-api/)
 	 - [CSS Typed OM](https://drafts.css-houdini.org/css-typed-om/)
  - [CSSWG](https://csswg.org):
-	 - [CSS Cascading and Inheritance](https://drafts.csswg.org/css-cascade-5/)
-	 - [CSS Containment](https://drafts.csswg.org/css-contain/)
-	 - [CSS Object Model](https://drafts.csswg.org/cssom-1/)
-	 - [CSS Custom Highlight API](https://drafts.csswg.org/css-highlight-api/)
-	 - [Scroll-linked Animations](https://drafts.csswg.org/scroll-animations/)
+	 - [CSS Cascading and Inheritance](https://w3c.github.io/csswg-drafts/css-cascade-5/)
+	 - [CSS Containment](https://w3c.github.io/csswg-drafts/css-contain/)
+	 - [CSS Object Model](https://w3c.github.io/csswg-drafts/cssom-1/)
+	 - [CSS Custom Highlight API](https://w3c.github.io/csswg-drafts/css-highlight-api/)
+	 - [Scroll-linked Animations](https://w3c.github.io/csswg-drafts/scroll-animations/)
+	 - [CSS View Transitions](https://w3c.github.io/csswg-drafts/css-view-transitions-1/) (formerly "Shared Element Transitions")
  - [W3C](https://www.w3.org/TR/):
+	 - [Device Memory](https://w3c.github.io/device-memory/)
+	 - [DeviceOrientation Events](https://w3c.github.io/deviceorientation/)
 	 - [MediaStream Image Capture](https://w3c.github.io/mediacapture-image/)
 	 - [Image Resource](https://w3c.github.io/image-resource/)
  - [WHATWG](https://spec.whatwg.org):

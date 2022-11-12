@@ -28,11 +28,14 @@ interface UALowEntropyJSON {
 	platform?: string;
 }
 
+/** @deprecated */
+type DeprecatedUAFullVersion = "uaFullVersion";
+
 declare class NavigatorUAData {
 	readonly brands: ReadonlyArray<NavigatorUABrandVersion>;
 	readonly mobile: boolean;
 	readonly platform: string;
-	getHighEntropyValues(hints: ("architecture" | "bitness" | "model" | "platformVersioin" | "uaFullVersion" | "wow64" | "fullVersionList")[]): Promise<UADataValues>;
+	getHighEntropyValues(hints: ("architecture" | "bitness" | "model" | "platformVersion" |  "wow64" | "fullVersionList" | DeprecatedUAFullVersion)[]): Promise<UADataValues>;
 	toJSON(): UALowEntropyJSON;
 }
 

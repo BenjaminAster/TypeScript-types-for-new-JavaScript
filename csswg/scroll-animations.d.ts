@@ -1,6 +1,6 @@
 
 // Scroll-linked Animations
-// Specification: https://drafts.csswg.org/scroll-animations-1/
+// Specification: https://w3c.github.io/csswg-drafts/scroll-animations-1/
 // Repository: https://github.com/w3c/csswg-drafts/blob/main/scroll-animations-1
 
 type ScrollAxis = (

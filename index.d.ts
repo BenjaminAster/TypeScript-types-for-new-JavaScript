@@ -10,9 +10,12 @@
 /// <reference path="./csswg/cssom.d.ts" />
 /// <reference path="./csswg/custom-highlight.d.ts" />
 /// <reference path="./csswg/scroll-animations.d.ts" />
+/// <reference path="./csswg/view-transitions.d.ts" />
 
 /// <reference path="./tc39/array-grouping.d.ts" />
 
+/// <reference path="./w3c/device-memory.d.ts" />
+/// <reference path="./w3c/device-orientation.d.ts" />
 /// <reference path="./w3c/image-capture.d.ts" />
 /// <reference path="./w3c/image-resource.d.ts" />
 
@@ -41,7 +44,6 @@
 /// <reference path="./wicg/portals.d.ts" />
 /// <reference path="./wicg/sanitizer.d.ts" />
 /// <reference path="./wicg/shape-detection.d.ts" />
-/// <reference path="./wicg/shared-element-transitions.d.ts" />
 /// <reference path="./wicg/ua-client-hints.d.ts" />
 /// <reference path="./wicg/urlpattern.d.ts" />
 /// <reference path="./wicg/window-controls-overlay.d.ts" />

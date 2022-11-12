@@ -1,9 +1,9 @@
 
 // CSS Object Model (CSSOM)
-// Specification: https://drafts.csswg.org/cssom-1/
+// Specification: https://w3c.github.io/csswg-drafts/cssom-1/
 // Repository: https://github.com/w3c/csswg-drafts/tree/main/cssom-1
 
-// This file is auto-generated from CSSWG's CSS properties index (https://drafts.csswg.org/indexes/#properties).
+// This file is auto-generated from CSSWG's CSS properties index (https://w3c.github.io/csswg-drafts/indexes/#properties).
 // The properties already in TypeScript's standard type declarations were removed.
 
 interface CSSStyleDeclaration {
