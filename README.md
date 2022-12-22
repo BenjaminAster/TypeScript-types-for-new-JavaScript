@@ -48,7 +48,7 @@ The type declarations in this repository include the following specifications (g
 	 - [Keyboard Lock](https://wicg.github.io/keyboard-lock/)
 	 - [Keyboard Map](https://wicg.github.io/keyboard-map/)
 	 - [Local Font Access API](https://wicg.github.io/local-font-access/)
-	 - [Manifest Incubations](https://wicg.github.io/manifest-incubations/) (this includes the [BeforeInstallPromptEvent](https://wicg.github.io/manifest-incubations/#beforeinstallpromptevent-interface) and [File Handling](https://github.com/WICG/file-handling/blob/main/explainer.md))
+	 - [Manifest Incubations](https://wicg.github.io/manifest-incubations/)
 	 - [Navigation API](https://wicg.github.io/navigation-api/)
 	 - [Network Information API](https://wicg.github.io/netinfo/)
 	 - [Periodic Background Sync](https://wicg.github.io/periodic-background-sync/)
@@ -57,6 +57,7 @@ The type declarations in this repository include the following specifications (g
 	 - [Shape Detection API](https://wicg.github.io/shape-detection-api/)
 	 - [User-Agent Client Hints](https://wicg.github.io/ua-client-hints/)
 	 - [URLPattern API](https://wicg.github.io/urlpattern/)
+	 - [Web App Launch Handler API](https://wicg.github.io/web-app-launch/)
 	 - [Window Controls Overlay](https://wicg.github.io/window-controls-overlay/)
  - [CSS-TAG Houdini](https://css-houdini.org):
 	 - [CSS Animation Worklet API](https://drafts.css-houdini.org/css-animation-worklet/)

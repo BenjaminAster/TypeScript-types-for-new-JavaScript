@@ -46,4 +46,5 @@
 /// <reference path="./wicg/shape-detection.d.ts" />
 /// <reference path="./wicg/ua-client-hints.d.ts" />
 /// <reference path="./wicg/urlpattern.d.ts" />
+/// <reference path="./wicg/web-app-launch.d.ts" />
 /// <reference path="./wicg/window-controls-overlay.d.ts" />

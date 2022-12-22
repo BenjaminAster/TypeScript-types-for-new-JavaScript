@@ -10,7 +10,7 @@ type HighlightType = (
 );
 
 declare class Highlight extends Set<AbstractRange> {
-	constructor(initialRanges: AbstractRange);
+	constructor(...initialRanges: AbstractRange[]);
 	priority: number;
 	type: HighlightType;
 }

@@ -28,16 +28,3 @@ interface WindowEventMap {
 
 declare var onbeforeinstallprompt: ((this: Window, ev: BeforeInstallPromptEvent) => any) | null;
 declare var onappinstalled: ((this: Window, ev: Event) => any) | null;
-
-declare class LaunchParams {
-	readonly targetURL?: string;
-	readonly files: ReadonlyArray<FileSystemFileHandle>;
-}
-
-type LaunchConsumer = (params: LaunchParams) => any;
-
-declare class LaunchQueue {
-	setConsumer(consumer: LaunchConsumer): void;
-}
-
-declare var launchQueue: LaunchQueue;
