@@ -34,7 +34,7 @@ Reference the type definitions directly in your TypeScript/JavaScript files...
 
 The type declarations in this repository include the following specifications (grouped by venue):
 
- -  [WICG](https://wicg.io):
+ - [WICG](https://wicg.io):
 	 - [Anonymous iframe](https://wicg.github.io/anonymous-iframe/)
 	 - [Background Fetch](https://wicg.github.io/background-fetch/)
 	 - [Background Sync](https://wicg.github.io/background-sync/spec/)
@@ -71,7 +71,7 @@ The type declarations in this repository include the following specifications (g
 	 - [CSS Object Model](https://w3c.github.io/csswg-drafts/cssom-1/)
 	 - [CSS Custom Highlight API](https://w3c.github.io/csswg-drafts/css-highlight-api/)
 	 - [Scroll-linked Animations](https://w3c.github.io/csswg-drafts/scroll-animations/)
-	 - [CSS View Transitions](https://w3c.github.io/csswg-drafts/css-view-transitions-1/) (formerly "Shared Element Transitions")
+	 - [CSS View Transitions](https://w3c.github.io/csswg-drafts/css-view-transitions-1/)
  - [W3C](https://www.w3.org/TR/):
 	 - [Device Memory](https://w3c.github.io/device-memory/)
 	 - [DeviceOrientation Events](https://w3c.github.io/deviceorientation/)
@@ -84,3 +84,5 @@ The type declarations in this repository include the following specifications (g
 	 - [Web Bluetooth](https://webbluetoothcg.github.io/web-bluetooth/)
  - [TC39](https://tc39.es):
 	 - [Array Grouping](https://tc39.es/proposal-array-grouping)
+
+Additionally, a [non-standard-stuff.d.ts](./non-standard-stuff.d.ts) file exists for various proprietary features that are not part of any specification.
