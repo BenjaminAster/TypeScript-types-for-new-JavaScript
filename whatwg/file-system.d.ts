@@ -16,6 +16,13 @@ interface FileSystemFileHandle extends FileSystemHandle {
 	move(parent: FileSystemDirectoryHandle, name: string): Promise<void>;
 }
 
+interface FileSystemDirectoryHandle extends FileSystemHandle {
+	[Symbol.asyncIterator](): AsyncIterableIterator<[string, FileSystemHandle]>;
+	entries(): AsyncIterableIterator<[string, FileSystemHandle]>;
+	keys(): AsyncIterableIterator<string>;
+	values(): AsyncIterableIterator<FileSystemHandle>;
+}
+
 type WriteCommandType = (
 	| "write"
 	| "seek"
