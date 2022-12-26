@@ -48,5 +48,5 @@
 /// <reference path="./non-standard-stuff.d.ts" />
 
 interface Navigator extends NavigatorUA {}
-interface Navigator extends NavigatorNetworkInformation { }
+interface Navigator extends NavigatorNetworkInformation {}
 interface Navigator extends NavigatorDeviceMemory {}

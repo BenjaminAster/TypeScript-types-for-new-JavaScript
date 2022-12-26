@@ -1,11 +1,8 @@
 {
 	"name": "new-javascript",
-	"version": "0.1.11",
+	"version": "0.1.12",
 	"description": "TypeScript type definitions for new JavaScript stuff that isn't yet in TypeScript's standard type definitions",
 	"main": "./index.d.ts",
-	"devDependencies" : {
-		"@webgpu/types": "latest"
-	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/BenjaminAster/TypeScript-types-for-new-JavaScript.git"
