@@ -6,49 +6,25 @@
 /// <reference types="@webgpu/types" />
 
 // The elements of HTML >> Scripting >> The canvas element >> The OffscreenCanvas interface (https://html.spec.whatwg.org/multipage/canvas.html#the-offscreencanvas-interface)
-type OffscreenRenderingContext = OffscreenCanvasRenderingContext2D | ImageBitmapRenderingContext | WebGLRenderingContext | WebGL2RenderingContext | GPUCanvasContext;
 
 interface ImageEncodeOptions {
 	type?: string;
 	quality?: number;
 }
 
-type OffscreenRenderingContextId = (
-	| "2d"
-	| "bitmaprenderer"
-	| "webgl"
-	| "webgl2"
-	| "webgpu"
-);
-
-declare class OffscreenCanvas extends EventTarget {
-	constructor(width: number, height: number);
-	width: number;
-	height: number;
+interface OffscreenCanvas extends EventTarget {
 	getContext(contextId: "2d", options?: CanvasRenderingContext2DSettings): OffscreenCanvasRenderingContext2D | null;
 	getContext(contextId: "bitmaprenderer", options?: ImageBitmapRenderingContextSettings): ImageBitmapRenderingContext | null;
 	getContext(contextId: "webgl", options?: WebGLContextAttributes): WebGLRenderingContext | null;
 	getContext(contextId: "webgl2", options?: WebGLContextAttributes): WebGL2RenderingContext | null;
-	transferToImageBitmap(): ImageBitmap;
+	getContext(contextId: "webgpu", options?: any): GPUCanvasContext | null;
 	convertToBlob(options?: ImageEncodeOptions): Promise<Blob>;
-	oncontextlost: ((this: OffscreenCanvas, ev: Event) => any) | null;
-	oncontextrestored: ((this: OffscreenCanvas, ev: Event) => any) | null;
-	addEventListener<K extends keyof OffscreenCanvasEventMap>(type: K, listener: (this: OffscreenCanvas, ev: OffscreenCanvasEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
-	addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-	removeEventListener<K extends keyof OffscreenCanvasEventMap>(type: K, listener: (this: OffscreenCanvas, ev: OffscreenCanvasEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
-	removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
 }
 
 interface OffscreenCanvasEventMap {
 	"contextlost": Event;
 	"contextrestored": Event;
 }
-
-declare class OffscreenCanvasRenderingContext2D {
-	commit(): void;
-	canvas: OffscreenCanvas;
-}
-
 interface OffscreenCanvasRenderingContext2D extends CanvasState { }
 
 interface OffscreenCanvasRenderingContext2D extends CanvasTransform { }

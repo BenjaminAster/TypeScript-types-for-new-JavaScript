@@ -42,6 +42,3 @@ declare class NavigatorUAData {
 interface NavigatorUA {
 	readonly userAgentData: NavigatorUAData;
 }
-
-interface Navigator extends NavigatorUA {}
-interface WorkerNavigator extends NavigatorUA {}

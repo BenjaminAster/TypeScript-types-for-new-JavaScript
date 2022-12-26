@@ -3,8 +3,6 @@
 // Specification: https://wicg.github.io/background-sync/spec/
 // Repository: https://github.com/WICG/background-sync
 
-/// <reference lib="WebWorker" />
-
 interface ServiceWorkerRegistration {
 	readonly sync: SyncManager;
 }

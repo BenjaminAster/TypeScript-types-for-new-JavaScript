@@ -20,6 +20,3 @@ interface GlobalEventHandlersEventMap {
 interface ContentVisibilityAutoStateChangedEventInit extends EventInit {
 	skipped?: boolean;
 }
-
-// Level 3:
-declare class CSSContainerRule extends CSSConditionRule { }

@@ -6,6 +6,3 @@
 declare class NavigatorDeviceMemory {
 	readonly deviceMemory: number;
 }
-
-interface Navigator extends NavigatorDeviceMemory {}
-interface WorkerNavigator extends NavigatorDeviceMemory {}

@@ -27,6 +27,11 @@ Reference the type definitions directly in your TypeScript/JavaScript files...
 	},
 }
 ```
+Inside of a [web worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers), use `new-javascript/worker` as the path:
+```javascript
+/// <reference no-default-lib="true" />
+/// <reference types="new-javascript/worker" />
+```
 
 ---
 
@@ -35,7 +40,6 @@ Reference the type definitions directly in your TypeScript/JavaScript files...
 The type declarations in this repository include the following specifications (grouped by venue):
 
  - [WICG](https://wicg.io):
-	 - [Anonymous iframe](https://wicg.github.io/anonymous-iframe/)
 	 - [Background Fetch](https://wicg.github.io/background-fetch/)
 	 - [Background Sync](https://wicg.github.io/background-sync/spec/)
 	 - [Compression Streams](https://wicg.github.io/compression-streams/)
@@ -44,6 +48,7 @@ The type declarations in this repository include the following specifications (g
 	 - [Fenced frame](https://wicg.github.io/fenced-frame/)
 	 - [File System Access API](https://wicg.github.io/file-system-access/)
 	 - [Handwriting Recognition API](https://wicg.github.io/handwriting-recognition/)
+	 - [Iframe credentialless](https://wicg.github.io/anonymous-iframe/)
 	 - [isInputPending](https://wicg.github.io/is-input-pending/)
 	 - [Keyboard Lock](https://wicg.github.io/keyboard-lock/)
 	 - [Keyboard Map](https://wicg.github.io/keyboard-map/)
@@ -66,7 +71,6 @@ The type declarations in this repository include the following specifications (g
 	 - [CSS Properties and Values API](https://drafts.css-houdini.org/css-properties-values-api/)
 	 - [CSS Typed OM](https://drafts.css-houdini.org/css-typed-om/)
  - [CSSWG](https://csswg.org):
-	 - [CSS Cascading and Inheritance](https://w3c.github.io/csswg-drafts/css-cascade-5/)
 	 - [CSS Containment](https://w3c.github.io/csswg-drafts/css-contain/)
 	 - [CSS Object Model](https://w3c.github.io/csswg-drafts/cssom-1/)
 	 - [CSS Custom Highlight API](https://w3c.github.io/csswg-drafts/css-highlight-api/)

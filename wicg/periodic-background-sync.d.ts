@@ -3,8 +3,6 @@
 // Specification: https://wicg.github.io/periodic-background-sync/
 // Repository: https://github.com/WICG/periodic-background-sync/
 
-/// <reference lib="WebWorker" />
-
 interface ServiceWorkerGlobalScope {
 	onperiodicsync: ((this: ServiceWorkerGlobalScope, ev: PeriodicSyncEvent) => any) | null;
 }

@@ -5,7 +5,6 @@
 /// <reference path="./css-houdini/properties-values.d.ts" />
 /// <reference path="./css-houdini/typed-om.d.ts" />
 
-/// <reference path="./csswg/cascade.d.ts" />
 /// <reference path="./csswg/contain.d.ts" />
 /// <reference path="./csswg/cssom.d.ts" />
 /// <reference path="./csswg/custom-highlight.d.ts" />
@@ -24,15 +23,13 @@
 /// <reference path="./whatwg/file-system.d.ts" />
 /// <reference path="./whatwg/html.d.ts" />
 
-/// <reference path="./wicg/anonymous-iframe.d.ts" />
-/// <reference path="./wicg/background-fetch.d.ts" />
-/// <reference path="./wicg/background-sync.d.ts" />
 /// <reference path="./wicg/compression-streams.d.ts" />
 /// <reference path="./wicg/compute-pressure.d.ts" />
 /// <reference path="./wicg/eyedropper.d.ts" />
 /// <reference path="./wicg/fenced-frame.d.ts" />
 /// <reference path="./wicg/file-system-access.d.ts" />
 /// <reference path="./wicg/handwriting-recognition.d.ts" />
+/// <reference path="./wicg/iframe-credentialless.d.ts" />
 /// <reference path="./wicg/is-input-pending.d.ts" />
 /// <reference path="./wicg/keyboard-lock.d.ts" />
 /// <reference path="./wicg/keyboard-map.d.ts" />
@@ -40,7 +37,6 @@
 /// <reference path="./wicg/manifest-incubations.d.ts" />
 /// <reference path="./wicg/navigation.d.ts" />
 /// <reference path="./wicg/netinfo.d.ts" />
-/// <reference path="./wicg/periodic-background-sync.d.ts" />
 /// <reference path="./wicg/portals.d.ts" />
 /// <reference path="./wicg/sanitizer.d.ts" />
 /// <reference path="./wicg/shape-detection.d.ts" />
@@ -50,3 +46,7 @@
 /// <reference path="./wicg/window-controls-overlay.d.ts" />
 
 /// <reference path="./non-standard-stuff.d.ts" />
+
+interface Navigator extends NavigatorUA {}
+interface Navigator extends NavigatorNetworkInformation { }
+interface Navigator extends NavigatorDeviceMemory {}

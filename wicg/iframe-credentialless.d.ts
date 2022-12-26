@@ -1,10 +1,10 @@
 
-// Anonymous iframe
+// Iframe credentialless
 // Specification: https://wicg.github.io/anonymous-iframe/
 // Repository: https://github.com/WICG/anonymous-iframe
 
 interface HTMLIFrameElement extends HTMLElement {
-	anonymous: boolean;
+	credentialless: boolean;
 }
 
-declare var anonymouslyFramed: boolean;
+declare var credentialless: boolean;

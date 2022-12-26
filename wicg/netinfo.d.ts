@@ -3,6 +3,18 @@
 // Specification: https://wicg.github.io/netinfo/
 // Repository: https://github.com/WICG/netinfo
 
+type ConnectionType = (
+	| "bluetooth"
+	| "cellular"
+	| "ethernet"
+	| "mixed"
+	| "none"
+	| "other"
+	| "unknown"
+	| "wifi"
+	| "wimax"
+);
+
 type EffectiveConnectionType = (
 	| "2g"
 	| "3g"
@@ -13,10 +25,6 @@ type EffectiveConnectionType = (
 interface NavigatorNetworkInformation {
 	readonly connection: NetworkInformation;
 }
-
-interface Navigator extends NavigatorNetworkInformation { }
-
-interface WorkerNavigator extends NavigatorNetworkInformation { }
 
 interface NetworkInformation extends EventTarget {
 	readonly type: ConnectionType;
