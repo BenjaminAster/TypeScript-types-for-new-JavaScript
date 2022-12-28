@@ -3,7 +3,7 @@
 // Specification: https://w3c.github.io/webcodecs/
 // Repository: https://github.com/w3c/webcodecs
 
-// Bug thanks to Ben Wagner (https://github.com/dogben) for the original type definitions!
+// Big thanks to Ben Wagner (https://github.com/dogben) for the original type definitions!
 // I modified them to reflect changes in the spec and to better fit my usual structure.
 // https://github.com/dogben/TypeScript-WebCodecs-generator
 // https://github.com/dogben/DefinitelyTyped/blob/master/types/dom-webcodecs
