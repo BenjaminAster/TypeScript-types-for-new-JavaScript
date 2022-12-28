@@ -2,8 +2,12 @@
 /// <reference no-default-lib="true" />
 /// <reference lib="ESNext" />
 /// <reference lib="WebWorker" />
+/// <reference lib="WebWorker.Iterable" />
 
+/// <reference path="./w3c/compute-pressure.d.ts" />
 /// <reference path="./w3c/device-memory.d.ts" />
+/// <reference path="./w3c/mediastream-recording.d.ts" />
+/// <reference path="./w3c/web-codecs.d.ts" />
 
 /// <reference path="./wicg/background-fetch.d.ts" />
 /// <reference path="./wicg/background-sync.d.ts" />

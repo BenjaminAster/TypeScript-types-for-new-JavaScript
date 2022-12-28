@@ -1,4 +1,8 @@
 
+/// <reference lib="ESNext" />
+/// <reference lib="DOM" />
+/// <reference lib="DOM.Iterable" />
+
 /// <reference path="./css-houdini/animation-worklet.d.ts" />
 /// <reference path="./css-houdini/layout.d.ts" />
 /// <reference path="./css-houdini/painting.d.ts" />
@@ -13,10 +17,14 @@
 
 /// <reference path="./tc39/array-grouping.d.ts" />
 
+/// <reference path="./w3c/contact-picker.d.ts" />
+/// <reference path="./w3c/compute-pressure.d.ts" />
 /// <reference path="./w3c/device-memory.d.ts" />
 /// <reference path="./w3c/device-orientation.d.ts" />
 /// <reference path="./w3c/image-capture.d.ts" />
 /// <reference path="./w3c/image-resource.d.ts" />
+/// <reference path="./w3c/mediastream-recording.d.ts" />
+/// <reference path="./w3c/web-codecs.d.ts" />
 
 /// <reference path="./webbluetoothcg/bluetooth.d.ts" />
 
@@ -24,7 +32,6 @@
 /// <reference path="./whatwg/html.d.ts" />
 
 /// <reference path="./wicg/compression-streams.d.ts" />
-/// <reference path="./wicg/compute-pressure.d.ts" />
 /// <reference path="./wicg/eyedropper.d.ts" />
 /// <reference path="./wicg/fenced-frame.d.ts" />
 /// <reference path="./wicg/file-system-access.d.ts" />

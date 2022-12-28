@@ -43,7 +43,6 @@ The type declarations in this repository include the following specifications (g
 	 - [Background Fetch](https://wicg.github.io/background-fetch/)
 	 - [Background Sync](https://wicg.github.io/background-sync/spec/)
 	 - [Compression Streams](https://wicg.github.io/compression-streams/)
-	 - [Compute Pressure](https://wicg.github.io/compute-pressure/)
 	 - [EyeDropper API](https://wicg.github.io/eyedropper-api/)
 	 - [Fenced frame](https://wicg.github.io/fenced-frame/)
 	 - [File System Access API](https://wicg.github.io/file-system-access/)
@@ -77,10 +76,14 @@ The type declarations in this repository include the following specifications (g
 	 - [Scroll-linked Animations](https://w3c.github.io/csswg-drafts/scroll-animations/)
 	 - [CSS View Transitions](https://w3c.github.io/csswg-drafts/css-view-transitions-1/)
  - [W3C](https://www.w3.org/TR/):
+	 - [Contact Picker](https://w3c.github.io/contact-picker/spec/)
+	 - [Compute Pressure](https://w3c.github.io/compute-pressure/)
 	 - [Device Memory](https://w3c.github.io/device-memory/)
 	 - [DeviceOrientation Events](https://w3c.github.io/deviceorientation/)
 	 - [MediaStream Image Capture](https://w3c.github.io/mediacapture-image/)
 	 - [Image Resource](https://w3c.github.io/image-resource/)
+	 - [WebCodecs](https://w3c.github.io/webcodecs/)
+	 - [MediaStream Recording](https://w3c.github.io/mediacapture-record/)
  - [WHATWG](https://spec.whatwg.org):
 	 - [File System](https://fs.spec.whatwg.org)
 	 - [HTML](https://html.spec.whatwg.org)

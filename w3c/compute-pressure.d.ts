@@ -1,7 +1,7 @@
 
 // Compute Pressure
-// Specification: https://wicg.github.io/compute-pressure/
-// Repository: https://github.com/wicg/compute-pressure
+// Specification: https://w3c.github.io/compute-pressure/
+// Repository: https://github.com/w3c/compute-pressure
 
 type PressureState = (
 	| "nominal"
@@ -15,7 +15,9 @@ type PressureFactor = (
 	| "power-supply"
 );
 
-type PressureUpdateCallback = (changes: PressureRecord[], observer: PressureObserver) => void;
+interface PressureUpdateCallback {
+	(changes: PressureRecord[], observer: PressureObserver): void;
+}
 
 type PressureSource = (
 	| "cpu"
