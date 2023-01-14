@@ -11,6 +11,8 @@ declare class AnimationWorkletGlobalScope implements WorkletGlobalScope {
 	registerAnimator(name: string, animatorCtor: AnimatorInstanceConstructor): void;
 }
 
+declare function registerAnimator(name: string, animatorCtor: AnimatorInstanceConstructor): void;
+
 type AnimatorInstanceConstructor = (options: any, state?: any) => any;
 
 declare class WorkletAnimationEffect {

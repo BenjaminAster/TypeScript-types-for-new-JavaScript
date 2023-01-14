@@ -28,6 +28,7 @@ interface UALowEntropyJSON {
 	platform?: string;
 }
 
+type UAHighEntropyValueHint = "architecture" | "bitness" | "model" | "platformVersion" |  "wow64" | "fullVersionList";
 /** @deprecated */
 type DeprecatedUAFullVersion = "uaFullVersion";
 
@@ -35,7 +36,9 @@ declare class NavigatorUAData {
 	readonly brands: ReadonlyArray<NavigatorUABrandVersion>;
 	readonly mobile: boolean;
 	readonly platform: string;
-	getHighEntropyValues(hints: ("architecture" | "bitness" | "model" | "platformVersion" |  "wow64" | "fullVersionList" | DeprecatedUAFullVersion)[]): Promise<UADataValues>;
+	getHighEntropyValues(hints: (UAHighEntropyValueHint)[]): Promise<UADataValues>;
+	/** @deprecated The `"uaFullVersion"` high entropy value hint is deprecated. Use `"fullVersionList"` instead. */
+	getHighEntropyValues(hints: (UAHighEntropyValueHint | DeprecatedUAFullVersion)[]): Promise<UADataValues>;
 	toJSON(): UALowEntropyJSON;
 }
 

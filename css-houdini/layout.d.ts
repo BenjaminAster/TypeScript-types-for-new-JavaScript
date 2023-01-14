@@ -11,6 +11,8 @@ declare class LayoutWorkletGlobalScope implements WorkletGlobalScope {
 	registerLayout(name: string, layoutCtor: VoidFunction): void;
 }
 
+declare function registerLayout(name: string, layoutCtor: VoidFunction): void;
+
 interface LayoutOptions {
 	childDisplay?: ChildDisplayType;
 	sizing?: LayoutSizingMode;

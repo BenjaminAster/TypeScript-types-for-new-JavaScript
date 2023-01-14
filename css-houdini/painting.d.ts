@@ -12,6 +12,8 @@ declare class PaintWorkletGlobalScope implements WorkletGlobalScope {
 	readonly devicePixelRatio: number;
 }
 
+declare function registerPaint(name: string, paintCtor: VoidFunction): void;
+
 interface PaintRenderingContext2DSettings {
 	alpha?: boolean;
 }
