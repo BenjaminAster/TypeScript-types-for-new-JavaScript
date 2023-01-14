@@ -7,13 +7,18 @@ declare namespace CSS {
 	var animationWorklet: Worklet;
 }
 
+interface AnimatorInstanceConstructor {
+	new(options?: any, state?: any): {
+		animate(currentTime: DOMHighResTimeStamp, effect: WorkletAnimationEffect): void;
+		destroy?(): void;
+	};
+}
+
 declare class AnimationWorkletGlobalScope implements WorkletGlobalScope {
 	registerAnimator(name: string, animatorCtor: AnimatorInstanceConstructor): void;
 }
 
 declare function registerAnimator(name: string, animatorCtor: AnimatorInstanceConstructor): void;
-
-type AnimatorInstanceConstructor = (options: any, state?: any) => any;
 
 declare class WorkletAnimationEffect {
 	getTiming(): EffectTiming;

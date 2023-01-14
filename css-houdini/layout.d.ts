@@ -7,11 +7,18 @@ declare namespace CSS {
 	var layoutWorklet: Worklet;
 }
 
-declare class LayoutWorkletGlobalScope implements WorkletGlobalScope {
-	registerLayout(name: string, layoutCtor: VoidFunction): void;
+interface LayoutInstanceConstructor {
+	new(): {
+		layout(children: LayoutChild[], edges: LayoutEdges, constraints: LayoutConstraints, styleMap: StylePropertyMapReadOnly): Promise<FragmentResultOptions | void>;
+		intrinsicSizes(children: LayoutChild, edges: LayoutEdges, styleMap: StylePropertyMapReadOnly): Promise<IntrinsicSizes | void>;
+	}
 }
 
-declare function registerLayout(name: string, layoutCtor: VoidFunction): void;
+declare class LayoutWorkletGlobalScope implements WorkletGlobalScope {
+	registerLayout(name: string, layoutCtor: LayoutInstanceConstructor): void;
+}
+
+declare function registerLayout(name: string, layoutCtor: LayoutInstanceConstructor): void;
 
 interface LayoutOptions {
 	childDisplay?: ChildDisplayType;
