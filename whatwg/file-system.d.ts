@@ -10,6 +10,9 @@ interface FileSystemCreateWritableOptions {
 interface FileSystemFileHandle extends FileSystemHandle {
 	createWritable(options?: FileSystemCreateWritableOptions): Promise<FileSystemWritableFileStream>;
 
+	// non-standard getUniqueId() function (Chromium only, see https://github.com/whatwg/fs/blob/97bcadc/UniqueID.md):
+	getUniqueId(): Promise<string>;
+
 	// non-standard move() function (Chromium only, see https://whatpr.org/fs/10.html#dom-filesystemhandle-move):
 	move(name: string): Promise<void>;
 	move(parent: FileSystemDirectoryHandle): Promise<void>;
@@ -42,8 +45,4 @@ declare class FileSystemWritableFileStream extends WritableStream {
 	write(data: FileSystemWriteChunkType): Promise<void>;
 	seek(position: number): Promise<void>;
 	truncate(size: number): Promise<void>;
-}
-
-interface StorageManager {
-	getDirectory(): Promise<FileSystemDirectoryHandle>;
 }

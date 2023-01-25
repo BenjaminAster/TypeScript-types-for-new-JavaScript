@@ -1,7 +1,9 @@
 
 # TypeScript types for new JavaScript
 
-This repository contains TypeScript type declarations for a lot of new JavaScript stuff that isn't yet in TypeScript's standard type declarations (see below for [the complete list](#specifications-in-this-repository)). These range from the [File System Access API](https://wicg.github.io/file-system-access/) over [View Transitions](https://w3c.github.io/csswg-drafts/css-view-transitions-1/) to [Houdini CSS Typed OM](https://drafts.css-houdini.org/css-typed-om/) or [Handwriting Recognition](https://wicg.github.io/handwriting-recognition/). Some specifications have only partially been integrated into TypeScript's standard type declarations, in which case this repository contains only the parts of the specifications that aren't there (yet). For most specifications I have used [WebIDL2TS](https://github.com/giniedp/webidl2ts), a tool that automatically converts [WebIDL](https://webidl.spec.whatwg.org/) to TypeScript type declarations, and manually edited the stuff where it didn't generate the desired result.
+This repository contains TypeScript type definitions for a lot of new JavaScript stuff that isn't yet in TypeScript's standard type definitions (see below for [the complete list](#specifications-in-this-repository)). These range from the [File System Access API](https://wicg.github.io/file-system-access/) over [View Transitions](https://w3c.github.io/csswg-drafts/css-view-transitions-1/) to [Houdini CSS Typed OM](https://drafts.css-houdini.org/css-typed-om/) or [Handwriting Recognition](https://wicg.github.io/handwriting-recognition/). Some specifications have only partially been integrated into TypeScript's standard type declarations, in which case this repository contains only the parts of the specifications that aren't there (yet). For most specifications I have used [WebIDL2TS](https://github.com/giniedp/webidl2ts), a tool that automatically converts [WebIDL](https://webidl.spec.whatwg.org/) to TypeScript type definitions, and manually edited the stuff where it didn't generate the desired result.
+
+Also take a look [Better-TypeScript](https://github.com/BenjaminAster/Better-TypeScript), which contains various TypeScript type definitions to make working with TypeScript more convenient.
 
 ---
 
@@ -13,7 +15,7 @@ GitHub: [BenjaminAster/TypeScript-types-for-new-JavaScript](https://github.com/B
 
 Install using npm:
 ```shell
-npm i -D new-javscript
+npm i -D new-javscript@latest
 ```
 Reference the type definitions directly in your TypeScript/JavaScript files...
 ```javascript
@@ -27,10 +29,28 @@ Reference the type definitions directly in your TypeScript/JavaScript files...
 	},
 }
 ```
-Inside of a [web worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers), use `new-javascript/worker` as the path:
+For [web workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers), use `new-javascript/worker` as the path and don't forget to exclude the DOM lib with `no-default-lib="true"`:
 ```javascript
 /// <reference no-default-lib="true" />
 /// <reference types="new-javascript/worker" />
+```
+
+For [worklets](https://developer.mozilla.org/en-US/docs/Web/API/Worklet), use `new-javascript/worklet/<WORKLET_NAME>` as the path:
+ - `new-javascript/worklet/audio` for [audio worklets](https://developer.mozilla.org/en-US/docs/Web/API/AudioWorklet)
+ - `new-javascript/worklet/paint` for [paint worklets](https://developer.mozilla.org/en-US/docs/Web/API/PaintWorklet)
+ - `new-javascript/worklet/layout` for [layout worklets](https://drafts.css-houdini.org/css-layout-api-1/)
+ - `new-javascript/worklet/animation` for [animation worklets](https://drafts.css-houdini.org/css-animation-worklet-1/)
+```javascript
+/// <reference types="new-javascript/worklet/audio" />
+```
+```javascript
+/// <reference types="new-javascript/worklet/paint" />
+```
+```javascript
+/// <reference types="new-javascript/worklet/layout" />
+```
+```javascript
+/// <reference types="new-javascript/worklet/animation" />
 ```
 
 ---
@@ -66,7 +86,7 @@ The type declarations in this repository include the following specifications (g
 	 - [URLPattern API](https://wicg.github.io/urlpattern/)
 	 - [Web App Launch Handler API](https://wicg.github.io/web-app-launch/)
 	 - [Window Controls Overlay](https://wicg.github.io/window-controls-overlay/)
- - [CSS-TAG Houdini](https://css-houdini.org):
+ - [CSS Houdini](https://css-houdini.org):
 	 - [CSS Animation Worklet API](https://drafts.css-houdini.org/css-animation-worklet/)
 	 - [CSS Layout API](https://drafts.css-houdini.org/css-layout-api/)
 	 - [CSS Painting API](https://drafts.css-houdini.org/css-paint-api/)
@@ -83,17 +103,16 @@ The type declarations in this repository include the following specifications (g
 	 - [Contact Picker](https://w3c.github.io/contact-picker/spec/)
 	 - [Device Memory](https://w3c.github.io/device-memory/)
 	 - [DeviceOrientation Events](https://w3c.github.io/deviceorientation/)
-	 - [MediaStream Image Capture](https://w3c.github.io/mediacapture-image/)
 	 - [Image Resource](https://w3c.github.io/image-resource/)
+	 - [MediaStream Image Capture](https://w3c.github.io/mediacapture-image/)
 	 - [MediaStream Recording](https://w3c.github.io/mediacapture-record/)
-	 - [Service Workers](https://w3c.github.io/ServiceWorker/)
 	 - [WebCodecs](https://w3c.github.io/webcodecs/)
  - [WHATWG](https://spec.whatwg.org):
 	 - [File System](https://fs.spec.whatwg.org)
 	 - [HTML](https://html.spec.whatwg.org/multipage/)
  - [Web Bluetooth CG](https://webbluetoothcg.github.io):
 	 - [Web Bluetooth](https://webbluetoothcg.github.io/web-bluetooth/)
+ - [Web Audio WG](https://github.com/WebAudio):
+	 - [Web Audio API](https://webaudio.github.io/web-audio-api/)
  - [TC39](https://tc39.es):
 	 - [Array Grouping](https://tc39.es/proposal-array-grouping)
-
-Additionally, a [non-standard-stuff.d.ts](./non-standard-stuff.d.ts) file exists for various proprietary features that are not part of any specification.

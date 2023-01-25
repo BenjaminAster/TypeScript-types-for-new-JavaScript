@@ -3,11 +3,9 @@
 /// <reference lib="DOM" />
 /// <reference lib="DOM.Iterable" />
 
-/// <reference path="./css-houdini/animation-worklet.d.ts" />
-/// <reference path="./css-houdini/layout.d.ts" />
-/// <reference path="./css-houdini/painting.d.ts" />
 /// <reference path="./css-houdini/properties-values.d.ts" />
 /// <reference path="./css-houdini/typed-om.d.ts" />
+/// <reference path="./css-houdini/worklets.d.ts" />
 
 /// <reference path="./csswg/contain.d.ts" />
 /// <reference path="./csswg/cssom.d.ts" />
@@ -21,10 +19,12 @@
 /// <reference path="./w3c/compute-pressure.d.ts" />
 /// <reference path="./w3c/device-memory.d.ts" />
 /// <reference path="./w3c/device-orientation.d.ts" />
-/// <reference path="./w3c/image-capture.d.ts" />
 /// <reference path="./w3c/image-resource.d.ts" />
+/// <reference path="./w3c/mediastream-image-capture.d.ts" />
 /// <reference path="./w3c/mediastream-recording.d.ts" />
 /// <reference path="./w3c/web-codecs.d.ts" />
+
+/// <reference path="./webaudio/web-audio.d.ts" />
 
 /// <reference path="./webbluetoothcg/bluetooth.d.ts" />
 
@@ -54,8 +54,6 @@
 /// <reference path="./wicg/urlpattern.d.ts" />
 /// <reference path="./wicg/web-app-launch.d.ts" />
 /// <reference path="./wicg/window-controls-overlay.d.ts" />
-
-/// <reference path="./non-standard-stuff.d.ts" />
 
 interface Navigator extends NavigatorUA {}
 interface Navigator extends NavigatorNetworkInformation {}

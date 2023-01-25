@@ -42,3 +42,7 @@ declare class Fence {
 }
 
 declare var fence: Fence | null;
+
+interface HTMLElementTagNameMap {
+	"fencedframe": HTMLFencedFrameElement;
+}

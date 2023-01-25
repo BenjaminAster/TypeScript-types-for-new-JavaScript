@@ -3,9 +3,8 @@
 // Specification: https://drafts.css-houdini.org/css-paint-api-1/
 // Repository: https://github.com/w3c/css-houdini-drafts/tree/main/css-paint-api
 
-declare namespace CSS {
-	var paintWorklet: Worklet;
-}
+/// <reference path="../worklet/worklet-global.d.ts" />
+/// <reference path="./typed-om.d.ts" />
 
 interface PaintInstanceConstructor {
 	new(): {

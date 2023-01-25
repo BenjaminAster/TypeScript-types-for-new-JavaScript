@@ -7,9 +7,10 @@
 /// <reference path="./w3c/compute-pressure.d.ts" />
 /// <reference path="./w3c/device-memory.d.ts" />
 /// <reference path="./w3c/mediastream-recording.d.ts" />
-/// <reference path="./w3c/service-worker.d.ts" />
 /// <reference path="./w3c/web-codecs.d.ts" />
 
+/// <reference path="./whatwg/file-system-sync-access-handle.d.ts" />
+/// <reference path="./whatwg/file-system.d.ts" />
 /// <reference path="./whatwg/html.d.ts" />
 
 /// <reference path="./wicg/background-fetch.d.ts" />

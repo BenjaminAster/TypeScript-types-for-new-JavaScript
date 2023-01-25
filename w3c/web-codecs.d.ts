@@ -8,6 +8,7 @@
 // https://github.com/dogben/TypeScript-WebCodecs-generator
 // https://github.com/dogben/DefinitelyTyped/blob/master/types/dom-webcodecs
 
+/// <reference path="./mediastream-recording.d.ts" />
 
 declare class AudioDecoder {
 	constructor(init: AudioDecoderInit);

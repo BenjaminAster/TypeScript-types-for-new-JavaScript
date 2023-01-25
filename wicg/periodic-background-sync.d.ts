@@ -3,6 +3,11 @@
 // Specification: https://wicg.github.io/periodic-background-sync/
 // Repository: https://github.com/WICG/periodic-background-sync/
 
+/// <reference no-default-lib="true" />
+/// <reference lib="ESNext" />
+/// <reference lib="WebWorker" />
+/// <reference lib="WebWorker.Iterable" />
+
 interface ServiceWorkerGlobalScope {
 	onperiodicsync: ((this: ServiceWorkerGlobalScope, ev: PeriodicSyncEvent) => any) | null;
 }

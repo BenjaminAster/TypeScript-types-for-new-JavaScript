@@ -15,7 +15,6 @@ interface CSSStyleDeclaration {
 	anyPointer: string;
 	ascentOverride: string;
 	azimuth: string;
-	backdropFilter: string;
 	baselineSource: string;
 	basePalette: string;
 	bleed: string;
@@ -39,9 +38,6 @@ interface CSSStyleDeclaration {
 	colorProfile: string;
 	colorRendering: string;
 	components: string;
-	container: string;
-	containerName: string;
-	containerType: string;
 	containIntrinsicBlockSize: string;
 	containIntrinsicHeight: string;
 	containIntrinsicInlineSize: string;
@@ -84,7 +80,6 @@ interface CSSStyleDeclaration {
 	fontDisplay: string;
 	fontLanguageOverride: string;
 	fontNamedInstance: string;
-	fontPalette: string;
 	fontSynthesisSmallCaps: string;
 	fontSynthesisStyle: string;
 	fontSynthesisWeight: string;
@@ -99,7 +94,6 @@ interface CSSStyleDeclaration {
 	hangingPunctuation: string;
 	horizontalViewportSegments: string;
 	hover: string;
-	hyphenateCharacter: string;
 	hyphenateLimitChars: string;
 	hyphenateLimitLast: string;
 	hyphenateLimitLines: string;
@@ -150,7 +144,6 @@ interface CSSStyleDeclaration {
 	offsetPosition: string;
 	orientation: string;
 	overflowBlock: string;
-	overflowClipMargin: string;
 	overflowInline: string;
 	overrideColors: string;
 	pad: string;
@@ -276,7 +269,6 @@ interface CSSStyleDeclaration {
 	webkitDevicePixelRatio: string;
 	webkitMaxDevicePixelRatio: string;
 	webkitMinDevicePixelRatio: string;
-	webkitTextSizeAdjust: string;
 	webkitTransform3d: string;
 	wordBoundaryDetection: string;
 	wordBoundaryExpansion: string;

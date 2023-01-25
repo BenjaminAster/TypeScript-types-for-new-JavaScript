@@ -3,9 +3,7 @@
 // Specification: https://drafts.css-houdini.org/css-animation-worklet-1/
 // Repository: https://github.com/w3c/css-houdini-drafts/tree/main/css-animation-worklet-1
 
-declare namespace CSS {
-	var animationWorklet: Worklet;
-}
+/// <reference path="../worklet/worklet-global.d.ts" />
 
 interface AnimatorInstanceConstructor {
 	new(options?: any, state?: any): {

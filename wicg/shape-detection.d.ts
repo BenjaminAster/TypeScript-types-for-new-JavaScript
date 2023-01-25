@@ -3,6 +3,8 @@
 // Specification: https://wicg.github.io/shape-detection-api/
 // Repository: https://github.com/WICG/shape-detection-api
 
+/// <reference path="../w3c/mediastream-image-capture.d.ts" />
+
 declare class FaceDetector {
 	constructor(faceDetectorOptions?: FaceDetectorOptions);
 	detect(image: ImageBitmapSource): Promise<DetectedFace[]>;

@@ -3,6 +3,8 @@
 // Specification: https://w3c.github.io/csswg-drafts/scroll-animations-1/
 // Repository: https://github.com/w3c/csswg-drafts/blob/main/scroll-animations-1
 
+/// <reference path="../css-houdini/typed-om.d.ts" />
+
 type ScrollAxis = (
 	| "block"
 	| "inline"

@@ -62,3 +62,7 @@ interface WindowEventHandlers {
 interface WindowEventMap {
 	"portalactivate": PortalActivateEvent
 }
+
+interface HTMLElementTagNameMap {
+	"portal": HTMLPortalElement;
+}

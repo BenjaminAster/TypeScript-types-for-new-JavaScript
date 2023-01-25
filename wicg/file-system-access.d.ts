@@ -3,6 +3,8 @@
 // Specification: https://wicg.github.io/file-system-access/
 // Repository: https://github.com/WICG/file-system-access
 
+/// <reference path="../whatwg/file-system.d.ts" />
+
 type FileSystemPermissionMode = (
 	| "read"
 	| "readwrite"
