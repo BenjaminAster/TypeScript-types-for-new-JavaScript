@@ -9,7 +9,7 @@ declare class FragmentDirective {
 	createSelectorDirective(selection: Range | Selection): Promise<SelectorDirective>;
 }
 
-interface Document extends Node, DocumentAndElementEventHandlers, DocumentOrShadowRoot, FontFaceSource, GlobalEventHandlers, NonElementParentNode, ParentNode, XPathEvaluatorBase {
+interface Document extends Node, DocumentOrShadowRoot, FontFaceSource, GlobalEventHandlers, NonElementParentNode, ParentNode, XPathEvaluatorBase {
 	fragmentDirective: FragmentDirective;
 }
 

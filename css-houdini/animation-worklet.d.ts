@@ -24,11 +24,6 @@ declare class WorkletAnimationEffect {
 	localTime?: number | null;
 }
 
-declare class WorkletAnimation extends Animation {
-	constructor(animatorName: string, effects?: AnimationEffect | AnimationEffect[], timeline?: AnimationTimeline, options?: any);
-	readonly animatorName: string;
-}
-
 interface WorkletGroupEffect {
 	getChildren(): WorkletAnimationEffect[];
 }

@@ -18,7 +18,7 @@ interface AudioWorkletProcessorConstructor {
 			parameters: Record<string, AudioParam>,
 		): boolean;
 	};
-	get parameterDescriptors(): {
+	parameterDescriptors?: {
 		name: string,
 		defaultValue: number,
 		minValue: number,

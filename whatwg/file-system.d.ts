@@ -7,11 +7,13 @@ interface FileSystemCreateWritableOptions {
 	keepExistingData?: boolean;
 }
 
-interface FileSystemFileHandle extends FileSystemHandle {
-	createWritable(options?: FileSystemCreateWritableOptions): Promise<FileSystemWritableFileStream>;
-
+interface FileSystemHandle {
 	// non-standard getUniqueId() function (Chromium only, see https://github.com/whatwg/fs/blob/97bcadc/UniqueID.md):
 	getUniqueId(): Promise<string>;
+}
+
+interface FileSystemFileHandle extends FileSystemHandle {
+	createWritable(options?: FileSystemCreateWritableOptions): Promise<FileSystemWritableFileStream>;
 
 	// non-standard move() function (Chromium only, see https://whatpr.org/fs/10.html#dom-filesystemhandle-move):
 	move(name: string): Promise<void>;

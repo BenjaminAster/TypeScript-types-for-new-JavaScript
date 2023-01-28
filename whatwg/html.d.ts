@@ -6,6 +6,8 @@
 // The elements of HTML >> Scripting >> The canvas element
 // https://html.spec.whatwg.org/multipage/canvas.html
 
+// convertToBlob() is included in TypeScript 5.0 and will be removed from here on March 14
+
 interface ImageEncodeOptions {
 	type?: string;
 	quality?: number;

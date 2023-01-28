@@ -14,14 +14,19 @@ GitHub: [BenjaminAster/TypeScript-types-for-new-JavaScript](https://github.com/B
 ---
 
 Install using npm:
+
 ```shell
 npm i -D new-javscript@latest
 ```
+
 Reference the type definitions directly in your TypeScript/JavaScript files...
+
 ```javascript
 /// <reference types="new-javascript" />
 ```
+
 ...or include them in your `tsconfig.json` or `jsconfig.json`:
+
 ```jsonc
 {
 	"compilerOptions": {
@@ -29,8 +34,11 @@ Reference the type definitions directly in your TypeScript/JavaScript files...
 	},
 }
 ```
-For [web workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers), use `new-javascript/worker` as the path and don't forget to exclude the DOM lib with `no-default-lib="true"`:
+
+For [web workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) (including [service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)), use `new-javascript/worker` as the path. If you use a `tsconfig.json` or `jsconfig.json` configuration file, you have to exclude the worker files there with the `"exclude"` option so that the DOM lib doesn't get included by default. If your worker is a JavaScript and not TypeScript file, you then have to manually re-enable type checking for the file via `// @ts-check`. Also don't forget to exclude the DOM lib with `no-default-lib="true"`. The start of your worker file should look like this:
+
 ```javascript
+// @ts-check
 /// <reference no-default-lib="true" />
 /// <reference types="new-javascript/worker" />
 ```
@@ -38,8 +46,8 @@ For [web workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_A
 For [worklets](https://developer.mozilla.org/en-US/docs/Web/API/Worklet), use `new-javascript/worklet/<WORKLET_NAME>` as the path:
  - `new-javascript/worklet/audio` for [audio worklets](https://developer.mozilla.org/en-US/docs/Web/API/AudioWorklet)
  - `new-javascript/worklet/paint` for [paint worklets](https://developer.mozilla.org/en-US/docs/Web/API/PaintWorklet)
- - `new-javascript/worklet/layout` for [layout worklets](https://drafts.css-houdini.org/css-layout-api-1/)
- - `new-javascript/worklet/animation` for [animation worklets](https://drafts.css-houdini.org/css-animation-worklet-1/)
+ - `new-javascript/worklet/layout` for [layout worklets](https://github.com/w3c/css-houdini-drafts/blob/main/css-layout-api/EXPLAINER.md)
+ - `new-javascript/worklet/animation` for [animation worklets](https://github.com/w3c/css-houdini-drafts/blob/main/css-animation-worklet-1/README.md)
 ```javascript
 /// <reference types="new-javascript/worklet/audio" />
 ```

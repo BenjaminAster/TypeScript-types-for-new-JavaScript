@@ -1,9 +1,13 @@
 
 /// <reference no-default-lib="true" />
+// / <reference lib="ESNext" />
+// / <reference lib="DOM" />
+// / <reference lib="DOM.Iterable" />
 // / <reference path="./worker.d.ts" />
 // / <reference path="./index.d.ts" />
+/// <reference path="./worklet/paint.d.ts" />
 // / <reference path="./worklet/layout.d.ts" />
-/// <reference path="./worklet/audio.d.ts" />
+// / <reference path="./worklet/audio.d.ts" />
 
 // registerLayout
 
@@ -13,14 +17,14 @@
 // }
 
 
-registerProcessor("test", class {
-	static get parameterDescriptors() {
-		return [];
-	};
-	process(inputs: Float32Array[][], outputs, parameters) {
-		return true;
-	}
-})
+// registerProcessor("test", class {
+// 	static get parameterDescriptors() {
+// 		return [];
+// 	};
+// 	process(inputs: Float32Array[][], outputs, parameters) {
+// 		return true;
+// 	}
+// })
 
 
 export { };

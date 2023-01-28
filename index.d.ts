@@ -5,6 +5,7 @@
 
 /// <reference path="./css-houdini/properties-values.d.ts" />
 /// <reference path="./css-houdini/typed-om.d.ts" />
+/// <reference path="./css-houdini/worklet-animation.d.ts" />
 /// <reference path="./css-houdini/worklets.d.ts" />
 
 /// <reference path="./csswg/contain.d.ts" />

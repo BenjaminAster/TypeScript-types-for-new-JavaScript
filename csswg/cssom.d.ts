@@ -38,11 +38,6 @@ interface CSSStyleDeclaration {
 	colorProfile: string;
 	colorRendering: string;
 	components: string;
-	containIntrinsicBlockSize: string;
-	containIntrinsicHeight: string;
-	containIntrinsicInlineSize: string;
-	containIntrinsicSize: string;
-	containIntrinsicWidth: string;
 	continue: string;
 	copyInto: string;
 	cue: string;
@@ -128,6 +123,8 @@ interface CSSStyleDeclaration {
 	maskBorderSource: string;
 	maskBorderWidth: string;
 	masonryAutoFlow: string;
+	mathDepth: string;
+	mathShift: string;
 	maxLines: string;
 	maxZoom: string;
 	minIntrinsicSizing: string;
