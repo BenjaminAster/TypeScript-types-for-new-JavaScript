@@ -1,13 +1,18 @@
 
-/// <reference no-default-lib="true" />
+// / <reference no-default-lib="true" />
 // / <reference lib="ESNext" />
 // / <reference lib="DOM" />
 // / <reference lib="DOM.Iterable" />
 // / <reference path="./worker.d.ts" />
-// / <reference path="./index.d.ts" />
-/// <reference path="./worklet/paint.d.ts" />
+/// <reference path="./index.d.ts" />
+// / <reference path="./worklet/paint.d.ts" />
 // / <reference path="./worklet/layout.d.ts" />
 // / <reference path="./worklet/audio.d.ts" />
+
+new DecompressionStream("deflate-raw");
+
+cookieStore
+window.cookieStore
 
 // registerLayout
 

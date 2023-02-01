@@ -71,6 +71,7 @@ The type declarations in this repository include the following specifications (g
 	 - [Background Fetch](https://wicg.github.io/background-fetch/)
 	 - [Background Sync](https://wicg.github.io/background-sync/spec/)
 	 - [Compression Streams](https://wicg.github.io/compression-streams/)
+	 - [Cookie Store API](https://wicg.github.io/cookie-store/)
 	 - [Document Picture-in-Picture](https://wicg.github.io/document-picture-in-picture/)
 	 - [EyeDropper API](https://wicg.github.io/eyedropper-api/)
 	 - [Fenced frame](https://wicg.github.io/fenced-frame/)

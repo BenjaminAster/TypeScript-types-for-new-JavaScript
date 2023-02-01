@@ -33,6 +33,7 @@
 /// <reference path="./whatwg/html.d.ts" />
 
 /// <reference path="./wicg/compression-streams.d.ts" />
+/// <reference path="./wicg/cookie-store.d.ts" />
 /// <reference path="./wicg/document-picture-in-picture.d.ts" />
 /// <reference path="./wicg/eyedropper.d.ts" />
 /// <reference path="./wicg/fenced-frame.d.ts" />

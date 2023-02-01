@@ -28,7 +28,15 @@ interface UALowEntropyJSON {
 	platform?: string;
 }
 
-type UAHighEntropyValueHint = "architecture" | "bitness" | "model" | "platformVersion" |  "wow64" | "fullVersionList";
+type UAHighEntropyValueHint = (
+	| "architecture"
+	| "bitness"
+	| "model"
+	| "platformVersion"
+	| "wow64"
+	| "fullVersionList"
+);
+
 /** @deprecated */
 type DeprecatedUAFullVersion = "uaFullVersion";
 
