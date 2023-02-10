@@ -9,6 +9,7 @@
 /// <reference path="./css-houdini/worklets.d.ts" />
 
 /// <reference path="./csswg/contain.d.ts" />
+/// <reference path="./csswg/cssom-view.d.ts" />
 /// <reference path="./csswg/cssom.d.ts" />
 /// <reference path="./csswg/custom-highlight.d.ts" />
 /// <reference path="./csswg/scroll-animations.d.ts" />

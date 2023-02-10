@@ -103,6 +103,7 @@ The type declarations in this repository include the following specifications (g
 	 - [CSS Typed OM](https://drafts.css-houdini.org/css-typed-om/)
  - [CSSWG](https://csswg.org):
 	 - [CSS Containment](https://w3c.github.io/csswg-drafts/css-contain/)
+	 - [CSSOM View](https://w3c.github.io/csswg-drafts/cssom-view-1/)
 	 - [CSS Object Model](https://w3c.github.io/csswg-drafts/cssom-1/)
 	 - [CSS Custom Highlight API](https://w3c.github.io/csswg-drafts/css-highlight-api/)
 	 - [Scroll-linked Animations](https://w3c.github.io/csswg-drafts/scroll-animations/)
