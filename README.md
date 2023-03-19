@@ -5,6 +5,9 @@ This repository contains TypeScript type definitions for a lot of new JavaScript
 
 Also take a look [Better-TypeScript](https://github.com/BenjaminAster/Better-TypeScript), which contains various TypeScript type definitions to make working with TypeScript more convenient.
 
+> **Note**
+> This requires **TypeScript 5.0**
+
 ---
 
 NPM: [new-javascript](https://www.npmjs.com/package/new-javascript)
@@ -90,6 +93,7 @@ The type declarations in this repository include the following specifications (g
 	 - [Portals](https://wicg.github.io/portals/)
 	 - [Sanitizer API](https://wicg.github.io/sanitizer-api/)
 	 - [Shape Detection API](https://wicg.github.io/shape-detection-api/)
+	 - [Text Detection API](https://wicg.github.io/shape-detection-api/text)
 	 - [Text Fragments](https://wicg.github.io/scroll-to-text-fragment/)
 	 - [User-Agent Client Hints](https://wicg.github.io/ua-client-hints/)
 	 - [URLPattern API](https://wicg.github.io/urlpattern/)
@@ -125,4 +129,5 @@ The type declarations in this repository include the following specifications (g
  - [Web Audio WG](https://github.com/WebAudio):
 	 - [Web Audio API](https://webaudio.github.io/web-audio-api/)
  - [TC39](https://tc39.es):
-	 - [Array Grouping](https://tc39.es/proposal-array-grouping)
+	 - [Array Grouping](https://tc39.es/proposal-array-grouping/)
+	 - [ECMAScript Language Specification](https://tc39.es/ecma262/)

@@ -1,13 +1,17 @@
 
-// Shape Detection API
+// Accelerated Shape Detection in Images
 // Specification: https://wicg.github.io/shape-detection-api/
 // Repository: https://github.com/WICG/shape-detection-api
 
-/// <reference path="../w3c/mediastream-image-capture.d.ts" />
+/// <reference path="../w3c/mediastream-image-capture-global.d.ts" />
 
-declare class FaceDetector {
-	constructor(faceDetectorOptions?: FaceDetectorOptions);
+interface FaceDetector {
 	detect(image: ImageBitmapSource): Promise<DetectedFace[]>;
+}
+
+declare var FaceDetector: {
+	prototype: FaceDetector;
+	new(faceDetectorOptions?: FaceDetectorOptions): FaceDetector;
 }
 
 interface FaceDetectorOptions {
@@ -31,11 +35,15 @@ type LandmarkType = (
 	| "nose"
 );
 
-declare class BarcodeDetector {
-	constructor(barcodeDetectorOptions?: BarcodeDetectorOptions);
+interface BarcodeDetector {
 	detect(image: ImageBitmapSource): Promise<DetectedBarcode[]>;
-	static getSupportedFormats(): Promise<BarcodeFormat[]>;
 }
+
+declare var BarcodeDetector: {
+	prototype: BarcodeDetector;
+	new(barcodeDetectorOptions?: BarcodeDetectorOptions): BarcodeDetector;
+	getSupportedFormats(): Promise<BarcodeFormat[]>;
+};
 
 interface BarcodeDetectorOptions {
 	formats?: BarcodeFormat[];
@@ -64,3 +72,4 @@ type BarcodeFormat = (
 	| "upc_a"
 	| "upc_e"
 );
+

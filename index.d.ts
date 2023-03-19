@@ -16,12 +16,14 @@
 /// <reference path="./csswg/view-transitions.d.ts" />
 
 /// <reference path="./tc39/array-grouping.d.ts" />
+/// <reference path="./tc39/esnext.d.ts" />
 
 /// <reference path="./w3c/contact-picker.d.ts" />
 /// <reference path="./w3c/compute-pressure.d.ts" />
 /// <reference path="./w3c/device-memory.d.ts" />
 /// <reference path="./w3c/device-orientation.d.ts" />
 /// <reference path="./w3c/image-resource.d.ts" />
+/// <reference path="./w3c/mediastream-image-capture-global.d.ts" />
 /// <reference path="./w3c/mediastream-image-capture.d.ts" />
 /// <reference path="./w3c/mediastream-recording.d.ts" />
 /// <reference path="./w3c/web-codecs.d.ts" />
@@ -52,6 +54,7 @@
 /// <reference path="./wicg/portals.d.ts" />
 /// <reference path="./wicg/sanitizer.d.ts" />
 /// <reference path="./wicg/shape-detection.d.ts" />
+/// <reference path="./wicg/text-detection.d.ts" />
 /// <reference path="./wicg/text-fragments.d.ts" />
 /// <reference path="./wicg/ua-client-hints.d.ts" />
 /// <reference path="./wicg/urlpattern.d.ts" />

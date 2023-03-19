@@ -1,18 +1,37 @@
 
-// / <reference no-default-lib="true" />
+/// <reference no-default-lib="true" />
 // / <reference lib="ESNext" />
 // / <reference lib="DOM" />
 // / <reference lib="DOM.Iterable" />
-// / <reference path="./worker.d.ts" />
-/// <reference path="./index.d.ts" />
+/// <reference path="./worker.d.ts" />
+// / <reference path="./index.d.ts" />
 // / <reference path="./worklet/paint.d.ts" />
 // / <reference path="./worklet/layout.d.ts" />
 // / <reference path="./worklet/audio.d.ts" />
 
 new DecompressionStream("deflate-raw");
 
+const detector = new TextDetector();
+detector.detect;
+
+BarcodeDetector.getSupportedFormats();
+
 cookieStore
-window.cookieStore
+// window.cookieStore
+
+TextDetector.name;
+
+Int8Array.prototype.sort;
+
+const alsjdf: ReadonlyArray<number> = [];
+
+alsjdf.slice;
+
+self.ononline
+globalThis.ononline
+
+// const alsjdf = Object.freeze([3]);
+
 
 // registerLayout
 

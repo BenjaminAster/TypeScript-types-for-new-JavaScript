@@ -5,14 +5,18 @@
 // Explainer: https://github.com/WICG/view-transitions/blob/main/explainer.md
 
 interface Document {
-	startViewTransition(callback?: () => Promise<any>): ViewTransition;
+	startViewTransition(updateCallback?: UpdateCallback): ViewTransition;
+}
+
+interface UpdateCallback {
+	(): Promise<any>;
 }
 
 declare class ViewTransition {
 	skipTranstion(): void;
 	readonly finished: Promise<undefined>;
 	readonly ready: Promise<undefined>;
-	readonly domUpdated: Promise<undefined>;
+	readonly updateCallbackDone: Promise<undefined>;
 }
 
 interface CSSStyleDeclaration {

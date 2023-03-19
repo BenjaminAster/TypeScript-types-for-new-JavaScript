@@ -9,7 +9,7 @@ type CompressionStreamFormat = (
 	| "gzip"
 );
 
-interface CompressionStream extends GenericTransformStream {}
+interface CompressionStream extends GenericTransformStream { }
 
 declare var CompressionStream: {
 	prototype: CompressionStream;
@@ -17,7 +17,7 @@ declare var CompressionStream: {
 	new(format: string): CompressionStream;
 };
 
-interface DecompressionStream extends GenericTransformStream {}
+interface DecompressionStream extends GenericTransformStream { }
 
 declare var DecompressionStream: {
 	prototype: DecompressionStream;

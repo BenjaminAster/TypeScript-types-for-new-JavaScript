@@ -3,6 +3,8 @@
 // Specification: https://w3c.github.io/mediacapture-image/
 // Repository: https://github.com/w3c/mediacapture-image
 
+/// <reference path="./mediastream-image-capture-global.d.ts" />
+
 declare class ImageCapture {
 	constructor(videoTrack: MediaStreamTrack);
 	takePhoto(photoSettings?: PhotoSettings): Promise<Blob>;
@@ -136,8 +138,3 @@ type MeteringMode = (
 	| "single-shot"
 	| "continuous"
 );
-
-interface Point2D {
-	x?: number;
-	y?: number;
-}

@@ -82,27 +82,4 @@ interface CookieChangeEventInit extends EventInit {
 	deleted: CookieList;
 }
 
-// interface ExtendableEvent { }
-
-interface ExtendableCookieChangeEvent extends ExtendableEvent {
-	readonly changed: ReadonlyArray<CookieListItem>;
-	readonly deleted: ReadonlyArray<CookieListItem>;
-}
-
-declare var ExtendableCookieChangeEvent: {
-	prototype: ExtendableCookieChangeEvent;
-	new(type: string, eventInitDict?: CookieChangeEventInit): ExtendableCookieChangeEvent;
-}
-
-// interface ExtendableEventInit { }
-
-interface ExtendableCookieChangeEventInit extends ExtendableEventInit {
-	changed: CookieList;
-	deleted: CookieList;
-}
-
-declare var ExtendableCookieChangeEventInit: {
-	prototype: ExtendableCookieChangeEventInit;
-}
-
 declare var cookieStore: CookieStore;
