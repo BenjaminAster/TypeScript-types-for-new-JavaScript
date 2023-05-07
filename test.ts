@@ -1,10 +1,12 @@
 
-/// <reference no-default-lib="true" />
+// import css from "sdlkfjasdf.css" assert { type: "css" };
+
+// / <reference no-default-lib="true" />
 // / <reference lib="ESNext" />
 // / <reference lib="DOM" />
 // / <reference lib="DOM.Iterable" />
-/// <reference path="./worker.d.ts" />
-// / <reference path="./index.d.ts" />
+// / <reference path="./worker.d.ts" />
+/// <reference path="./index.d.ts" />
 // / <reference path="./worklet/paint.d.ts" />
 // / <reference path="./worklet/layout.d.ts" />
 // / <reference path="./worklet/audio.d.ts" />
@@ -29,6 +31,13 @@ alsjdf.slice;
 
 self.ononline
 globalThis.ononline
+
+IdleDetector
+window.IdleDetector
+
+navigator.permissions.query({
+	name: "local-fonts"
+})
 
 // const alsjdf = Object.freeze([3]);
 

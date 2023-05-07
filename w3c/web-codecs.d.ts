@@ -8,6 +8,8 @@
 // https://github.com/dogben/TypeScript-WebCodecs-generator
 // https://github.com/dogben/DefinitelyTyped/blob/master/types/dom-webcodecs
 
+// TODO: remove for TypeScript 5.1.0
+
 /// <reference path="./mediastream-recording.d.ts" />
 
 declare class AudioDecoder {
@@ -369,8 +371,8 @@ interface VideoFrameCopyToOptions {
 }
 
 interface PlaneLayout {
-	offset?: number;
-	stride?: number;
+	offset: number;
+	stride: number;
 }
 
 type VideoPixelFormat = (

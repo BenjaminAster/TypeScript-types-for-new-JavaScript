@@ -16,9 +16,3 @@ declare class FontData {
 	readonly family: string;
 	readonly style: string;
 }
-
-interface Permissions {
-	query(permissionDesc: {
-		name: PermissionName | "local-fonts";
-	}): Promise<PermissionStatus>;
-}

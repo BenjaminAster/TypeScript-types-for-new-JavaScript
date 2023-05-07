@@ -3,6 +3,8 @@
 // Specification: https://drafts.css-houdini.org/css-typed-om-1/
 // Repository: https://github.com/w3c/css-houdini-drafts/tree/main/css-typed-om
 
+// TODO: remove for TypeScript 5.1.0
+
 declare class CSSStyleValue {
 	static parse(property: string, cssText: string): CSSStyleValue;
 	static parseAll(property: string, cssText: string): CSSStyleValue[];

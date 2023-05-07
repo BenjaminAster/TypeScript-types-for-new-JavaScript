@@ -3,6 +3,8 @@
 // Specification: https://fs.spec.whatwg.org
 // Repository: https://github.com/whatwg/fs
 
+// TODO: remove writables for TypeScript 5.1.0
+
 interface FileSystemCreateWritableOptions {
 	keepExistingData?: boolean;
 }

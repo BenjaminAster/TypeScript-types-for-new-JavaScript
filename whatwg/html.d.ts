@@ -14,5 +14,18 @@ interface FocusOptions {
 // https://html.spec.whatwg.org/multipage/webappapis.html
 
 interface ImportMeta {
-	resolve(url: string): string;
+	resolve(specifier: string): string;
 }
+
+// Not-yet-standardized timezonechange event
+// https://github.com/whatwg/html/pull/3047, https://docs.google.com/document/d/1gu-HAVIjVxfPQEE0uQg9Y4tJwYl33Y54DKTA9hfDyic/view
+
+interface WindowEventHandlersEventMap {
+	"timezonechange": Event;
+}
+
+interface WindowEventHandlers {
+	ontimezonechange: ((this: WindowEventHandlers, ev: Event) => any) | null;
+}
+
+declare var ontimezonechange: ((this: typeof globalThis, ev: Event) => any) | null;

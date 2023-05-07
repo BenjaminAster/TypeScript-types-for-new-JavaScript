@@ -1,6 +1,7 @@
 
 // Navigation API
-// Specification: https://wicg.github.io/navigation-api/
+// Specification: https://whatpr.org/html/8502/nav-history-apis.html#navigation-api
+//                future link: https://html.spec.whatwg.org/multipage/nav-history-apis.html#navigation-api
 // Repository: https://github.com/WICG/navigation-api
 
 declare var navigation: Navigation;

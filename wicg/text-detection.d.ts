@@ -1,6 +1,6 @@
 
 // Accelerated Text Detection in Images
-// Specification: text: https://wicg.github.io/shape-detection-api/text
+// Specification: https://wicg.github.io/shape-detection-api/text
 // Repository: https://github.com/WICG/shape-detection-api
 
 /// <reference path="../w3c/mediastream-image-capture-global.d.ts" />

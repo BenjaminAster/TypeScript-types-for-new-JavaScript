@@ -44,7 +44,7 @@ declare class NavigatorUAData {
 	readonly brands: ReadonlyArray<NavigatorUABrandVersion>;
 	readonly mobile: boolean;
 	readonly platform: string;
-	getHighEntropyValues(hints: (UAHighEntropyValueHint)[]): Promise<UADataValues>;
+	getHighEntropyValues(hints: UAHighEntropyValueHint[]): Promise<UADataValues>;
 	/** @deprecated The `"uaFullVersion"` high entropy value hint is deprecated. Use `"fullVersionList"` instead. */
 	getHighEntropyValues(hints: (UAHighEntropyValueHint | DeprecatedUAFullVersion)[]): Promise<UADataValues>;
 	toJSON(): UALowEntropyJSON;
