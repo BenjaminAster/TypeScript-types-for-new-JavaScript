@@ -9,17 +9,18 @@ interface NavigatorUABrandVersion {
 }
 
 interface UADataValues {
-	brands?: NavigatorUABrandVersion[];
-	mobile?: boolean;
 	architecture?: string;
 	bitness?: string;
+	brands?: NavigatorUABrandVersion[];
+	formFactor?: string;
+	fullVersionList?: NavigatorUABrandVersion[];
 	model?: string;
+	mobile?: boolean;
 	platform?: string;
 	platformVersion?: string;
-	/** @deprecated */
+	/** @deprecated The `uaFullVersion` high entropy value is deprecated. Use `fullVersionList` instead. */
 	uaFullVersion?: string;
 	wow64?: boolean;
-	fullVersionList?: NavigatorUABrandVersion[];
 }
 
 interface UALowEntropyJSON {
@@ -31,10 +32,11 @@ interface UALowEntropyJSON {
 type UAHighEntropyValueHint = (
 	| "architecture"
 	| "bitness"
+	| "formFactor"
+	| "fullVersionList"
 	| "model"
 	| "platformVersion"
 	| "wow64"
-	| "fullVersionList"
 );
 
 /** @deprecated */

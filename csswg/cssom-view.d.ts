@@ -1,6 +1,6 @@
 
 // CSSOM View
-// Specification: https://w3c.github.io/csswg-drafts/cssom-view/
+// Specification: https://drafts.csswg.org/cssom-view-1/
 // Repository: https://github.com/w3c/csswg-drafts/tree/main/cssom-view-1
 
 interface Document {

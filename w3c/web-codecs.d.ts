@@ -12,8 +12,7 @@
 
 /// <reference path="./mediastream-recording.d.ts" />
 
-declare class AudioDecoder {
-	constructor(init: AudioDecoderInit);
+interface AudioDecoder {
 	readonly state: CodecState;
 	readonly decodeQueueSize: number;
 	ondequeue: ((this: AudioDecoder, ev: Event) => any) | null;
@@ -26,7 +25,12 @@ declare class AudioDecoder {
 	addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
 	removeEventListener<K extends keyof AudioDecoderEventMap>(type: K, listener: (this: AudioDecoder, ev: AudioDecoderEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
 	removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
-	static isConfigSupported(config: AudioDecoderConfig): Promise<AudioDecoderSupport>;
+}
+
+declare var AudioDecoder: {
+	prototype: AudioDecoder;
+	new(init: AudioDecoderInit): AudioDecoder;
+	isConfigSupported(config: AudioDecoderConfig): Promise<AudioDecoderSupport>;
 }
 
 interface AudioDecoderEventMap {
@@ -42,8 +46,7 @@ interface AudioFrameOutputCallback {
 	(output: AudioData): void;
 }
 
-declare class VideoDecoder {
-	constructor(init: VideoDecoderInit);
+interface VideoDecoder {
 	readonly state: CodecState;
 	readonly decodeQueueSize: number;
 	ondequeue: ((this: VideoDecoder, ev: Event) => any) | null;
@@ -56,7 +59,12 @@ declare class VideoDecoder {
 	addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
 	removeEventListener<K extends keyof VideoDecoderEventMap>(type: K, listener: (this: VideoDecoder, ev: VideoDecoderEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
 	removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
-	static isConfigSupported(config: VideoDecoderConfig): Promise<VideoDecoderSupport>;
+}
+
+declare var VideoDecoder: {
+	prototype: VideoDecoder;
+	new(init: VideoDecoderInit): VideoDecoder;
+	isConfigSupported(config: VideoDecoderConfig): Promise<VideoDecoderSupport>;
 }
 
 interface VideoDecoderEventMap {
@@ -72,8 +80,7 @@ interface VideoFrameOutputCallback {
 	(output: VideoFrame): void;
 }
 
-declare class AudioEncoder {
-	constructor(init: AudioEncoderInit);
+interface AudioEncoder {
 	readonly state: CodecState;
 	readonly encodeQueueSize: number;
 	ondequeue: ((this: AudioEncoder, ev: Event) => any) | null;
@@ -86,7 +93,12 @@ declare class AudioEncoder {
 	addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
 	removeEventListener<K extends keyof AudioEncoderEventMap>(type: K, listener: (this: AudioEncoder, ev: AudioEncoderEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
 	removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
-	static isConfigSupported(config: AudioEncoderConfig): Promise<AudioEncoderSupport>;
+}
+
+declare var AudioEncoder: {
+	prototype: AudioEncoder;
+	new(init: AudioEncoderInit): AudioEncoder;
+	isConfigSupported(config: AudioEncoderConfig): Promise<AudioEncoderSupport>;
 }
 
 interface AudioEncoderEventMap {
@@ -106,8 +118,7 @@ interface EncodedAudioChunkMetadata {
 	decoderConfig?: AudioDecoderConfig;
 }
 
-declare class VideoEncoder {
-	constructor(init: VideoEncoderInit);
+interface VideoEncoder {
 	readonly state: CodecState;
 	readonly encodeQueueSize: number;
 	ondequeue: ((this: VideoEncoder, ev: Event) => any) | null;
@@ -120,7 +131,12 @@ declare class VideoEncoder {
 	addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
 	removeEventListener<K extends keyof VideoEncoderEventMap>(type: K, listener: (this: VideoEncoder, ev: VideoEncoderEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
 	removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
-	static isConfigSupported(config: VideoEncoderConfig): Promise<VideoEncoderSupport>;
+}
+
+declare var VideoEncoder: {
+	prototype: VideoEncoder;
+	new(init: VideoEncoderInit): VideoEncoder;
+	isConfigSupported(config: VideoEncoderConfig): Promise<VideoEncoderSupport>;
 }
 
 interface VideoEncoderEventMap {
@@ -237,13 +253,17 @@ interface WebCodecsErrorCallback {
 	(error: DOMException): void;
 }
 
-declare class EncodedAudioChunk {
-	constructor(init: EncodedAudioChunkInit);
+interface EncodedAudioChunk {
 	readonly type: EncodedAudioChunkType;
 	readonly timestamp: DOMHighResTimeStamp;
 	readonly duration: number | null;
 	readonly byteLength: number;
 	copyTo(destination: BufferSource): void;
+}
+
+declare var EncodedAudioChunk: {
+	prototype: EncodedAudioChunk;
+	new(init: EncodedAudioChunkInit): EncodedAudioChunk;
 }
 
 interface EncodedAudioChunkInit {
@@ -258,13 +278,17 @@ type EncodedAudioChunkType = (
 	| "delta"
 );
 
-declare class EncodedVideoChunk {
-	constructor(init: EncodedVideoChunkInit);
+interface EncodedVideoChunk {
 	readonly type: EncodedVideoChunkType;
 	readonly timestamp: DOMHighResTimeStamp;
 	readonly duration: number | null;
 	readonly byteLength: number;
 	copyTo(destination: BufferSource): void;
+}
+
+declare var EncodedVideoChunk: {
+	prototype: EncodedVideoChunk;
+	new(init: EncodedVideoChunkInit): EncodedVideoChunk;
 }
 
 interface EncodedVideoChunkInit {
@@ -279,8 +303,7 @@ type EncodedVideoChunkType = (
 	| "delta"
 );
 
-declare class AudioData {
-	constructor(init: AudioDataInit);
+interface AudioData {
 	readonly format: AudioSampleFormat | null;
 	readonly sampleRate: number;
 	readonly numberOfFrames: number;
@@ -291,6 +314,12 @@ declare class AudioData {
 	copyTo(destination: BufferSource, options: AudioDataCopyToOptions): void;
 	clone(): AudioData;
 	close(): void;
+}
+
+
+declare var AudioData: {
+	prototype: AudioData;
+	new(init: AudioDataInit): AudioData;
 }
 
 interface AudioDataInit {
@@ -320,9 +349,7 @@ type AudioSampleFormat = (
 	| "f32-planar"
 );
 
-declare class VideoFrame {
-	constructor(image: CanvasImageSource, init?: VideoFrameInit);
-	constructor(data: BufferSource, init: VideoFrameBufferInit);
+interface VideoFrame {
 	readonly format: VideoPixelFormat | null;
 	readonly codedWidth: number;
 	readonly codedHeight: number;
@@ -338,6 +365,12 @@ declare class VideoFrame {
 	copyTo(destination: BufferSource, options?: VideoFrameCopyToOptions): Promise<PlaneLayout[]>;
 	clone(): VideoFrame;
 	close(): void;
+}
+
+declare var VideoFrame: {
+	prototype: VideoFrame;
+	new(image: CanvasImageSource, init?: VideoFrameInit): VideoFrame;
+	new(data: BufferSource, init: VideoFrameBufferInit): VideoFrame;
 }
 
 interface VideoFrameInit {
@@ -387,8 +420,7 @@ type VideoPixelFormat = (
 	| "BGRX"
 );
 
-declare class ImageDecoder {
-	constructor(init: ImageDecoderInit);
+interface ImageDecoder {
 	readonly type: string;
 	readonly complete: boolean;
 	readonly completed: Promise<void>;
@@ -396,7 +428,12 @@ declare class ImageDecoder {
 	decode(options?: ImageDecodeOptions): Promise<ImageDecodeResult>;
 	reset(): void;
 	close(): void;
-	static isTypeSupported(type: string): Promise<boolean>;
+}
+
+declare var ImageDecoder: {
+	prototype: ImageDecoder;
+	new(init: ImageDecoderInit): ImageDecoder;
+	isTypeSupported(type: string): Promise<boolean>;
 }
 
 type ImageBufferSource = BufferSource | ReadableStream;
@@ -420,7 +457,7 @@ interface ImageDecodeResult {
 	complete: boolean;
 }
 
-declare class ImageTrackList {
+interface ImageTrackList {
 	[index: number]: ImageTrack;
 	readonly ready: Promise<void>;
 	readonly length: number;
@@ -428,9 +465,17 @@ declare class ImageTrackList {
 	readonly selectedTrack: ImageTrack | null;
 }
 
-declare class ImageTrack {
+declare var ImageTrackList: {
+	prototype: ImageTrackList;
+}
+
+interface ImageTrack {
 	readonly animated: boolean;
 	readonly frameCount: number;
 	readonly repetitionCount: number;
 	selected: boolean;
+}
+
+declare var ImageTrack: {
+	prototype: ImageTrack;
 }

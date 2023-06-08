@@ -8,3 +8,12 @@ declare var ondeviceorientationabsolute: ((this: Window, ev: DeviceOrientationEv
 interface WindowEventMap {
 	"deviceorientationabsolute": DeviceOrientationEvent;
 }
+
+interface Window {
+	DeviceMotionEvent: {
+		requestPermission(): Promise<PermissionState>;
+	};
+	DeviceOrientationEvent: {
+		requestPermission(): Promise<PermissionState>;
+	};
+}

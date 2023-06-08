@@ -4,6 +4,8 @@
 /// <reference lib="WebWorker" />
 /// <reference lib="WebWorker.Iterable" />
 
+/// <reference path="./privacycg/global-privacy-control.d.ts" />
+
 /// <reference path="./tc39/array-grouping.d.ts" />
 /// <reference path="./tc39/esnext.d.ts" />
 /// <reference path="./tc39/import-attributes.d.ts" />
@@ -12,7 +14,7 @@
 /// <reference path="./w3c/device-memory.d.ts" />
 /// <reference path="./w3c/mediastream-image-capture-global.d.ts" />
 /// <reference path="./w3c/mediastream-recording.d.ts" />
-/// <reference path="./w3c/permissions.d.ts" />
+/// <reference path="./w3c/permissions-registry.d.ts" />
 /// <reference path="./w3c/web-codecs.d.ts" />
 
 /// <reference path="./whatwg/file-system.d.ts" />
@@ -32,3 +34,4 @@
 interface WorkerNavigator extends NavigatorUA { }
 interface WorkerNavigator extends NavigatorNetworkInformation { }
 interface WorkerNavigator extends NavigatorDeviceMemory { }
+interface WorkerNavigator extends GlobalPrivacyControl { }

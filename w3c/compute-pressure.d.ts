@@ -3,6 +3,11 @@
 // Specification: https://w3c.github.io/compute-pressure/
 // Repository: https://github.com/w3c/compute-pressure
 
+type PressureSource = (
+	| "thermals"
+	| "cpu"
+);
+
 type PressureState = (
 	| "nominal"
 	| "fair"
@@ -10,36 +15,30 @@ type PressureState = (
 	| "critical"
 );
 
-type PressureFactor = (
-	| "thermal"
-	| "power-supply"
-);
-
 interface PressureUpdateCallback {
 	(changes: PressureRecord[], observer: PressureObserver): void;
 }
 
-type PressureSource = (
-	| "cpu"
-);
-
-declare class PressureObserver {
-	constructor(callback: PressureUpdateCallback, options?: PressureObserverOptions);
-	observe(source: PressureSource): void;
+interface PressureObserver {
+	observe(source: PressureSource): Promise<void>;
 	unobserve(source: PressureSource): void;
 	disconnect(): void;
 	takeRecords(): PressureRecord[];
-	static readonly supportedSources: ReadonlyArray<PressureSource>;
-	static requestPermission(): Promise<PermissionState>;
+}
+
+declare var PressureObserver: {
+	prototype: PressureObserver;
+	new(callback: PressureUpdateCallback, options?: PressureObserverOptions): PressureObserver;
+	readonly supportedSources: ReadonlyArray<PressureSource>;
 }
 
 interface PressureRecord {
-	source?: PressureSource;
-	state?: PressureState;
-	factors?: PressureFactor[];
-	time?: DOMHighResTimeStamp;
+	readonly source: PressureSource | null;
+	readonly state: PressureState | null;
+	readonly time: DOMHighResTimeStamp | null;
+	toJSON(): any;
 }
 
 interface PressureObserverOptions {
-	samplerate?: number;
+	sampleRate?: number;
 }

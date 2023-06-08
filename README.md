@@ -4,7 +4,7 @@
 > **Note**
 > This requires **TypeScript 5.0**
 
-This repository contains TypeScript type definitions for a lot of new JavaScript stuff that isn't yet in TypeScript's standard type definitions (see below for [the complete list](#specifications-in-this-repository)). These range from the [File System Access API](https://wicg.github.io/file-system-access/) over [View Transitions](https://w3c.github.io/csswg-drafts/css-view-transitions-1/) to [Houdini CSS Typed OM](https://drafts.css-houdini.org/css-typed-om/) or [Handwriting Recognition](https://wicg.github.io/handwriting-recognition/). Some specifications have only partially been integrated into TypeScript's standard type declarations, in which case this repository contains only the parts of the specifications that aren't there (yet). For most specifications I have used [WebIDL2TS](https://github.com/giniedp/webidl2ts), a tool that automatically converts [WebIDL](https://webidl.spec.whatwg.org/) to TypeScript type definitions, and manually edited the stuff where it didn't generate the desired result.
+This repository contains TypeScript type definitions for a lot of new JavaScript stuff that isn't yet in TypeScript's standard type definitions (see below for [the complete list](#specifications-in-this-repository)). These range from the [File System Access API](https://wicg.github.io/file-system-access/) over [View Transitions](https://drafts.csswg.org/css-view-transitions-1/) to [Houdini CSS Typed OM](https://drafts.css-houdini.org/css-typed-om/) or [Handwriting Recognition](https://wicg.github.io/handwriting-recognition/). Some specifications have only partially been integrated into TypeScript's standard type declarations, in which case this repository contains only the parts of the specifications that aren't there (yet). For most specifications I have used [WebIDL2TS](https://github.com/giniedp/webidl2ts), a tool that automatically converts [WebIDL](https://webidl.spec.whatwg.org/) to TypeScript type definitions, and manually edited the stuff where it didn't generate the desired result.
 
 Also take a look [Better-TypeScript](https://github.com/BenjaminAster/Better-TypeScript), which contains various TypeScript type definitions to make working with TypeScript more convenient.
 
@@ -70,12 +70,13 @@ For [worklets](https://developer.mozilla.org/en-US/docs/Web/API/Worklet), use `n
 
 The type declarations in this repository include the following specifications (grouped by venue):
 
- - [WICG](https://wicg.io):
+ - [Web Incubator Community Group (WICG)](https://wicg.io):
 	 - [Background Fetch](https://wicg.github.io/background-fetch/)
 	 - [Background Sync](https://wicg.github.io/background-sync/spec/)
 	 - [Compression Streams](https://wicg.github.io/compression-streams/)
 	 - [Cookie Store API](https://wicg.github.io/cookie-store/)
 	 - [Document Picture-in-Picture](https://wicg.github.io/document-picture-in-picture/)
+	 - [Element Timing API](https://wicg.github.io/element-timing/)
 	 - [EyeDropper API](https://wicg.github.io/eyedropper-api/)
 	 - [Fenced frame](https://wicg.github.io/fenced-frame/)
 	 - [File System Access API](https://wicg.github.io/file-system-access/)
@@ -85,6 +86,8 @@ The type declarations in this repository include the following specifications (g
 	 - [isInputPending](https://wicg.github.io/is-input-pending/)
 	 - [Keyboard Lock](https://wicg.github.io/keyboard-lock/)
 	 - [Keyboard Map](https://wicg.github.io/keyboard-map/)
+	 - [Largest Contentful Paint](https://wicg.github.io/largest-contentful-paint/)
+	 - [Layout Instability API](https://wicg.github.io/layout-instability/)
 	 - [Local Font Access API](https://wicg.github.io/local-font-access/)
 	 - [Manifest Incubations](https://wicg.github.io/manifest-incubations/)
 	 - [Navigation API](https://wicg.github.io/navigation-api/)
@@ -110,32 +113,38 @@ The type declarations in this repository include the following specifications (g
 	 - [CSS Painting API](https://drafts.css-houdini.org/css-paint-api/)
 	 - [CSS Properties and Values API](https://drafts.css-houdini.org/css-properties-values-api/)
 	 - [CSS Typed OM](https://drafts.css-houdini.org/css-typed-om/)
- - [CSSWG](https://csswg.org):
-	 - [CSS Containment](https://w3c.github.io/csswg-drafts/css-contain/)
-	 - [CSSOM View](https://w3c.github.io/csswg-drafts/cssom-view-1/)
-	 - [CSS Object Model](https://w3c.github.io/csswg-drafts/cssom-1/)
-	 - [CSS Custom Highlight API](https://w3c.github.io/csswg-drafts/css-highlight-api/)
-	 - [Scroll-linked Animations](https://w3c.github.io/csswg-drafts/scroll-animations/)
-	 - [CSS View Transitions](https://w3c.github.io/csswg-drafts/css-view-transitions-1/)
- - [W3C](https://www.w3.org/TR/):
+ - [CSS Working Group (CSSWG)](https://csswg.org):
+	 - [CSS Containment](https://drafts.csswg.org/css-contain-3/)
+	 - [CSSOM View](https://drafts.csswg.org/cssom-view-1/)
+	 - [CSS Object Model](https://drafts.csswg.org/cssom-1/)
+	 - [CSS Custom Highlight API](https://drafts.csswg.org/css-highlight-api-1/)
+	 - [CSS Nesting](https://drafts.csswg.org/css-nesting-1/)
+	 - [Scroll-linked Animations](https://drafts.csswg.org/scroll-animations-1/)
+	 - [CSS View Transitions](https://drafts.csswg.org/css-view-transitions-1/)
+ - [World Wide Web Consortium (W3C)](https://www.w3.org/TR/):
 	 - [Battery Status API](https://w3c.github.io/battery/)
 	 - [Compute Pressure](https://w3c.github.io/compute-pressure/)
 	 - [Contact Picker](https://w3c.github.io/contact-picker/spec/)
 	 - [Device Memory](https://w3c.github.io/device-memory/)
 	 - [DeviceOrientation Events](https://w3c.github.io/deviceorientation/)
 	 - [Image Resource](https://w3c.github.io/image-resource/)
+	 - [Long Tasks API](https://w3c.github.io/longtasks/)
 	 - [MediaStream Image Capture](https://w3c.github.io/mediacapture-image/)
 	 - [MediaStream Recording](https://w3c.github.io/mediacapture-record/)
-	 - [Permissions](https://w3c.github.io/permissions/)
+	 - [Permissions Registry](https://w3c.github.io/permissions-registry/)
 	 - [WebCodecs](https://w3c.github.io/webcodecs/)
 	 - [Window Management](https://w3c.github.io/window-management/)
- - [WHATWG](https://spec.whatwg.org):
+ - [Web Hypertext Application Technology Working Group (WHATWG)](https://spec.whatwg.org):
 	 - [File System](https://fs.spec.whatwg.org)
 	 - [HTML](https://html.spec.whatwg.org/multipage/)
- - [Web Bluetooth CG](https://webbluetoothcg.github.io):
+ - [Web Bluetooth Community Group](https://webbluetoothcg.github.io):
 	 - [Web Bluetooth](https://webbluetoothcg.github.io/web-bluetooth/)
- - [Web Audio WG](https://github.com/WebAudio):
+ - [Web Audio Working Group](https://github.com/WebAudio):
 	 - [Web Audio API](https://webaudio.github.io/web-audio-api/)
+ - [Open UI](https://open-ui.org):
+	 - [Selectmenu element](https://open-ui.org/components/selectmenu/)
+ - [Privacy Community Group](https://github.com/WebAudio):
+	 - [Global Privacy Control](https://privacycg.github.io/gpc-spec/)
  - [TC39](https://tc39.es):
 	 - [Array Grouping](https://tc39.es/proposal-array-grouping/)
 	 - [ECMAScript Language Specification](https://tc39.es/ecma262/)

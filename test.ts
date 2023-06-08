@@ -13,6 +13,8 @@
 
 new DecompressionStream("deflate-raw");
 
+window.DeviceMotionEvent.requestPermission();
+
 const detector = new TextDetector();
 detector.detect;
 

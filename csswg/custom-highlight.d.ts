@@ -1,6 +1,6 @@
 
 // CSS Custom Highlight API
-// Specification: https://w3c.github.io/csswg-drafts/css-highlight-api-1/
+// Specification: https://drafts.csswg.org/css-highlight-api-1/
 // Repository: https://github.com/w3c/csswg-drafts/tree/main/css-highlight-api-1
 
 type HighlightType = (

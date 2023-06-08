@@ -12,10 +12,15 @@
 /// <reference path="./csswg/cssom-view.d.ts" />
 /// <reference path="./csswg/cssom.d.ts" />
 /// <reference path="./csswg/custom-highlight.d.ts" />
+/// <reference path="./csswg/nesting.d.ts" />
 /// <reference path="./csswg/scroll-animations.d.ts" />
 /// <reference path="./csswg/view-transitions.d.ts" />
 
 /// <reference path="./immersivewebwg/webxr.d.ts" />
+
+/// <reference path="./open-ui/select-menu.d.ts" />
+
+/// <reference path="./privacycg/global-privacy-control.d.ts" />
 
 /// <reference path="./tc39/array-grouping.d.ts" />
 /// <reference path="./tc39/esnext.d.ts" />
@@ -28,10 +33,11 @@
 /// <reference path="./w3c/device-memory.d.ts" />
 /// <reference path="./w3c/device-orientation.d.ts" />
 /// <reference path="./w3c/image-resource.d.ts" />
+/// <reference path="./w3c/long-tasks.d.ts" />
 /// <reference path="./w3c/mediastream-image-capture-global.d.ts" />
 /// <reference path="./w3c/mediastream-image-capture.d.ts" />
 /// <reference path="./w3c/mediastream-recording.d.ts" />
-/// <reference path="./w3c/permissions.d.ts" />
+/// <reference path="./w3c/permissions-registry.d.ts" />
 /// <reference path="./w3c/sensors.d.ts" />
 /// <reference path="./w3c/web-codecs.d.ts" />
 /// <reference path="./w3c/window-management.d.ts" />
@@ -46,6 +52,7 @@
 /// <reference path="./wicg/compression-streams.d.ts" />
 /// <reference path="./wicg/cookie-store.d.ts" />
 /// <reference path="./wicg/document-picture-in-picture.d.ts" />
+/// <reference path="./wicg/element-timing.d.ts" />
 /// <reference path="./wicg/eyedropper.d.ts" />
 /// <reference path="./wicg/fenced-frame.d.ts" />
 /// <reference path="./wicg/file-system-access.d.ts" />
@@ -55,6 +62,8 @@
 /// <reference path="./wicg/is-input-pending.d.ts" />
 /// <reference path="./wicg/keyboard-lock.d.ts" />
 /// <reference path="./wicg/keyboard-map.d.ts" />
+/// <reference path="./wicg/largest-contentful-paint.d.ts" />
+/// <reference path="./wicg/layout-instability.d.ts" />
 /// <reference path="./wicg/local-font-access.d.ts" />
 /// <reference path="./wicg/manifest-incubations.d.ts" />
 /// <reference path="./wicg/navigation.d.ts" />
@@ -77,3 +86,4 @@
 interface Navigator extends NavigatorUA { }
 interface Navigator extends NavigatorNetworkInformation { }
 interface Navigator extends NavigatorDeviceMemory { }
+interface Navigator extends GlobalPrivacyControl { }

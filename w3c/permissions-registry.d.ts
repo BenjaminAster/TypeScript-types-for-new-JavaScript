@@ -1,25 +1,29 @@
 
-// Permissions
-// Specification: https://w3c.github.io/permissions/
-// Repository: https://github.com/w3c/permissions
+// Permissions Registry
+// Specification: https://w3c.github.io/permissions-registry/
+// Repository: https://github.com/w3c/permissions-registry
 
 declare namespace NewJavaScript {
 	type PermissionName = (
+		// in lib.dom.d.ts: "geolocation", "notifications", "push", "persistent-storage", "screen-wake-lock", "xr-spatial-tracking"
+
+		// https://w3c.github.io/permissions-registry/#registry-table-of-standardized-permissions
+		| "web-share"
+
+		// https://w3c.github.io/permissions-registry/#registry-table-of-provisional-permissions
+		| "accelerometer"
+		| "window-management"
+		| "local-fonts"
+
 		// https://github.com/chromium/chromium/blob/main/third_party/blink/renderer/modules/permissions/permission_descriptor.idl
-		| "geolocation" // already in lib.dom.d.ts
-		| "notifications" // already in lib.dom.d.ts
-		| "push" // already in lib.dom.d.ts
 		| "midi"
 		| "camera"
 		| "microphone"
 		| "background-fetch"
 		| "background-sync"
-		| "persistent-storage" // already in lib.dom.d.ts
 		| "ambient-light-sensor"
-		| "accelerometer"
 		| "gyroscope"
 		| "magnetometer"
-		| "screen-wake-lock" // already in lib.dom.d.ts
 		| "nfc"
 		| "display-capture"
 		| "accessibility-events"
@@ -30,9 +34,7 @@ declare namespace NewJavaScript {
 		| "periodic-background-sync"
 		| "system-wake-lock"
 		| "storage-access"
-		| "window-management"
 		| "window-placement"
-		| "local-fonts"
 		| "top-level-storage-access"
 	);
 
