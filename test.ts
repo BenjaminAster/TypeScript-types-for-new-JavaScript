@@ -11,6 +11,8 @@
 // / <reference path="./worklet/layout.d.ts" />
 // / <reference path="./worklet/audio.d.ts" />
 
+CSS.lvmin
+
 new DecompressionStream("deflate-raw");
 
 window.DeviceMotionEvent.requestPermission();

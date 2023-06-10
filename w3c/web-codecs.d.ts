@@ -8,8 +8,6 @@
 // https://github.com/dogben/TypeScript-WebCodecs-generator
 // https://github.com/dogben/DefinitelyTyped/blob/master/types/dom-webcodecs
 
-// TODO: remove for TypeScript 5.1.0
-
 /// <reference path="./mediastream-recording.d.ts" />
 
 interface AudioDecoder {
@@ -44,40 +42,6 @@ interface AudioDecoderInit {
 
 interface AudioFrameOutputCallback {
 	(output: AudioData): void;
-}
-
-interface VideoDecoder {
-	readonly state: CodecState;
-	readonly decodeQueueSize: number;
-	ondequeue: ((this: VideoDecoder, ev: Event) => any) | null;
-	configure(config: VideoDecoderConfig): void;
-	decode(chunk: EncodedVideoChunk): void;
-	flush(): Promise<void>;
-	close(): void;
-	reset(): void;
-	addEventListener<K extends keyof VideoDecoderEventMap>(type: K, listener: (this: VideoDecoder, ev: VideoDecoderEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
-	addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-	removeEventListener<K extends keyof VideoDecoderEventMap>(type: K, listener: (this: VideoDecoder, ev: VideoDecoderEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
-	removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
-}
-
-declare var VideoDecoder: {
-	prototype: VideoDecoder;
-	new(init: VideoDecoderInit): VideoDecoder;
-	isConfigSupported(config: VideoDecoderConfig): Promise<VideoDecoderSupport>;
-}
-
-interface VideoDecoderEventMap {
-	"ondequeue": Event;
-}
-
-interface VideoDecoderInit {
-	output: VideoFrameOutputCallback;
-	error: WebCodecsErrorCallback;
-}
-
-interface VideoFrameOutputCallback {
-	(output: VideoFrame): void;
 }
 
 interface AudioEncoder {
@@ -118,36 +82,6 @@ interface EncodedAudioChunkMetadata {
 	decoderConfig?: AudioDecoderConfig;
 }
 
-interface VideoEncoder {
-	readonly state: CodecState;
-	readonly encodeQueueSize: number;
-	ondequeue: ((this: VideoEncoder, ev: Event) => any) | null;
-	configure(config: VideoEncoderConfig): void;
-	encode(frame: VideoFrame, options?: VideoEncoderEncodeOptions): void;
-	flush(): Promise<void>;
-	reset(): void;
-	close(): void;
-	addEventListener<K extends keyof VideoEncoderEventMap>(type: K, listener: (this: VideoEncoder, ev: VideoEncoderEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
-	addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-	removeEventListener<K extends keyof VideoEncoderEventMap>(type: K, listener: (this: VideoEncoder, ev: VideoEncoderEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
-	removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
-}
-
-declare var VideoEncoder: {
-	prototype: VideoEncoder;
-	new(init: VideoEncoderInit): VideoEncoder;
-	isConfigSupported(config: VideoEncoderConfig): Promise<VideoEncoderSupport>;
-}
-
-interface VideoEncoderEventMap {
-	"ondequeue": Event;
-}
-
-interface VideoEncoderInit {
-	output: EncodedVideoChunkOutputCallback;
-	error: WebCodecsErrorCallback;
-}
-
 interface EncodedVideoChunkOutputCallback {
 	(chunk: EncodedVideoChunk, metadata?: EncodedVideoChunkMetadata): void;
 }
@@ -167,19 +101,9 @@ interface AudioDecoderSupport {
 	config?: AudioDecoderConfig;
 }
 
-interface VideoDecoderSupport {
-	supported?: boolean;
-	config?: VideoDecoderConfig;
-}
-
 interface AudioEncoderSupport {
 	supported?: boolean;
 	config?: AudioEncoderConfig;
-}
-
-interface VideoEncoderSupport {
-	supported?: boolean;
-	config?: VideoEncoderConfig;
 }
 
 interface AudioDecoderConfig {
@@ -189,68 +113,11 @@ interface AudioDecoderConfig {
 	description?: BufferSource;
 }
 
-interface VideoDecoderConfig {
-	codec: string;
-	description?: BufferSource;
-	codedWidth?: number;
-	codedHeight?: number;
-	displayAspectWidth?: number;
-	displayAspectHeight?: number;
-	colorSpace?: VideoColorSpaceInit;
-	hardwareAcceleration?: HardwareAcceleration;
-	optimizeForLatency?: boolean;
-}
-
 interface AudioEncoderConfig {
 	codec: string;
 	sampleRate?: number;
 	numberOfChannels?: number;
 	bitrate?: number;
-}
-
-interface VideoEncoderConfig {
-	codec: string;
-	height: number;
-	width: number;
-	displayWidth?: number;
-	displayHeight?: number;
-	bitrate?: number;
-	framerate?: number;
-	hardwareAcceleration?: HardwareAcceleration;
-	alpha?: AlphaOption;
-	scalabilityMode?: string;
-	bitrateMode?: BitrateMode;
-	latencyMode?: LatencyMode;
-}
-
-type HardwareAcceleration = (
-	| "no-preference"
-	| "prefer-hardware"
-	| "prefer-software"
-);
-
-type AlphaOption = (
-	| "discard"
-	| "keep"
-);
-
-type LatencyMode = (
-	| "quality"
-	| "realtime"
-);
-
-interface VideoEncoderEncodeOptions {
-	keyFrame?: boolean;
-}
-
-type CodecState = (
-	| "unconfigured"
-	| "configured"
-	| "closed"
-);
-
-interface WebCodecsErrorCallback {
-	(error: DOMException): void;
 }
 
 interface EncodedAudioChunk {
@@ -298,11 +165,6 @@ interface EncodedVideoChunkInit {
 	data: BufferSource;
 }
 
-type EncodedVideoChunkType = (
-	| "key"
-	| "delta"
-);
-
 interface AudioData {
 	readonly format: AudioSampleFormat | null;
 	readonly sampleRate: number;
@@ -347,77 +209,6 @@ type AudioSampleFormat = (
 	| "s16-planar"
 	| "s32-planar"
 	| "f32-planar"
-);
-
-interface VideoFrame {
-	readonly format: VideoPixelFormat | null;
-	readonly codedWidth: number;
-	readonly codedHeight: number;
-	readonly codedRect: DOMRectReadOnly | null;
-	readonly visibleRect: DOMRectReadOnly | null;
-	readonly displayWidth: number;
-	readonly displayHeight: number;
-	readonly duration: number | null;
-	readonly timestamp: DOMHighResTimeStamp;
-	readonly colorSpace: VideoColorSpace;
-	metadata(): VideoFrameMetadata;
-	allocationSize(options?: VideoFrameCopyToOptions): number;
-	copyTo(destination: BufferSource, options?: VideoFrameCopyToOptions): Promise<PlaneLayout[]>;
-	clone(): VideoFrame;
-	close(): void;
-}
-
-declare var VideoFrame: {
-	prototype: VideoFrame;
-	new(image: CanvasImageSource, init?: VideoFrameInit): VideoFrame;
-	new(data: BufferSource, init: VideoFrameBufferInit): VideoFrame;
-}
-
-interface VideoFrameInit {
-	duration?: number;
-	timestamp?: DOMHighResTimeStamp;
-	alpha?: AlphaOption;
-	visibleRect?: DOMRectInit;
-	displayWidth?: number;
-	displayHeight?: number;
-	metadata?: VideoFrameMetadata;
-}
-
-interface VideoFrameBufferInit {
-	format: VideoPixelFormat;
-	codedWidth: number;
-	codedHeight: number;
-	timestamp: DOMHighResTimeStamp;
-	duration?: number;
-	layout?: PlaneLayout[];
-	visibleRect?: DOMRectInit;
-	displayWidth?: number;
-	displayHeight?: number;
-	colorSpace?: VideoColorSpaceInit;
-}
-
-interface VideoFrameMetadata {}
-
-interface VideoFrameCopyToOptions {
-	rect?: DOMRectInit;
-	layout?: PlaneLayout[];
-}
-
-interface PlaneLayout {
-	offset: number;
-	stride: number;
-}
-
-type VideoPixelFormat = (
-	| "I420"
-	| "I420A"
-	| "I422"
-	| "I444"
-	| "NV12"
-	| "RGBA"
-	| "RGBX"
-	| "BGRA"
-	| "BGRX"
 );
 
 interface ImageDecoder {
