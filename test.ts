@@ -11,6 +11,12 @@
 // / <reference path="./worklet/layout.d.ts" />
 // / <reference path="./worklet/audio.d.ts" />
 
+Object.fromEntries
+
+Map.toString
+
+
+
 CSS.lvmin
 
 new DecompressionStream("deflate-raw");

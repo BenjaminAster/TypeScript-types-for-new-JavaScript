@@ -5,17 +5,23 @@
 
 declare namespace NewJavaScript {
 	type PermissionName = (
-		// in lib.dom.d.ts: "geolocation", "notifications", "push", "persistent-storage", "screen-wake-lock", "xr-spatial-tracking"
+		// in lib.dom.d.ts:
+		| "geolocation"
+		| "notifications"
+		| "push"
+		| "persistent-storage"
+		| "screen-wake-lock"
+		| "xr-spatial-tracking"
 
-		// https://w3c.github.io/permissions-registry/#registry-table-of-standardized-permissions
+		// https://w3c.github.io/permissions-registry/#registry-table-of-standardized-permissions:
 		| "web-share"
 
-		// https://w3c.github.io/permissions-registry/#registry-table-of-provisional-permissions
+		// https://w3c.github.io/permissions-registry/#registry-table-of-provisional-permissions:
 		| "accelerometer"
 		| "window-management"
 		| "local-fonts"
 
-		// https://github.com/chromium/chromium/blob/main/third_party/blink/renderer/modules/permissions/permission_descriptor.idl
+		// https://github.com/chromium/chromium/blob/main/third_party/blink/renderer/modules/permissions/permission_descriptor.idl:
 		| "midi"
 		| "camera"
 		| "microphone"

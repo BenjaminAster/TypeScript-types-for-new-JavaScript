@@ -144,6 +144,7 @@ The type declarations in this repository include the following specifications (g
  - [Privacy Community Group](https://github.com/WebAudio):
 	 - [Global Privacy Control](https://privacycg.github.io/gpc-spec/)
  - [TC39](https://tc39.es):
+	 - [Array.fromAsync](https://tc39.es/proposal-array-from-async/)
 	 - [Array Grouping](https://tc39.es/proposal-array-grouping/)
 	 - [ECMAScript Language Specification](https://tc39.es/ecma262/)
 	 - [Import Attributes](https://tc39.es/proposal-import-attributes/)
