@@ -10,13 +10,12 @@
 /// <reference path="./csswg/cssom-view.d.ts" />
 /// <reference path="./csswg/cssom.d.ts" />
 /// <reference path="./csswg/custom-highlight.d.ts" />
-/// <reference path="./csswg/nesting.d.ts" />
 /// <reference path="./csswg/scroll-animations.d.ts" />
 /// <reference path="./csswg/view-transitions.d.ts" />
 
 /// <reference path="./immersivewebwg/webxr.d.ts" />
 
-/// <reference path="./open-ui/select-menu.d.ts" />
+/// <reference path="./open-ui/selectlist.d.ts" />
 
 /// <reference path="./privacycg/global-privacy-control.d.ts" />
 
@@ -48,7 +47,6 @@
 /// <reference path="./whatwg/file-system.d.ts" />
 /// <reference path="./whatwg/html.d.ts" />
 
-/// <reference path="./wicg/compression-streams.d.ts" />
 /// <reference path="./wicg/cookie-store.d.ts" />
 /// <reference path="./wicg/document-picture-in-picture.d.ts" />
 /// <reference path="./wicg/element-timing.d.ts" />

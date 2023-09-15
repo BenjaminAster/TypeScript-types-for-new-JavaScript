@@ -23,7 +23,6 @@
 
 /// <reference path="./wicg/background-fetch.d.ts" />
 /// <reference path="./wicg/background-sync.d.ts" />
-/// <reference path="./wicg/compression-streams.d.ts" />
 /// <reference path="./wicg/cookie-store.d.ts" />
 /// <reference path="./wicg/cookie-store-worker.d.ts" />
 /// <reference path="./wicg/netinfo.d.ts" />
