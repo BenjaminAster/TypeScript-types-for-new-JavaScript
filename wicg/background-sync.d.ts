@@ -26,9 +26,12 @@ interface ServiceWorkerGlobalScopeEventMap {
 }
 
 interface SyncEvent extends ExtendableEvent {
-	new(type: string, init: SyncEventInit);
 	readonly tag: string;
 	readonly lastChance: boolean;
+}
+
+declare var SyncEvent: {
+	new(type: string, init: SyncEventInit): SyncEvent;
 }
 
 interface SyncEventInit extends ExtendableEventInit {

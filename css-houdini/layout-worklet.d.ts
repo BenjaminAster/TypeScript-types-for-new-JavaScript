@@ -4,7 +4,6 @@
 // Repository: https://github.com/w3c/css-houdini-drafts/tree/main/css-layout-api
 
 /// <reference path="../worklet/worklet-global.d.ts" />
-/// <reference path="./typed-om.d.ts" />
 
 interface LayoutInstanceConstructor {
 	new(): {

@@ -3,7 +3,7 @@
 // Specification: https://wicg.github.io/permissions-request/
 // Repository: https://github.com/WICG/permissions-request
 
-/// <reference path="../w3c/permissions.d.ts" />
+/// <reference path="../w3c/permissions-registry.d.ts" />
 
 interface Permissions {
 	request(permissionDesc: NewJavaScript.PermissionDescriptor): Promise<PermissionStatus>;

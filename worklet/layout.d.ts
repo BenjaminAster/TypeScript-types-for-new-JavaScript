@@ -5,6 +5,4 @@
 
 /// <reference path="./worklet-global.d.ts" />
 
-/// <reference path="../css-houdini/typed-om.d.ts" />
-
 /// <reference path="../css-houdini/layout-worklet.d.ts" />
