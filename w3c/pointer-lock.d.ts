@@ -7,7 +7,7 @@
 // https://github.com/w3c/pointerlock/pull/49/
 
 interface PointerLockOptions {
-	unadjustedMovement: boolean;
+	unadjustedMovement?: boolean;
 }
 
 interface Element {
