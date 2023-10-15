@@ -3,8 +3,6 @@
 // Explainer: https://open-ui.org/components/selectlist/
 // Repository: https://github.com/openui/open-ui/blob/main/site/src/pages/components/selectlist.mdx
 
-// See also: https://github.com/chromium/chromium/blob/main/third_party/blink/renderer/core/html/forms/html_select_menu_element.idl
-
 interface HTMLSelectListElement extends HTMLElement {
 	readonly open: boolean;
 	readonly selectedOption: HTMLOptionElement | null;
@@ -20,6 +18,7 @@ interface HTMLSelectListElement extends HTMLElement {
 	checkValidity(): boolean;
 	reportValidity(): boolean;
 	setCustomValidity(error: string): void;
+	showPicker(): void;
 	readonly labels: NodeList;
 	addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLSelectListElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
 	addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;

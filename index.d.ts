@@ -36,6 +36,7 @@
 /// <reference path="./w3c/mediastream-image-capture.d.ts" />
 /// <reference path="./w3c/mediastream-recording.d.ts" />
 /// <reference path="./w3c/permissions-registry.d.ts" />
+/// <reference path="./w3c/pointer-lock.d.ts" />
 /// <reference path="./w3c/sensors.d.ts" />
 /// <reference path="./w3c/web-codecs.d.ts" />
 /// <reference path="./w3c/window-management.d.ts" />
