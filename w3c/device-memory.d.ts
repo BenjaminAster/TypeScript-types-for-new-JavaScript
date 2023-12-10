@@ -6,3 +6,5 @@
 interface NavigatorDeviceMemory {
 	readonly deviceMemory: number;
 }
+
+interface Navigator extends NavigatorDeviceMemory { }

@@ -26,6 +26,8 @@ interface NavigatorNetworkInformation {
 	readonly connection: NetworkInformation;
 }
 
+interface Navigator extends NavigatorNetworkInformation { }
+
 interface NetworkInformation extends EventTarget {
 	readonly type: ConnectionType;
 	readonly effectiveType: EffectiveConnectionType;

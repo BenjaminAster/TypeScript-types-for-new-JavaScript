@@ -3,10 +3,7 @@
 // Specification: https://wicg.github.io/background-sync/spec/
 // Repository: https://github.com/WICG/background-sync
 
-/// <reference no-default-lib="true" />
-/// <reference lib="ESNext" />
-/// <reference lib="WebWorker" />
-/// <reference lib="WebWorker.Iterable" />
+/// <reference path="../worker.d.ts" />
 
 interface ServiceWorkerRegistration {
 	readonly sync: SyncManager;

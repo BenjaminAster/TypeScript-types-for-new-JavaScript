@@ -3,11 +3,7 @@
 // Specification: https://wicg.github.io/background-fetch/
 // Repository: https://github.com/WICG/background-fetch/
 
-/// <reference no-default-lib="true" />
-/// <reference lib="ESNext" />
-/// <reference lib="WebWorker" />
-/// <reference lib="WebWorker.Iterable" />
-
+/// <reference path="../worker.d.ts" />
 /// <reference path="../w3c/image-resource.d.ts" />
 
 interface ServiceWorkerGlobalScope {

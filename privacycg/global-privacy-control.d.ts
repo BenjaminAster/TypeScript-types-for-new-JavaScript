@@ -6,3 +6,5 @@
 interface GlobalPrivacyControl {
 	globalPrivacyControl: boolean;
 }
+
+interface Navigator extends GlobalPrivacyControl { }

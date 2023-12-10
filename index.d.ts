@@ -3,6 +3,8 @@
 /// <reference lib="DOM" />
 /// <reference lib="DOM.Iterable" />
 
+/// <reference path="./worker.d.ts" />
+
 /// <reference path="./css-houdini/worklet-animation.d.ts" />
 /// <reference path="./css-houdini/worklets.d.ts" />
 
@@ -46,6 +48,8 @@
 /// <reference path="./whatwg/file-system.d.ts" />
 /// <reference path="./whatwg/html.d.ts" />
 
+/// <reference path="./wicg/background-fetch.d.ts" />
+/// <reference path="./wicg/background-sync.d.ts" />
 /// <reference path="./wicg/cookie-store.d.ts" />
 /// <reference path="./wicg/document-picture-in-picture.d.ts" />
 /// <reference path="./wicg/element-timing.d.ts" />
@@ -65,6 +69,7 @@
 /// <reference path="./wicg/navigation.d.ts" />
 /// <reference path="./wicg/netinfo.d.ts" />
 /// <reference path="./wicg/pending-beacon.d.ts" />
+/// <reference path="./wicg/periodic-background-sync.d.ts" />
 /// <reference path="./wicg/permissions-request.d.ts" />
 /// <reference path="./wicg/permissions-revoke.d.ts" />
 /// <reference path="./wicg/portals.d.ts" />
@@ -77,8 +82,3 @@
 /// <reference path="./wicg/urlpattern.d.ts" />
 /// <reference path="./wicg/web-app-launch.d.ts" />
 /// <reference path="./wicg/window-controls-overlay.d.ts" />
-
-interface Navigator extends NavigatorUA { }
-interface Navigator extends NavigatorNetworkInformation { }
-interface Navigator extends NavigatorDeviceMemory { }
-interface Navigator extends GlobalPrivacyControl { }

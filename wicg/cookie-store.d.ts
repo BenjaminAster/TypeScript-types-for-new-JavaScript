@@ -3,6 +3,8 @@
 // Specification: https://wicg.github.io/cookie-store/
 // Repository: https://github.com/WICG/cookie-store
 
+/// <reference path="../worker.d.ts" />
+
 interface CookieStore extends EventTarget {
 	get(name: string): Promise<CookieListItem | null>;
 	get(options: CookieStoreGetOptions): Promise<CookieListItem | null>;
@@ -95,3 +97,22 @@ interface CookieChangeEventInit extends EventInit {
 }
 
 declare var cookieStore: CookieStore;
+
+interface ExtendableCookieChangeEvent extends ExtendableEvent {
+	readonly changed: ReadonlyArray<CookieListItem>;
+	readonly deleted: ReadonlyArray<CookieListItem>;
+}
+
+declare var ExtendableCookieChangeEvent: {
+	prototype: ExtendableCookieChangeEvent;
+	new(type: string, eventInitDict?: CookieChangeEventInit): ExtendableCookieChangeEvent;
+}
+
+interface ExtendableCookieChangeEventInit extends ExtendableEventInit {
+	changed: CookieList;
+	deleted: CookieList;
+}
+
+declare var ExtendableCookieChangeEventInit: {
+	prototype: ExtendableCookieChangeEventInit;
+}

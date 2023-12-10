@@ -35,13 +35,7 @@ Reference the type definitions directly in your TypeScript/JavaScript files...
 }
 ```
 
-For [web workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) (including [service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)), use `new-javascript/worker` as the path. If you use a `tsconfig.json` or `jsconfig.json` configuration file, you have to exclude the worker files there with the `"exclude"` option so that the DOM lib doesn't get included by default. If your worker is a JavaScript and not TypeScript file, you then have to manually re-enable type checking for the file via `// @ts-check`. Also don't forget to exclude the DOM lib with `no-default-lib="true"`. The start of your worker file should look like this:
-
-```javascript
-// @ts-check
-/// <reference no-default-lib="true" />
-/// <reference types="new-javascript/worker" />
-```
+Since combining [web worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) scripts and scripts running on the main thread in one project [is rather difficult](https://github.com/BenjaminAster/TypeScript-types-for-new-JavaScript/issues/4#issuecomment-1848361769) in TypeScript by default, all worker-exclusive interfaces (e.g. [`FileReaderSync`](https://developer.mozilla.org/en-US/docs/Web/API/FileReaderSync), [`FileSystemSyncAccessHandle`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemSyncAccessHandle)) are included by default in this package (see [worker.d.ts](./worker.d.ts)). For service worker and shared worker types, see [Better-TypeScript](https://github.com/BenjaminAster/Better-TypeScript).
 
 For [worklets](https://developer.mozilla.org/en-US/docs/Web/API/Worklet), use `new-javascript/worklet/<WORKLET_NAME>` as the path:
  - `new-javascript/worklet/audio` for [audio worklets](https://developer.mozilla.org/en-US/docs/Web/API/AudioWorklet)
