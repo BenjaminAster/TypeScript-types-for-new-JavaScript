@@ -4,5 +4,5 @@
 // Repository: https://github.com/tc39/proposal-array-from-async
 
 interface ArrayConstructor {
-	fromAsync<T>(asyncIterable: AsyncIterable<T>): Promise<T[]>;
+	fromAsync<T>(asyncIterable: AsyncIterable<T> | Iterable<T>): Promise<T[]>;
 }

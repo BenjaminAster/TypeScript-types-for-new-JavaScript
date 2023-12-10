@@ -20,9 +20,7 @@
 /// <reference path="./privacycg/global-privacy-control.d.ts" />
 
 /// <reference path="./tc39/array-from-async.d.ts" />
-/// <reference path="./tc39/array-grouping.d.ts" />
 /// <reference path="./tc39/esnext.d.ts" />
-/// <reference path="./tc39/import-attributes.d.ts" />
 
 /// <reference path="./w3c/ambient-light.d.ts" />
 /// <reference path="./w3c/battery.d.ts" />
@@ -70,7 +68,6 @@
 /// <reference path="./wicg/permissions-request.d.ts" />
 /// <reference path="./wicg/permissions-revoke.d.ts" />
 /// <reference path="./wicg/portals.d.ts" />
-/// <reference path="./wicg/sanitizer.d.ts" />
 /// <reference path="./wicg/save-data.d.ts" />
 /// <reference path="./wicg/shape-detection.d.ts" />
 /// <reference path="./wicg/speech.d.ts" />

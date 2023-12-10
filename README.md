@@ -1,7 +1,7 @@
 
 # TypeScript types for new JavaScript
 
-This repository contains TypeScript type definitions for a lot of new JavaScript stuff that isn't yet in TypeScript's standard type definitions (see below for [the complete list](#specifications-in-this-repository)). These range from the [File System Access API](https://wicg.github.io/file-system-access/) over [View Transitions](https://drafts.csswg.org/css-view-transitions-1/) to [Houdini CSS Typed OM](https://drafts.css-houdini.org/css-typed-om/) or [Handwriting Recognition](https://wicg.github.io/handwriting-recognition/). Some specifications have only partially been integrated into TypeScript's standard type declarations, in which case this repository contains only the parts of the specifications that aren't there (yet). For most specifications I have used [WebIDL2TS](https://github.com/giniedp/webidl2ts), a tool that automatically converts [WebIDL](https://webidl.spec.whatwg.org/) to TypeScript type definitions, and manually edited the stuff where it didn't generate the desired result.
+This repository contains TypeScript type definitions for a lot of new JavaScript stuff that isn't yet in TypeScript's standard type definitions (see below for [the complete list](#specifications-in-this-repository)). These range from the [File System Access API](https://wicg.github.io/file-system-access/) over [View Transitions](https://drafts.csswg.org/css-view-transitions-1/) to [View Transitions](https://drafts.csswg.org/css-view-transitions-1/) or [Handwriting Recognition](https://wicg.github.io/handwriting-recognition/). Some specifications have only partially been integrated into TypeScript's standard type declarations, in which case this repository contains only the parts of the specifications that aren't there (yet). For most specifications I have used [WebIDL2TS](https://github.com/giniedp/webidl2ts), a tool that automatically converts [WebIDL](https://webidl.spec.whatwg.org/) to TypeScript type definitions, and manually edited the stuff where it didn't generate the desired result.
 
 Also take a look [Better-TypeScript](https://github.com/BenjaminAster/Better-TypeScript), which contains various TypeScript type definitions to make working with TypeScript more convenient.
 
@@ -94,7 +94,6 @@ The type declarations in this repository include the following specifications (g
 	 - [Requesting Permissions](https://wicg.github.io/permissions-request/)
 	 - [Relinquishing Permissions](https://wicg.github.io/permissions-revoke/)
 	 - [Portals](https://wicg.github.io/portals/)
-	 - [Sanitizer API](https://wicg.github.io/sanitizer-api/)
 	 - [Save Data API](https://wicg.github.io/savedata/)
 	 - [Shape Detection API](https://wicg.github.io/shape-detection-api/)
 	 - [Speech API](https://wicg.github.io/speech-api/)
@@ -144,4 +143,3 @@ The type declarations in this repository include the following specifications (g
 	 - [Array.fromAsync](https://tc39.es/proposal-array-from-async/)
 	 - [Array Grouping](https://tc39.es/proposal-array-grouping/)
 	 - [ECMAScript Language Specification](https://tc39.es/ecma262/)
-	 - [Import Attributes](https://tc39.es/proposal-import-attributes/)

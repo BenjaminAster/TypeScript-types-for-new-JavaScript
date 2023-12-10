@@ -7,9 +7,7 @@
 /// <reference path="./privacycg/global-privacy-control.d.ts" />
 
 /// <reference path="./tc39/array-from-async.d.ts" />
-/// <reference path="./tc39/array-grouping.d.ts" />
 /// <reference path="./tc39/esnext.d.ts" />
-/// <reference path="./tc39/import-attributes.d.ts" />
 
 /// <reference path="./w3c/compute-pressure.d.ts" />
 /// <reference path="./w3c/device-memory.d.ts" />

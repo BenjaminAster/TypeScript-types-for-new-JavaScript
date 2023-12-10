@@ -3,7 +3,7 @@
 // Specification: https://wicg.github.io/cookie-store/
 // Repository: https://github.com/WICG/cookie-store
 
-declare class CookieStore extends EventTarget {
+interface CookieStore extends EventTarget {
 	get(name: string): Promise<CookieListItem | null>;
 	get(options: CookieStoreGetOptions): Promise<CookieListItem | null>;
 	getAll(name: string): Promise<CookieList>;
@@ -18,6 +18,10 @@ declare class CookieStore extends EventTarget {
 	removeEventListener<K extends keyof CookieStoreEventMap>(type: K, listener: (this: CookieStore, ev: CookieStoreEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
 	removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
 }
+
+declare var CookieStore: {
+	prototype: CookieStore;
+};
 
 interface CookieStoreEventMap {
 	"change": CookieChangeEvent;
@@ -61,21 +65,29 @@ interface CookieListItem {
 
 type CookieList = CookieListItem[];
 
-declare class CookieStoreManager {
+interface CookieStoreManager {
 	subscribe(subscriptions: CookieStoreGetOptions[]): Promise<void>;
 	getSubscriptions(): Promise<CookieStoreGetOptions[]>;
 	unsubscribe(subscriptions: CookieStoreGetOptions[]): Promise<void>;
 }
 
+declare var CookieStoreManager: {
+	prototype: CookieStoreManager;
+};
+
 interface ServiceWorkerRegistration {
 	readonly cookies: CookieStoreManager;
 }
 
-declare class CookieChangeEvent extends Event {
-	constructor(type: string, eventInitDict?: CookieChangeEventInit);
+interface CookieChangeEvent extends Event {
 	readonly changed: ReadonlyArray<CookieListItem>;
 	readonly deleted: ReadonlyArray<CookieListItem>;
 }
+
+declare var CookieChangeEvent: {
+	prototype: CookieChangeEvent;
+	new(type: string, eventInitDict?: CookieChangeEventInit): CookieChangeEvent;
+};
 
 interface CookieChangeEventInit extends EventInit {
 	changed: CookieList;

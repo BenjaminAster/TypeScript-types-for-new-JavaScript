@@ -8,6 +8,8 @@
 /// <reference lib="WebWorker" />
 /// <reference lib="WebWorker.Iterable" />
 
+/// <reference path="./cookie-store.d.ts" />
+
 interface ExtendableCookieChangeEvent extends ExtendableEvent {
 	readonly changed: ReadonlyArray<CookieListItem>;
 	readonly deleted: ReadonlyArray<CookieListItem>;

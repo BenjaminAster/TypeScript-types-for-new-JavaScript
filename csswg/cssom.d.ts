@@ -3,11 +3,10 @@
 // Specification: https://drafts.csswg.org/cssom-1/
 // Repository: https://github.com/w3c/csswg-drafts/tree/main/cssom-1
 
-// This file is auto-generated from CSSWG's CSS properties index (https://drafts.csswg.org/indexes/#properties).
+// This file is auto-generated from my CSS properties index (http://localhost/webindex/css.html).
 // The properties already in TypeScript's standard type declarations were removed.
 
 interface CSSStyleDeclaration {
-	alignTracks: string;
 	anchorDefault: string;
 	anchorName: string;
 	animationRange: string;
@@ -27,8 +26,27 @@ interface CSSStyleDeclaration {
 	bookmarkLabel: string;
 	bookmarkLevel: string;
 	bookmarkState: string;
+	borderBlockEndRadius: string;
+	borderBlockStartRadius: string;
+	borderBottomRadius: string;
 	borderBoundary: string;
+	borderClip: string;
+	borderClipBottom: string;
+	borderClipLeft: string;
+	borderClipRight: string;
+	borderClipTop: string;
+	borderInlineEndRadius: string;
+	borderInlineStartRadius: string;
+	borderLeftRadius: string;
+	borderLimit: string;
+	borderRightRadius: string;
+	borderTopRadius: string;
 	boxDecorationBreak: string;
+	boxShadowBlur: string;
+	boxShadowColor: string;
+	boxShadowOffset: string;
+	boxShadowPosition: string;
+	boxShadowSpread: string;
 	boxSnap: string;
 	caret: string;
 	caretShape: string;
@@ -36,12 +54,15 @@ interface CSSStyleDeclaration {
 	contentVisibility: string;
 	continue: string;
 	copyInto: string;
+	cornerShape: string;
+	corners: string;
 	cue: string;
 	cueAfter: string;
 	cueBefore: string;
 	cx: string;
 	cy: string;
 	d: string;
+	fieldSizing: string;
 	fillBreak: string;
 	fillColor: string;
 	fillImage: string;
@@ -55,6 +76,7 @@ interface CSSStyleDeclaration {
 	flowFrom: string;
 	flowInto: string;
 	fontLanguageOverride: string;
+	fontSynthesisPosition: string;
 	fontVariantEmoji: string;
 	footnoteDisplay: string;
 	footnotePolicy: string;
@@ -70,7 +92,7 @@ interface CSSStyleDeclaration {
 	initialLetterWrap: string;
 	inlineSizing: string;
 	inputSecurity: string;
-	justifyTracks: string;
+	insetArea: string;
 	layoutOrder: string;
 	lineClamp: string;
 	lineGrid: string;
@@ -181,6 +203,8 @@ interface CSSStyleDeclaration {
 	textSpacing: string;
 	textSpacingTrim: string;
 	textWrap: string;
+	textWrapMode: string;
+	textWrapStyle: string;
 	timelineScope: string;
 	toggle: string;
 	toggleGroup: string;
@@ -202,10 +226,11 @@ interface CSSStyleDeclaration {
 	voiceRate: string;
 	voiceStress: string;
 	voiceVolume: string;
+	webkitAppRegion: string;
+	webkitTextSecurity: string;
 	whiteSpaceCollapse: string;
 	whiteSpaceTrim: string;
-	wordBoundaryDetection: string;
-	wordBoundaryExpansion: string;
+	wordSpaceTransform: string;
 	wrapAfter: string;
 	wrapBefore: string;
 	wrapFlow: string;

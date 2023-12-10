@@ -49,6 +49,11 @@ navigator.permissions.query({
 	name: "local-fonts"
 })
 
+Object.groupBy;
+
+import.meta.url
+import.meta.resolve
+
 // const alsjdf = Object.freeze([3]);
 
 
