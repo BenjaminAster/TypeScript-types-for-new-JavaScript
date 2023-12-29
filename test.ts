@@ -15,9 +15,50 @@ Object.fromEntries
 
 Map.toString
 
+Promise.allSettled
 
+ArrayBuffer.prototype
+
+SharedArrayBuffer.prototype
+
+let buffer = new ArrayBuffer(5)
+buffer.resize(10)
+
+let sab = new SharedArrayBuffer(10)
+sab.growable && sab.grow(20)
+
+"".charCodeAt(0)
+"".toWellFormed()
+"".isWellFormed()
+
+;[].toReversed
+;[].toSorted
+;[].toSpliced
+;[].with
+Uint8Array.prototype.toReversed
+Uint8Array.prototype.toSorted
+Uint8Array.prototype.with
+
+new Promise<void>((res, rej) => {
+	res()
+})
+
+let { promise, resolve, reject } = Promise.withResolvers();
+{
+	let { promise, resolve, reject } = Promise.withResolvers<number>();
+}
 
 CSS.lvmin
+
+CSS.in
+CSS.vi
+
+
+StylePropertyMapReadOnly
+
+let a: CSSUnparsedSegment
+
+CSSMathSum
 
 new DecompressionStream("deflate-raw");
 

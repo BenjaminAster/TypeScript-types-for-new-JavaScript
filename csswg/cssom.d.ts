@@ -3,7 +3,7 @@
 // Specification: https://drafts.csswg.org/cssom-1/
 // Repository: https://github.com/w3c/csswg-drafts/tree/main/cssom-1
 
-// This file is auto-generated from my CSS properties index (http://localhost/webindex/css.html).
+// This file is auto-generated from my CSS properties index (https://benjaminaster.com/webindex/css.html).
 // The properties already in TypeScript's standard type declarations were removed.
 
 interface CSSStyleDeclaration {
