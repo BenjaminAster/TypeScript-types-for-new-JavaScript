@@ -1,5 +1,5 @@
 
-// ECMAScript Language Specification
+// ECMAScript
 // Specification: https://tc39.es/ecma262/multipage/
 // Repository: https://github.com/tc39/ecma262
 

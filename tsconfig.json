@@ -1,0 +1,10 @@
+{
+	"compilerOptions": {
+		"module": "ESNext",
+		"target": "ESNext",
+		"noEmit": true,
+		"strict": false,
+		"lib": ["ESNext", "DOM", "DOM.Iterable"],
+		"types": [],
+	},
+}

@@ -8,11 +8,26 @@ interface NavigatorUABrandVersion {
 	version?: string;
 }
 
+declare namespace NewJavaScript {
+	type FormFactor = (
+		| "Desktop"
+		| "Automotive"
+		| "Mobile"
+		| "Tablet"
+		| "XR"
+		| "EInk"
+		| "Watch"
+	);
+
+	/** @deprecated */
+	type DeprecatedUAFullVersion = "uaFullVersion";
+}
+
 interface UADataValues {
 	architecture?: string;
 	bitness?: string;
 	brands?: NavigatorUABrandVersion[];
-	formFactor?: string;
+	formFactor?: NewJavaScript.FormFactor[];
 	fullVersionList?: NavigatorUABrandVersion[];
 	model?: string;
 	mobile?: boolean;
@@ -39,16 +54,13 @@ type UAHighEntropyValueHint = (
 	| "wow64"
 );
 
-/** @deprecated */
-type DeprecatedUAFullVersion = "uaFullVersion";
-
 declare class NavigatorUAData {
 	readonly brands: ReadonlyArray<NavigatorUABrandVersion>;
 	readonly mobile: boolean;
 	readonly platform: string;
 	getHighEntropyValues(hints: UAHighEntropyValueHint[]): Promise<UADataValues>;
 	/** @deprecated The `"uaFullVersion"` high entropy value hint is deprecated. Use `"fullVersionList"` instead. */
-	getHighEntropyValues(hints: (UAHighEntropyValueHint | DeprecatedUAFullVersion)[]): Promise<UADataValues>;
+	getHighEntropyValues(hints: (UAHighEntropyValueHint | NewJavaScript.DeprecatedUAFullVersion)[]): Promise<UADataValues>;
 	toJSON(): UALowEntropyJSON;
 }
 

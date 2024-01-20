@@ -6,8 +6,8 @@
 /// <reference path="../w3c/permissions-registry.d.ts" />
 
 interface Permissions {
-	request(permissionDesc: NewJavaScript.PermissionDescriptor): Promise<PermissionStatus>;
+	request(permissionDesc: PermissionDescriptor | NewJavaScript.PermissionDescriptor): Promise<PermissionStatus>;
 
 	// non-standard requestAll() function (https://crbug.com/516626):
-	requestAll(permissionsDesc: NewJavaScript.PermissionDescriptor[]): Promise<PermissionStatus>;
+	requestAll(permissionsDesc: (PermissionDescriptor | NewJavaScript.PermissionDescriptor)[]): Promise<PermissionStatus>;
 }

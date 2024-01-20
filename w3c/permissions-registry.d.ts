@@ -5,13 +5,7 @@
 
 declare namespace NewJavaScript {
 	type PermissionName = (
-		// in lib.dom.d.ts:
-		| "geolocation"
-		| "notifications"
-		| "push"
-		| "persistent-storage"
-		| "screen-wake-lock"
-		| "xr-spatial-tracking"
+		// already in lib.dom.d.ts: "geolocation", "notifications", "persistent-storage", "push", "screen-wake-lock", "xr-spatial-tracking"
 
 		// https://w3c.github.io/permissions-registry/#registry-table-of-standardized-permissions:
 		| "web-share"
@@ -30,8 +24,10 @@ declare namespace NewJavaScript {
 		| "ambient-light-sensor"
 		| "gyroscope"
 		| "magnetometer"
+		| "screen-wake-lock"
 		| "nfc"
 		| "display-capture"
+
 		| "accessibility-events"
 		| "clipboard-read"
 		| "clipboard-write"
@@ -40,8 +36,10 @@ declare namespace NewJavaScript {
 		| "periodic-background-sync"
 		| "system-wake-lock"
 		| "storage-access"
+		| "window-management"
 		| "window-placement"
 		| "top-level-storage-access"
+		| "captured-surface-control"
 	);
 
 	interface PermissionDescriptor {

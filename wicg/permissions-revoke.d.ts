@@ -6,5 +6,5 @@
 /// <reference path="../w3c/permissions-registry.d.ts" />
 
 interface Permissions {
-	revoke(permissionDesc: NewJavaScript.PermissionDescriptor): Promise<PermissionStatus>;
+	revoke(permissionDesc: PermissionDescriptor | NewJavaScript.PermissionDescriptor): Promise<PermissionStatus>;
 }

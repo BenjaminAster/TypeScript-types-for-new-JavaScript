@@ -46,6 +46,7 @@
 
 /// <reference path="./webbluetoothcg/bluetooth.d.ts" />
 
+/// <reference path="./whatwg/file-system-observer.d.ts" />
 /// <reference path="./whatwg/file-system.d.ts" />
 /// <reference path="./whatwg/html.d.ts" />
 

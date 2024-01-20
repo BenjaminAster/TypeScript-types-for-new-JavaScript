@@ -123,6 +123,7 @@ The type declarations in this repository include the following specifications (g
 	 - [WebCodecs](https://w3c.github.io/webcodecs/)
 	 - [Window Management](https://w3c.github.io/window-management/)
  - [Web Hypertext Application Technology Working Group (WHATWG)](https://spec.whatwg.org):
+	 - [File System Observer](https://github.com/whatwg/fs/blob/main/proposals/FileSystemObserver.md)
 	 - [File System](https://fs.spec.whatwg.org)
 	 - [HTML](https://html.spec.whatwg.org/multipage/)
  - [Web Bluetooth Community Group](https://webbluetoothcg.github.io):
@@ -135,4 +136,4 @@ The type declarations in this repository include the following specifications (g
 	 - [Global Privacy Control](https://privacycg.github.io/gpc-spec/)
  - [TC39](https://tc39.es):
 	 - [Array.fromAsync](https://tc39.es/proposal-array-from-async/)
-	 - [ECMAScript Language Specification](https://tc39.es/ecma262/)
+	 - [ECMAScript](https://tc39.es/ecma262/)

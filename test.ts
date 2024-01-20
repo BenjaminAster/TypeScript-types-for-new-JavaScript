@@ -2,9 +2,9 @@
 // import css from "sdlkfjasdf.css" assert { type: "css" };
 
 // / <reference no-default-lib="true" />
-// / <reference lib="ESNext" />
-// / <reference lib="DOM" />
-// / <reference lib="DOM.Iterable" />
+/// <reference lib="ESNext" />
+/// <reference lib="DOM" />
+/// <reference lib="DOM.Iterable" />
 // / <reference path="./worker.d.ts" />
 /// <reference path="./index.d.ts" />
 // / <reference path="./worklet/paint.d.ts" />
@@ -19,7 +19,19 @@ Promise.allSettled
 
 ArrayBuffer.prototype
 
+const observer = new FileSystemObserver((changes) => {
+
+})
+
+observer.observe
+
 SharedArrayBuffer.prototype
+
+// import("./package.json", {
+// 	with: {
+// 		type: "json"
+// 	}
+// })
 
 let buffer = new ArrayBuffer(5)
 buffer.resize(10)
@@ -31,10 +43,10 @@ sab.growable && sab.grow(20)
 "".toWellFormed()
 "".isWellFormed()
 
-;[].toReversed
-;[].toSorted
-;[].toSpliced
-;[].with
+	;[].toReversed
+	;[].toSorted
+	;[].toSpliced
+	;[].with
 Uint8Array.prototype.toReversed
 Uint8Array.prototype.toSorted
 Uint8Array.prototype.with
@@ -42,6 +54,15 @@ Uint8Array.prototype.with
 new Promise<void>((res, rej) => {
 	res()
 })
+
+navigator.permissions.query({ name: "geolocation" })
+navigator.permissions.query({ name: "web-share" })
+navigator.permissions.request({ name: "geolocation" })
+navigator.permissions.request({ name: "web-share" })
+navigator.permissions.requestAll([{ name: "geolocation" }])
+navigator.permissions.requestAll([{ name: "web-share" }])
+navigator.permissions.revoke({ name: "geolocation" })
+navigator.permissions.revoke({ name: "web-share" })
 
 let { promise, resolve, reject } = Promise.withResolvers();
 {
