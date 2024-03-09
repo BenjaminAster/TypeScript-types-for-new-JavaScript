@@ -105,8 +105,6 @@ The type declarations in this repository include the following specifications (g
 	 - [CSS Containment](https://drafts.csswg.org/css-contain-3/)
 	 - [CSSOM View](https://drafts.csswg.org/cssom-view-1/)
 	 - [CSS Object Model](https://drafts.csswg.org/cssom-1/)
-	 - [CSS Custom Highlight API](https://drafts.csswg.org/css-highlight-api-1/)
-	 - [CSS Nesting](https://drafts.csswg.org/css-nesting-1/)
 	 - [Scroll-linked Animations](https://drafts.csswg.org/scroll-animations-1/)
 	 - [CSS View Transitions](https://drafts.csswg.org/css-view-transitions-1/)
  - [World Wide Web Consortium (W3C)](https://www.w3.org/TR/):
