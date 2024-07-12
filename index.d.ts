@@ -21,7 +21,6 @@
 
 /// <reference path="./privacycg/global-privacy-control.d.ts" />
 
-/// <reference path="./tc39/array-from-async.d.ts" />
 /// <reference path="./tc39/esnext.d.ts" />
 
 /// <reference path="./w3c/ambient-light.d.ts" />

@@ -29,7 +29,7 @@ interface PressureObserver {
 declare var PressureObserver: {
 	prototype: PressureObserver;
 	new(callback: PressureUpdateCallback, options?: PressureObserverOptions): PressureObserver;
-	readonly supportedSources: ReadonlyArray<PressureSource>;
+	readonly knownSources: ReadonlyArray<PressureSource>;
 }
 
 interface PressureRecord {
