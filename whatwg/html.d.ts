@@ -17,7 +17,7 @@ interface ImportMeta {
 	resolve(specifier: string): string;
 }
 
-// Not-yet-standardized timezonechange event
+// Not yet standardized timezonechange event
 // https://github.com/whatwg/html/pull/3047, https://docs.google.com/document/d/1gu-HAVIjVxfPQEE0uQg9Y4tJwYl33Y54DKTA9hfDyic/preview
 
 interface WindowEventHandlersEventMap {

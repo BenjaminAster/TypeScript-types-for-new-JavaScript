@@ -96,6 +96,7 @@ The type declarations in this repository include the following specifications (g
 	 - [User-Agent Client Hints](https://wicg.github.io/ua-client-hints/)
 	 - [URLPattern API](https://wicg.github.io/urlpattern/)
 	 - [Web App Launch Handler API](https://wicg.github.io/web-app-launch/)
+	 - [Web Preferences API](https://wicg.github.io/web-preferences-api/)
 	 - [Window Controls Overlay](https://wicg.github.io/window-controls-overlay/)
  - [CSS Houdini](https://css-houdini.org):
 	 - [CSS Animation Worklet API](https://drafts.css-houdini.org/css-animation-worklet/)
@@ -135,3 +136,5 @@ The type declarations in this repository include the following specifications (g
  - [TC39](https://tc39.es):
 	 - [Array.fromAsync](https://tc39.es/proposal-array-from-async/)
 	 - [ECMAScript](https://tc39.es/ecma262/)
+ - [Explainers by Googlers](https://github.com/explainers-by-googlers):
+	 - [Prompt API](https://github.com/explainers-by-googlers/prompt-api#readme)

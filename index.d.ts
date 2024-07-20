@@ -15,6 +15,8 @@
 /// <reference path="./csswg/scroll-animations.d.ts" />
 /// <reference path="./csswg/view-transitions.d.ts" />
 
+/// <reference path="./explainers-by-googlers/prompt-api.d.ts" />
+
 /// <reference path="./immersivewebwg/webxr.d.ts" />
 
 /// <reference path="./open-ui/selectlist.d.ts" />
@@ -47,6 +49,7 @@
 /// <reference path="./whatwg/file-system-observer.d.ts" />
 /// <reference path="./whatwg/file-system.d.ts" />
 /// <reference path="./whatwg/html.d.ts" />
+/// <reference path="./whatwg/streams.d.ts" />
 
 /// <reference path="./wicg/background-fetch.d.ts" />
 /// <reference path="./wicg/background-sync.d.ts" />
@@ -81,4 +84,5 @@
 /// <reference path="./wicg/ua-client-hints.d.ts" />
 /// <reference path="./wicg/urlpattern.d.ts" />
 /// <reference path="./wicg/web-app-launch.d.ts" />
+/// <reference path="./wicg/web-preferences-api.d.ts" />
 /// <reference path="./wicg/window-controls-overlay.d.ts" />
