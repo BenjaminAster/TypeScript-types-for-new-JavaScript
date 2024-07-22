@@ -2,6 +2,7 @@
 /// <reference lib="ESNext" />
 /// <reference lib="DOM" />
 /// <reference lib="DOM.Iterable" />
+/// <reference lib="DOM.AsyncIterable" />
 
 /// <reference path="./worker.d.ts" />
 
@@ -51,7 +52,6 @@
 /// <reference path="./whatwg/file-system-observer.d.ts" />
 /// <reference path="./whatwg/file-system.d.ts" />
 /// <reference path="./whatwg/html.d.ts" />
-/// <reference path="./whatwg/streams.d.ts" />
 
 /// <reference path="./wicg/background-fetch.d.ts" />
 /// <reference path="./wicg/background-sync.d.ts" />

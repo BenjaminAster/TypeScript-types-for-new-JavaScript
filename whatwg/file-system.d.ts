@@ -14,10 +14,3 @@ interface FileSystemFileHandle extends FileSystemHandle {
 	move(destinationDirectory: FileSystemDirectoryHandle): Promise<void>;
 	move(destinationDirectory: FileSystemDirectoryHandle, newEntryName: string): Promise<void>;
 }
-
-interface FileSystemDirectoryHandle extends FileSystemHandle {
-	[Symbol.asyncIterator](): AsyncIterableIterator<[string, FileSystemHandle]>;
-	entries(): AsyncIterableIterator<[string, FileSystemHandle]>;
-	keys(): AsyncIterableIterator<string>;
-	values(): AsyncIterableIterator<FileSystemHandle>;
-}
