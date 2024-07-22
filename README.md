@@ -116,6 +116,8 @@ The type declarations in this repository include the following specifications (g
 	 - [DeviceOrientation Events](https://w3c.github.io/deviceorientation/)
 	 - [Image Resource](https://w3c.github.io/image-resource/)
 	 - [Long Tasks API](https://w3c.github.io/longtasks/)
+	 - [Region Capture](https://w3c.github.io/mediacapture-region/)
+	 - [Screen Capture](https://w3c.github.io/mediacapture-screen-share/)
 	 - [MediaStream Image Capture](https://w3c.github.io/mediacapture-image/)
 	 - [MediaStream Recording](https://w3c.github.io/mediacapture-record/)
 	 - [Permissions Registry](https://w3c.github.io/permissions-registry/)
